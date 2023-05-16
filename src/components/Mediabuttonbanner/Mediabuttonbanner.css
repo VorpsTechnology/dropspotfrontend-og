@@ -1,0 +1,25 @@
+.catogrybtn{
+    background-color:white;
+    font-weight:400;
+    font-size:14.15px;
+    line-height:19.33px;
+ 
+    color:rgba(0,0,1);
+    height:50px;
+    border-color:transparent;
+    border-radius:20px;
+    width:150px;
+    box-shadow:2px 3px 5px dimgrey;
+    border:1;
+    margin:2px,
+}
+.catogrybtn:hover{
+    background-color: 
+    rgba(255, 214, 0, 1);
+}
+.catogrybtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(255, 214, 0, 1);;
+  }
+
+@media
+

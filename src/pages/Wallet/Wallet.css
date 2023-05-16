@@ -1,0 +1,161 @@
+#walletrow {
+    padding: 40px;
+}
+
+.inputtext {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 10px;
+    border-color: transparent;
+    outline: transparent;
+    width: 250px;
+}
+
+.inputitem {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 5px;
+    border-color: transparent;
+    outline: transparent;
+    width: 300px;
+}
+
+.withdrawbtn {
+    background-color: rgba(253, 227, 26, 1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    border-color: transparent;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.walletinput {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 5px;
+    border-color: transparent;
+    outline: transparent;
+    width: 200px;
+}
+
+.flexitems {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexleft {
+    justify-content: left;
+}
+
+.boxinput {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 20px;
+    padding: 5px;
+    border-color: transparent;
+    outline: transparent;
+    width: 300px;
+}
+
+.flexright {
+    justify-content: right;
+}
+
+.upibtn {
+    background-color: rgba(253, 227, 26, 1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    border-color: transparent;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.paybtn {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    border-color: transparent;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#tabcontainer {
+    background: #ffffff;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 27px;
+}
+
+.tabbtn {
+    background-color: #D9D9D9;
+    border-color: transparent;
+    width: auto;
+    padding: 10px;
+    font-weight: 800;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 15px 5px 15px 5px;
+    width: 200px;
+}
+
+.tabbtn:active {
+    background-color: white;
+    border-color: black;
+}
+
+.selected-tab {
+    background-color: black;
+    color: #ffffff;
+    width: 200px
+}
+
+.tablist {
+    justify-content: center;
+    text-align: center;
+    background-color: "yellow";
+}
+
+.tabconetnt {
+    margin: "10px";
+}
+
+.selectbox {
+    background-color: #D9D9D9;
+    width: 230px;
+    padding: 10px;
+    border-color: transparent;
+    border-radius: 20px;
+    outline: transparent;
+}
+
+.serachbtn {
+    background-color: #fde31a;
+    border-color: transparent;
+    width: 130px;
+    padding: 5px;
+    font-weight: 800;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.genrateinvoice {
+    background-color: #fde31a;
+    border-color: transparent;
+    width: 150px;
+    padding: 5px;
+    font-weight: 800;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#walletcontainer {
+    background: #ffffff;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 27px;
+}

@@ -1,0 +1,41 @@
+.dropbtnsubmenu{
+    background-color:#FDE31A;
+    border-color: transparent;
+   
+    color: rgba(0,0,0,1);
+    font-size: 15px;
+    width: 170px;
+    height: 50px;
+    border-radius: 5px;
+
+    font-weight: 800;
+}
+
+ul{
+    list-style-type:none;
+}
+
+.nav-item .nav-item button{
+width:150px;
+font-size: 15px;
+font-weight: 650;
+align-items: center;
+ 
+}
+
+.nav-item{
+    margin: 10px 0px 0px 0px;
+}
+
+#main{
+    border-left: 1.5px;
+    
+    border-color:#FDE31A;
+    border-radius: 10px;
+}
+
+
+
+
+
+

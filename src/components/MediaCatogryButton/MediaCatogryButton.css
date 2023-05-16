@@ -1,0 +1,38 @@
+.trendingbanner {
+    background-color: transparent;
+    border-color: transparent; 
+    font-size: 12.20px;
+    border-radius: 20px;
+    margin-top: 15px;
+
+    
+    }
+.bannerbtn{
+    background-color:rgba(220, 220, 220, 1);
+   padding-top: 30px;
+   height: 80.19px;
+    border-radius: 32.67px;
+    left: 13457.89px;
+    top: 20332px;
+}
+
+.trendingbanner:hover{
+    background-color: #FDE31A;
+    font-size: 12.20px;
+    border-radius: 20px;
+    border-color:#FDE31A;
+border-width: 0.5px;
+}
+
+.bannerbtn:hover{
+    background-color: #FDE31A;
+}
+#MediaCatogryButton{
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    #MediaCatogryButton{
+        display: block;
+    }
+}

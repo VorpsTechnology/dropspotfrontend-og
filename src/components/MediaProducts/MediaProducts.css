@@ -1,0 +1,73 @@
+.connectbtn{
+background-color: #FDE31A;
+border-color: transparent;
+border-radius: 20px;
+font-size: 15px;
+margin-bottom: 10px;
+}
+.listbtn{
+  background-color: #FDE31A;
+  border-color: transparent;
+  border-radius: 20px;
+  font-size: 15px; 
+}
+.super_btnMedia{
+  background-color: #FDE31A;
+  border-color: transparent;
+  border-radius: 20px;
+  font-size: 15px; 
+}
+#headerMedia{
+  display: none;
+
+}
+
+.connect01{
+  background-color: white;
+  font-weight: 500;
+ font-size:15px ;
+  color:black;
+  width:100px ;
+  border-radius: 20px;
+    
+ margin-top: 20px;
+   border-color:rgba(255, 214, 0, 1);
+}
+
+.discount01{
+  background-color: white;
+  font-weight:500;
+  font-size:15px;
+    color: black;
+    width:80%;
+    margin-left: 15px;
+    margin-right: 20px;
+    border-radius: 20px;
+    margin-top:10px ;
+    border-color:rgba(255, 214, 0, 1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+  
+  
+.listbtnlist01{
+  background-color:white;
+  color:black;
+  width: 100px;
+ border-radius: 20px;
+ margin-top: 10px;
+ margin-bottom: 20px;
+
+  
+  
+  
+  border-color: rgba(255, 214, 0, 1);
+}
+@media screen and (max-width: 500px) {
+#headerMedia{
+  display: block;
+
+}
+}

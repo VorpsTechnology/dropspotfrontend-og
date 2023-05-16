@@ -1,0 +1,34 @@
+#mediabutton{
+display: none;
+}
+
+#catory{
+background: transparent;
+border-color: transparent;
+}
+
+.catogrybtns20{
+  width: 240.76px;
+  padding: 7px;
+  text-align: center;
+ 
+background: #DCDCDC;
+border: 0.708841px solid rgba(0, 0, 0, 0.15);
+border-radius: 29.0625px;
+box-sizing: border-box;
+margin:10px 10px 10px 10px
+}
+
+.catogrybtns20:hover{
+  background-color: #FDE31A;
+}
+@media screen and (max-width: 500px)
+{
+    #mediabutton{
+      display:inline;
+    }
+
+ 
+  
+ 
+  }

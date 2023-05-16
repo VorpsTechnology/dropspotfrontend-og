@@ -1,0 +1,22 @@
+.Buttonstik{
+    width: 100%;
+    padding: 20px;
+    
+
+    
+    border-color: transparent;
+    outline: transparent;
+    
+    background:  #FFFEFA;
+    border-radius: 12px;
+    text-align: left; 
+}
+
+#cardblockkAuto{
+    background-color:#FDE31A ;
+    padding: 7px;
+    width: auto;
+    border: transparent;
+    border-radius: 7px;
+    margin: 20px;
+}

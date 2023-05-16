@@ -1,0 +1,24 @@
+
+.tablist{
+    justify-content: center;
+    text-align: center;
+    background-color:'white';
+  
+  }
+  
+  .tabconetnt{
+    margin:'10px'
+  }
+  
+
+
+
+  #tabcontainer{
+  
+  
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 27px;
+  }
+   

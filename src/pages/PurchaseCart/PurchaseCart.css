@@ -1,0 +1,46 @@
+.tablist {
+  justify-content: center;
+  text-align: center;
+  background-color: "yellow";
+}
+
+.tabconetnt {
+  margin: "10px";
+}
+
+#tabcontainer {
+  background: #ffffff;
+  border: 0.1px  rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 27px;
+}
+.tabbtn3 {
+  background-color: black;
+color:white;
+  border-color: transparent;
+  width: auto;
+  padding: 10px;
+  font-weight: 800;
+  height: 50px;
+  align-items: center;
+  border-radius: 10px;
+  margin: 15px 5px 15px 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.selected-tab1 {
+  background-color: #fde31a;
+  color: black;
+  border-color: transparent;
+  border-width:0.2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  
+}
+
+.headingAll h2{
+  padding: 20px;
+  margin: 20px 0px 20px 10px,
+
+}

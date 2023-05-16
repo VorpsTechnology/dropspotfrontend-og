@@ -1,0 +1,25 @@
+.flexlcontainr{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.flexk{
+    justify-content: left;
+    font-size: 15px;
+    font-weight: 650;
+}
+.fln{
+    justify-content: right;
+}
+
+.fln button{
+    background-color: #FDE736;
+    border-color:transparent ;
+    border-radius: 15px;
+    padding: 7px;
+    width: 120px;
+    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 650;
+}

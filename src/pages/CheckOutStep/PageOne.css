@@ -1,0 +1,438 @@
+
+.flexi-left img{
+    display: block;
+ }
+
+ .nextbtn {
+    background-color: #F3CA6D;
+    border-color: transparent;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+ .submitbutton{
+    background-color:#FFD600;
+    border-color: transparent;
+    box-shadow: 0px 1.18466px 1.18466px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width:150px;
+    padding:10px;
+    font-weight: 650;
+    font-size: 15px;
+
+ }
+
+ .imagecontainer img{
+    width: 300px;
+ }
+ .containerMAx{
+    height:50px
+ }
+ #cardComponet{
+    width:350px;
+    border-radius: 20px;
+    height: 500px;
+    display: block;
+
+  
+ }
+ .totabtn{
+    width: 300px;
+    background-color: #FFD600;
+    border-color: transparent;
+    margin-top: 40px;
+    border-radius: 20px;
+ }
+
+ .flexitem{
+    justify-content: space-between;
+    display: flex;
+  
+ }
+ .flexleft{
+    justify-content: left;
+    
+ }
+ .flexright{
+    justify-content: right;
+   
+ }
+.flex-contianer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 70px 20px 70px;
+  
+ 
+}
+
+.stateflex{
+   display:flex;margin:20px;
+}
+.flex-item-right {
+    justify-content: center;
+    margin-top: 20px;
+
+   
+  
+}
+
+.card200 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 439px;
+    height: 400px;
+  
+  
+  
+    background: #F4F7EE;
+    border: 3px solid #F4F7EE;
+    border-radius: 25px;
+}
+
+.fromcontainerm{
+    display:flex;margin:20px;
+}
+
+#cardid {
+    position: absolute;
+    width: 150px;
+    height: 149px;
+    background: #FFFFFF;
+    border-radius: 7px;
+    padding-top: 10px;
+}
+.nameinput{
+    width:250px;
+}
+
+#pro {
+    background: #FFFFFF;
+    border-radius: 7px;
+    width: 100px;
+    text-align: center;
+    width: 150px;
+    height: 80px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+#purdisplay{
+    display:flex;justify-content:space-between;padding-left:40px;padding:20px 20px 20px 20px;
+}
+.nameinput2 {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1.8793px solid #EAEAEA;
+    border-radius: 5.63791px;
+    padding: 7px;
+    width:230px;
+    border-color: transparent;
+    border-radius: 5px;
+    outline-color: #F2C879;
+    box-shadow: 3px 4px 5px rgba(230, 235, 229, 1);
+}
+
+.logininputarea {
+    background-color: rgba(255, 255, 255, 1);
+    width: 300px;
+    padding: 7px;
+    border-color: transparent;
+    border-radius: 5px;
+    outline-color: #F2C879;
+    box-shadow: 3px 4px 5px rgba(230, 235, 229, 1);
+    margin-top: 3px;
+}
+
+.logininputarea{
+    width:520px
+}
+.Mobileinputarea {
+    background-color: rgba(255, 255, 255, 1);
+
+    border-color: transparent;
+    border-radius: 5px;
+    outline-color: #F2C879;
+    box-shadow: 3px 4px 5px rgba(230, 235, 229, 1);
+    padding: 7px;
+    margin-top: 3px;
+    width:520px;
+}
+
+.card300 {
+    position: absolute;
+    width: 298px;
+    height: 80px;
+    text-align: center;
+    padding: 20px;
+    left: 934px;
+    background: #F4F4F4;
+    border-radius: 7px;
+}
+
+.flexi-right img{
+    display: block;
+ }
+.nextbtn {
+    background-color: #F3CA6D;
+    border-color: transparent;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.anime {
+    float: right;
+    transform: translateY(-150px);
+}
+
+.animeleg {
+    float: left;
+   
+}
+
+.tup {
+    float: right;
+ bottom:0
+}
+
+.per {
+    float: right;
+    transform: translateY(-200px);
+    display: block;
+   
+}
+.flexbuttons{
+    margin:40px 60px 40px 60px
+}
+
+#mobile{
+    display: none;
+}
+
+.flex-contianer{
+    justify-content:space-between;margin:40px; 
+}
+
+.flex-item-left{
+    justify-content: left;
+  
+}
+
+.header1{
+    
+    font-size: 30px;
+    font-weight: 650;
+}
+.namele{
+    color: black;
+    margin: 10px;
+}
+
+
+.poi{
+    display:flex;
+    justify-content: space-evenly;
+    width:450px
+    
+}
+.Mobiinput{
+    border-radius: 10px;
+    background-color: rgb(231, 231, 231);
+    color: rgb(50, 51, 58);
+    font-size: 15px;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px;
+    outline-color: transparent;
+    width: 500px; 
+    border-color: transparent;
+    padding: 7px;
+}
+#leftslide{
+    display: block;
+    height:'0px'
+}
+.mediacarf{
+    display: none;
+}
+.MediaCard{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+
+
+    .flex-contianer{
+        justify-content:center;
+        display:inline
+    }
+    
+    .flex-item-left{
+        justify-content: center;
+        margin-left: 0px;
+    }
+    .flex-item-right{
+        justify-content: center;
+       
+        margin-right: 0px;
+    }
+    .MediaCard{
+        display: block;
+    }
+    #cardComponet{
+        width:350px;
+        border-radius: 20px;
+        height: 500px;
+        display:none;
+    
+      
+     }
+     .totabtn{
+        width: 250px;
+        background-color: #FFD600;
+        border-color: transparent;
+        margin-top: 40px;
+        border-radius: 20px;
+     }
+     #MediaCard{
+        width:300px;
+        border-radius: 20px;
+        height: 500px;
+     }
+.header1{
+    margin: 40px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.poi{
+    display:inline;
+    justify-content: center;
+}
+.mediay{
+    display: block;
+
+}
+
+.footj{
+    display: block;
+}
+.footj img{
+    justify-content: left;
+}
+.mediay img{
+    display: block;
+    transform: translateY(-100px);
+}
+.fname4{
+   
+    font-weight: 600;
+}
+.fname5{
+    margin-right: 170px;
+    font-weight: 600; 
+}
+
+
+
+
+.nameinput2 {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1.8793px solid #EAEAEA;
+    border-radius: 5.63791px;
+    padding: 7px;
+width:300px;
+    border-color: transparent;
+    border-radius: 5px;
+    outline-color: transparent;
+    box-shadow: 3px 4px 5px rgba(230, 235, 229, 1);
+}
+
+.Mobiinput{
+    border-radius: 10px;
+    background-color: rgb(231, 231, 231);
+    color: rgb(50, 51, 58);
+    font-size: 15px;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px;
+    outline-color: transparent;
+    width: 300px; 
+    border-color: transparent;
+    padding: 7px; 
+}
+
+
+
+
+
+
+
+
+.nameinput{
+    width:150px;outline-color:transparent;
+   }
+
+.fromcontainerm{
+    display:inline;
+    justify-content: center;
+
+    
+}
+
+
+.logininputarea{
+    width:300px
+}
+.submitbutton{
+    background-color:#FFD600;
+    border-color: transparent;
+    box-shadow: 0px 1.18466px 1.18466px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    width:120px;
+    padding:10px;
+    font-weight: 650;
+    font-size: 15px;
+
+ }
+ .flexbuttons{
+    margin:40px 20px 20px 40px
+}
+
+
+
+
+
+
+
+    
+}
+
+@media only screen and (max-width: 300px){
+    .Mobiinput{
+        border-radius: 10px;
+        background-color: rgb(231, 231, 231);
+        color: rgb(50, 51, 58);
+        font-size: 15px;
+        padding-left: 20px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px;
+        outline-color: transparent;
+        width: 230px; 
+        border-color: transparent;
+        padding: 7px; 
+    }
+    #MediaCard{
+        width:230px;
+        border-radius: 20px;
+        height: 500px;
+     }
+     .totabtn{
+        width: 200px;
+        background-color: #FFD600;
+        border-color: transparent;
+        margin-top: 40px;
+        border-radius: 20px;
+     }
+     .flexbuttons{
+         margin:40px 0px 20px 0px
+     }
+}

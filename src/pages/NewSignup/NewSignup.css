@@ -1,0 +1,177 @@
+.flex-containersign{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    
+}
+
+.flex-leftsign{
+justify-content: left;
+margin-left: 50px;
+}
+
+.flex-rightsign{
+    justify-content: right;
+    padding-right: 50px;
+}
+.inputbox20{
+    background-color:rgba(239, 239, 239, 1);
+    width:400px;
+     height:45.44px;
+     top:223px;
+     border-radius:27.51px;
+    border-color:transparent;
+    outline-color:rgba(255, 214, 0, 1);
+    border: 10px; 
+    margin-top: 8px;
+    padding-left: 20px;
+    }
+    .submitbtn{
+        background-color:rgba(255, 214, 0, 1);;
+        font-size: 15px;
+        font-weight: 650;
+        font-weight: 400;
+        color: black;
+        margin-bottom: 20px;
+        width: 120px;  
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .subbtn{
+        background-color:white;
+        font-size: 20px;
+        font-weight: 400;
+        color: black;
+        margin-bottom: 20px;
+        width: 120px;
+    }
+
+    .checkbox-roundchecked{
+     background-color: white;
+     outline: black;
+     width: 30px;
+     height: 30px;
+     border-radius: 50px;
+    }
+
+    .checkbox-roundchecked:checked{
+        background-color: rgba(255, 214, 0, 1);
+        color: rgba(255, 214, 0, 1);
+    }
+
+    .backbtn{
+        background-color: white;
+        border-color: transparent;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 15px;
+        color: black;
+        box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15)
+    }
+
+    .formlabel{
+    text-align: left;
+    padding-left: 60px;
+        
+    }
+
+    .contsiner{
+        background-color:white;border-radius:20px;width:500px; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    @media screen and (max-width: 600px){
+        .flex-containersign{
+            display: inline;
+            justify-content: center;
+            padding-bottom: 50px;
+            
+        }
+
+        .contsiner{
+            background-color:white;border-radius:20px;width:300px; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15); margin-bottom: 100px;
+        } 
+    
+        
+        .flex-leftsign{
+        justify-content: center;
+        margin-left: 50px;
+        }
+        
+        .flex-rightsign{
+            justify-content: center;
+            padding-right: 50px;
+            display: none;
+        }
+        
+    .formlabel{
+        text-align: left;
+        padding-left: 20px;
+            
+        }
+        .inputbox20{
+            background-color:rgba(239, 239, 239, 1);
+            width:250px;
+             height:45.44px;
+             top:223px;
+             border-radius:27.51px;
+            border-color:transparent;
+            outline-color:rgba(255, 214, 0, 1);
+            border: 10px; 
+            margin-top: 8px;
+            padding-left: 10px;
+            }
+            .flex-leftsign{
+                justify-content: left;
+                margin-left: 0px;
+                }
+                .backbtn{
+                    background-color: white;
+                    border-color: transparent;
+                    border-radius: 20px;
+                    font-weight: 800;
+                    font-size: 15px;
+                    color: black;
+                    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+                    margin: 20px 0px 0px 40px ;
+                    
+                    
+                }
+    }
+
+    @media screen and (max-width: 300px){
+        .contsiner{
+            background-color:white;border-radius:20px;width:230px; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+            margin-bottom: 100px;
+        } 
+        .inputbox20{
+            background-color:rgba(239, 239, 239, 1);
+            width:200px;
+             height:45.44px;
+             top:223px;
+             border-radius:27.51px;
+            border-color:transparent;
+            outline-color:rgba(255, 214, 0, 1);
+            border: 10px; 
+            margin-top: 8px;
+            padding-left: 20px;
+            }
+            .flex-leftsign{
+                justify-content: left;
+                margin-left: 0px;
+                }
+                .backbtn{
+                    background-color: white;
+                    border-color: transparent;
+                    border-radius: 20px;
+                    font-weight: 800;
+                    font-size: 15px;
+                    color: black;
+                    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+                    margin: 20px 0px 0px 40px ;
+                    
+                    
+                }
+    
+              
+    }

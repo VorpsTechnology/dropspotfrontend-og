@@ -1,0 +1,26 @@
+#MediaProductListing{
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+#MediaProductListing{
+    display:block;
+    margin-top: 50px;
+
+}
+#listingbuttons button{
+    background-color:rgba(253, 227, 26, 1) ;
+    font-size: 15px;
+    color: rgba(70, 70, 70, 1);
+    border-radius: 20px;
+   width: 70px;
+    border-color: transparent;
+}
+#selectbox{
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgba(222, 222, 222, 1);
+}
+
+}

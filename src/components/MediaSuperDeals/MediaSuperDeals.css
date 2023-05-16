@@ -1,0 +1,50 @@
+
+#reomdProduct{
+    display: none;
+  
+  }
+  #headerMediayo{
+    display: none;
+  }
+  .headerproduuct{
+    justify-content: center;
+    padding:10px ;
+    
+    background-color:#FDE31A ;
+    width:230px ;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-bottom:40px ;
+    margin-top: 40px;
+  }
+
+   
+  
+
+@media screen and (max-width: 500px) {
+    #reomdProduct{
+      display: flex;
+    
+    }
+    #headerMediayo{
+      display: block;
+    }
+    }
+
+    @media screen and (max-width: 600px) {
+      #reomdProduct{
+        display: block;
+      
+      }
+      #headerMediayo{
+        display: block;
+      }
+      .super_btn20{
+        background-color: #FDE31A;
+        border-color: transparent;
+        border-radius: 20px;
+        font-size: 15px;  
+      }
+
+  
+      }

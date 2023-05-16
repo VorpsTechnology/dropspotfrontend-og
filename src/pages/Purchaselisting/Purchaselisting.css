@@ -1,0 +1,67 @@
+.selectbox{
+    background-color: #f9f9f9;
+    outline: #FDE31A;;
+}
+
+.selectbox option{
+    background-color: #f9f9f9; 
+}
+
+
+select option:checked
+{
+    background-color: #FDE31A; 
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.selectboxPuechse{
+    width: 280px;
+    height: 35px;
+    border-radius: 86px;
+    border-color: transparent;
+    background-color:rgba(231, 231, 231, 1);
+    color: rgb(0,0,0,1);
+    font-size: 15px;
+    padding-left: 20px;
+  
+   
+    font-style: 'Poppins';
+    margin-left: 30px;  
+    outline-color:transparent;
+}
+
+.inputtraction{
+    width: 500px;
+    height: 35px;
+    border-radius: 86px;
+    border-color: transparent;
+    background-color:rgba(231, 231, 231, 1);
+    color: rgba(50, 51, 58, 1);
+    font-size: 15px;
+    padding-left: 20px;
+    font-style: 'Poppins';
+    margin-top: 20px;
+  margin-left:30px;
+    outline-color:transparent;  
+}
+
+.inputdate{
+   width:150px;
+   height: 35px;
+   border-radius: 86px;
+   border-color: transparent;
+   background-color:rgba(231, 231, 231, 1);
+   color: rgba(50, 51, 58, 1);
+   font-size: 15px;
+   padding-left: 20px;
+   font-style: 'Poppins';
+   margin-top: 20px;
+   margin-left: 30px;
+
+   outline-color:transparent; 
+
+}

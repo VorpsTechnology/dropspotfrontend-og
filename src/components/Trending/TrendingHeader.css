@@ -1,0 +1,22 @@
+h3{
+    color:black;
+    justify-content: center;
+    top: 1230px;
+    bottom: 1217px;
+    align-items: center;
+
+
+
+}
+#header{
+    display: block;
+    margin-bottom: 40px;
+}
+ 
+
+@media screen and (max-width: 500px) {
+    #header{
+        display: none;
+    }
+
+  }

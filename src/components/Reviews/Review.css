@@ -1,0 +1,119 @@
+.slick-initialized .slick-slider {
+    display: grid;
+    grid-template-areas:
+      "img img img box box"
+      "img img img box box"
+      "img img img box box"
+      "img img img box box"
+      "img img img box box";
+    height: 30rem;
+    /* width:800px; */
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+  /* .review-item{
+      display: grid;
+      grid-template-areas: 
+      "img img img cli-img rtg"
+      "img img img txt txt"
+      "img img img txt txt"
+      "img img img txt txt"
+      "img img img cli pro";
+  } */
+  .review-img{
+      grid-area: img;
+  }
+  
+  .review-box{
+   
+    display:grid;
+    grid-template-areas:
+    "c-img c-img info date"
+    "c-img c-img rtg rtg"
+    "txt txt txt txt"
+    "txt txt txt txt"
+    "txt txt txt txt"
+    "cli cli pro pro"
+  }
+  .review-text{
+  grid-area: txt;
+  
+  
+  width: 347px;
+  height: 244px;
+  
+  
+  background: rgba(255, 214, 0, 1);
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
+  border-radius: 27px;
+  padding: 15px;
+  margin: 10px;
+  }
+  .checked{
+    color:rgba(255, 214, 0, 1);
+  }
+  .cli-img{
+    grid-area: c-img;
+    /* Ellipse 44 */
+  
+  
+  width: 120px;
+  height: auto;
+  margin-left:25px;
+  margin-top:10px;
+  /* background: #FFFFFF; */
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.12);
+  border-radius: 48px;
+  }
+  .review-date{
+ 
+  background: #FDE736;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.12);
+  border-radius: 43px;
+  padding:3px;
+  padding-top:10px;
+  padding-left:10px;
+  font-size:20px;
+  width: 200px;
+  
+  }
+  .review-info{
+    grid-area: detail;
+    margin-right: 40px;
+    /* Rectangle 111 */
+  
+  
+  background: #FFFFFF;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0)
+  
+  }
+  
+  .review-rating{
+    grid-area: rtg;
+  
+  
+  width: 110px;
+  height: 50px;
+  margin: 5px;
+  padding-top:10px;
+  padding-left:15px;
+  
+  }
+  .review-cli{
+      grid-area: cli;
+  }
+  .review-pro{
+      grid-area: pro;
+  }
+  #reviewcontainer{
+    display: flex;
+  }
+
+
+
+  @media screen and (max-width: 500px){
+    #reviewcontainer{
+      display: none;
+    }
+  }
+

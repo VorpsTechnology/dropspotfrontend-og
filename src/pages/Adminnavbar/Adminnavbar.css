@@ -1,0 +1,85 @@
+.flex-container120{
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+}
+
+#Admindashboard{
+    background-color: #32333A;
+    border-bottom: 1px solid #FDE31A;
+box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+   
+   
+
+}
+
+.flex-item-left120{
+    justify-content: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+.flex-item-right120{
+    justify-content: right;
+    color: rgba(255, 255, 255, 1);
+    margin-top:20px;
+}
+
+.username{
+    background-color:#FDE31A;
+    color: #32333A;
+    font-size:15px ;
+    padding: 10px;
+    border-radius: 30px;
+    border-color:transparent ;
+}
+
+.dropbtnuser {
+    background-color: #FDE31A;
+    color:  rgba(50, 51, 58, 1);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  
+  .dropdownuser {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-contentuser {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+    margin-left: 20px;
+    border-radius: 5px;
+    
+  }
+  
+  .dropdown-contentuser a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  
+  .dropdown-contentuser a:hover {background-color: rgba(50, 51, 58, 1);color:white}
+  
+  .dropdownuser:hover .dropdown-contentuser {
+    display: block;
+  }
+  
+  .dropdownuser:hover .dropbtnuser {
+    background-color: #FDE31A;
+  }

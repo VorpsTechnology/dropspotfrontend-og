@@ -1,0 +1,75 @@
+.mobile-nav {
+
+    position: fixed;
+    bottom: 0;
+   margin-left: 2%;
+   margin-right: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #1F1E1A;
+
+
+box-sizing: border-box;
+padding: 5px 0px 10px 0px;
+
+margin:0px 5px 12px 5px;
+
+
+
+
+border-radius: 20px;
+  }
+  .bloc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  #MediaFooterconteriner {
+    display:none;
+    }
+    .btn{
+        background-color:#FFD600;
+        border-color:transparent;
+       font-size:7px;
+       color:black;
+       border-radius:20px;
+    }
+ 
+    
+
+  @media screen and (max-width: 500px) {
+    
+    #MediaFooterconteriner {
+    display: inline;
+    justify-content: center;
+    }
+    .btnFooter{
+        background-color:#FFD600;
+        border-color:transparent;
+       font-size:10px;
+       color:black;
+       border-radius:20px;
+       margin-top: 10px;
+       font-weight: 650;
+    }
+    .btnFooter:hover{
+        background-color:#FDE31A;
+       
+    }
+    
+  }
+
+  
+  @media screen and (max-width: 300px){
+    .btnFooter{
+      background-color:#FFD600;
+      border-color:transparent;
+     font-size:10px;
+     color:black;
+     border-radius:20px;
+     margin-top: 10px;
+     font-weight: 650;
+  }
+  }

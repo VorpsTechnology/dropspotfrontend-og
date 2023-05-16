@@ -1,0 +1,468 @@
+
+
+
+.cardcard {
+   margin-bottom: 40px;
+    border-radius: 16px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 210px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.2);
+    height:'500px';
+    
+  
+
+}
+
+.cardcard:hover{
+    transform: translateY(-20px);
+}
+
+
+
+.thumbnail-image {
+    border-radius: 10px !important;
+   
+
+}
+
+.discount {
+    background-color: white;
+font-weight:500;
+font-size:15px;
+  color: black;
+  width:200px;
+  border-radius: 20px;
+  margin-top:10px ;
+  border-color:rgba(255, 214, 0, 1);
+}
+
+.connect{
+    background-color: white;
+    font-weight: 500;
+   font-size:15px ;
+    color:black;
+    width:100px ;
+    border-radius: 20px;
+      
+   margin-top: 20px;
+     border-color:rgba(255, 214, 0, 1);
+}
+
+.btnview{
+    background-color: rgba(255, 214, 0, 1);
+    color: black;
+    border-color: transparent;
+    border-radius: 20px;
+    padding: 5px;
+    width: 150px;
+    font-weight: 800;
+}
+
+.btnview:hover{
+    
+	border: 1px solid rgba(255, 255, 255, 0.3);
+    
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 214, 0, 1);
+    
+}
+.connect:hover{
+    background-color:rgba(255, 214, 0, 1) ;   
+}
+.discount:hover{
+    background-color:rgba(255, 214, 0, 1) ;
+}
+
+.listbtnlist{
+    background-color:white;
+    color:black;
+    width: 70px;
+   border-radius: 20px;
+   margin-top: 20px;
+    
+    
+    float:left;
+    border-color: rgba(255, 214, 0, 1);
+}
+
+.listbtnlist:hover{
+    background-color:rgba(255, 214, 0, 1) ;
+}
+
+.wishlist {
+    height: 25px;
+    width: 25px;
+    background-color:rgba(255, 214, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    font-family: "poppins";
+    margin-left: 10px;
+}
+
+.first {
+    position: absolute;
+    width: 100%;
+    
+}
+
+.dress-name {
+    font-size: 15.82px;
+    font-weight: 400;
+    width: 100%;
+	align-items: center;
+	padding-top: 10px;
+	font-family: 'Poppins';
+	line-height:22.23px;
+    padding-left: 15px;
+    font-weight:600;
+    font-size: 17.5px;
+}
+
+.new-price {
+    font-size: 13px;
+    font-weight: bold;
+    color: red
+}
+
+.old-price {
+    font-size: 8px;
+    font-weight: bold;
+    color: grey
+}
+
+
+.btn :hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 100px 0 rgba(255, 214, 0, 1);;
+}
+.btn :hover{
+    background-color:rgba(255, 214, 0, 1);
+}
+
+.creme {
+    background-color: #fff;
+    border: 2px solid grey
+}
+
+.creme:hover {
+    border: 3px solid grey
+}
+
+.creme:focus {
+    background-color: grey
+}
+
+.red {
+    background-color: #fff;
+    border: 2px solid red
+}
+
+.red:hover {
+    border: 3px solid red
+}
+
+.red:focus {
+    background-color: red
+}
+
+.blue {
+    background-color: #fff;
+    border: 2px solid #40C4FF
+}
+
+.blue:hover {
+    border: 3px solid #40C4FF
+}
+
+.blue:focus {
+    background-color: #40C4FF
+}
+
+.darkblue {
+    background-color: #fff;
+    border: 2px solid #01579B
+}
+
+.darkblue:hover {
+    border: 3px solid #01579B
+}
+
+.darkblue:focus {
+    background-color: #01579B
+}
+
+.yellow {
+    background-color: #fff;
+    border: 2px solid #FFCA28
+}
+
+.yellow:hover {
+    border-radius: 3px solid #FFCA28
+}
+
+.yellow:focus {
+    background-color: #FFCA28
+}
+
+.item-size {
+    width: 10px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.rating-star {
+    font-size: 10px !important
+}
+
+.rating-number {
+    font-size: 10px;
+    color: grey
+}
+
+.buy {
+    font-size: 12px;
+    color: purple;
+    font-weight: 500
+}
+
+.voutchers {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden
+}
+
+.voutcher-divider {
+    display: flex
+}
+
+.voutcher-left {
+    width: 60%
+}
+
+.voutcher-name {
+    color: grey;
+    font-size: 9px;
+    font-weight: 500
+}
+
+.voutcher-code {
+    color: red;
+    font-size: 11px;
+    font-weight: bold
+}
+
+.voutcher-right {
+    width: 40%;
+    background-color: purple;
+    color: #fff
+}
+
+.discount-percent {
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    top: 5px
+}
+
+.off {
+    font-size: 14px;
+    position: relative;
+    bottom: 5px
+}
+.super_btn{
+background-color: rgba(255, 214, 0, 1);
+border-width:0;
+  color: black;
+  width: 100px;
+ border-radius: 20px;
+  margin-left: 2px;
+  margin-right:10px;
+ float: right;
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+
+}
+
+.Selectbox{
+    padding: 5px;
+    border-radius: 10px;
+    background-color:rgba(231, 231, 231, 1) ;
+    border-color: transparent;
+    margin: 5px;
+    outline-color:rgba(253, 227, 26, 1) ;
+    width: 200px;
+}
+#trendingcontainer{
+    display: inline;
+
+}
+#MediaProduct{
+    display: none;
+}
+
+.flexcontinaer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.varitybtn{
+    background-color: rgba(255, 214, 0, 1);
+    border-width:0;
+      color: black;
+      width: 100px;
+      padding: 10px;
+     border-radius: 20px;
+      margin-left: 2px;
+      margin-right:10px;
+    
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); 
+}
+.inputflied{
+    padding: 5px;
+    border-radius: 10px;
+    background-color:rgba(231, 231, 231, 1) ;
+    border-color: transparent;
+    margin: 5px;
+    outline-color:rgba(253, 227, 26, 1) ;
+    width: 130px;  
+}
+.bulkbtn{
+    background-color: rgba(255, 214, 0, 1);
+    border-width:0;
+      color: black;
+     width: 100px;
+      padding: 10px;
+     border-radius: 20px;
+      
+      
+    
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);   
+}
+
+.bulkbtnrec{
+    background-color: rgba(255, 214, 0, 1);
+    border-width:0;
+      color: black;
+     width: 300px;
+      padding: 10px;
+     border-radius: 20px;
+      
+      
+    
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);   
+}
+.bulkbtnok{
+    background-color: rgba(255, 214, 0, 1);
+    border-width:0;
+      color: black;
+     width: 50px;
+      padding: 10px;
+     border-radius: 20px;
+      
+      
+    
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);    
+}
+
+.bulkbtnprice{
+    background-color: rgba(255, 214, 0, 1);
+    border-width:0;
+      color: black;
+     width: 150px;
+      padding: 10px;
+     border-radius: 20px;
+     margin-left: 20px;
+      
+      
+    
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);  
+}
+
+.buttonboxsecond{
+    border-color:transparent ;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;  
+    width: 200px;   
+}
+
+.buttonboxTcking{
+    border-color:transparent ;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;  
+    border-radius: 20px;
+    width: 200px; 
+    
+}
+
+.Availblity{
+    border-color:transparent ;
+    background-color: rgba(255, 214, 0, 1);
+    font-size: 15px;
+    font-weight: 800;
+    color: black;  
+    border-radius: 20px;  
+    padding: 5px;    
+}
+
+.buttonboxrange{
+    border-color:transparent ;
+    background-color: rgba(255, 214, 0, 1);
+    font-size: 15px;
+    font-weight: 800;
+    color: black;  
+    border-radius: 20px; 
+    padding: 5px; 
+}
+
+.buttonboxcost{
+    border-color:transparent ;
+    background-color: rgba(255, 214, 0, 1);
+    font-size: 15px;
+    font-weight: 800;
+    color: black;  
+    border-radius: 20px;  
+    padding: 5px;  
+}
+
+.buttonbox{
+    border-color:transparent ;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+#carasouelsection{
+    background: #FFFFFF;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 27px;
+  }
+
+@media screen and (max-width: 500px){
+    #trendingcontainer{
+      display: none;
+    }
+    #MediaProduct{
+        display: inline;
+    }
+  }
+
+
