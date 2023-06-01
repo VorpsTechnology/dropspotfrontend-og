@@ -12,7 +12,7 @@ import './PageOne.css'
 import { useHistory, useParams } from 'react-router-dom'
 import { getProduct } from '../../Api/ProductRequest'
 import swal from 'sweetalert'
-import { createOrder } from '../../Api/OrderRequest'
+import { createOrder, createpreOrder } from '../../Api/OrderRequest'
 import './PageOne.css'
 import { getUser } from '../../Api/UserRequest';
 
@@ -106,7 +106,7 @@ const orderType=localStorage.getItem("accountType")
           } 
 
           const order=async()=>{
-            
+            alert()
            console.log("orderdata", userData,userId);
            console.log("preOrder",preOrder)
            
@@ -119,6 +119,7 @@ const orderType=localStorage.getItem("accountType")
                price:post.price,
                sellerId:post.sellerId,
                sellerName:post.sellerName,
+               sku:post.sku,
                deliveryAddress:{
                   firstName:address.firstName,
                   lastName:address.lastName,
@@ -139,14 +140,16 @@ const orderType=localStorage.getItem("accountType")
                preOrder:preOrder
 
              }
-             console.log(ata);
-             alert()
-             const tata= await createOrder(ata)
+             console.log("ata====>",ata);
+          
+             const tata= await createpreOrder(ata)  
              if(tata){
               swal("Ordered Successfully...!")
               //  history.push("/SellerOrderFullfillment")
               // history.push("/PurchaseCart")
               openModal()
+             }else{
+              alert("error")
              }
             }else{
              swal("Login first")
@@ -359,10 +362,14 @@ const orderType=localStorage.getItem("accountType")
        
         {
          preOrder==true? <>
-           <div><button type='button' className='submitbutton' onClick={order}>PreOrder</button></div>
+           <div><button type='button' className='submitbutton' onClick={()=>{
+            order()
+           }}>PreOrder</button></div>
          </>:
           <>
-   <div><button type='submit' className='submitbutton' onClick={order}>Pay Now</button></div>
+   <div><button type='submit' className='submitbutton' onClick={()=>{
+    order()
+   }}>Pay Now</button></div>
        
           </>
         }
@@ -378,7 +385,7 @@ const orderType=localStorage.getItem("accountType")
         </div>
       <div className='flex-item-right'>
           <div className='card' id='cardComponet'>
-            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"https://server.dropspot.in/images/"+post.image1:""} alt="" /></div>
+            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"https://localhost:5007/images/"+post.image1:""} alt="" /></div>
            <div className='containerMAx'>
            <div className='flexitem'>
               <div className='flexleft'>

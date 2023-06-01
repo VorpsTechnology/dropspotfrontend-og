@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react';
 import './ImportedOrder.css'
 import DataTable from 'react-data-table-component';
-import {  myOrders, preOrderFullFill} from "../../Api/OrderRequest";
+import {  myOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import swal from 'sweetalert';
 
 
@@ -94,17 +94,17 @@ const [declinedordercomponent,setdeclineOrderComponent]=useState(false)
 useEffect(() => {
 async function fetchData() {
 // You can await here
-if(declinedordercomponent){
-  const ata={userId:userId,type:"preOrder",status:"Declined"}
-const {data}=await myOrders(ata)
+
+  const ata={dropshipperId:userId,type:"shopify"}
+const {data}=await myshopifyOrders(ata)
 setUsers(data)
 setFilteredUsers(data)
 console.log("gaiii",data);
-}
+
 // ...
 }
 fetchData();
-}, [ordercomponent,invalidordercomponent,declinedordercomponent]); // Or [] if effect doesn't need props or state
+}, []); // Or [] if effect doesn't need props or state
 
 // useEffect(()=>{
 //   const result=users.filter((user)=>{
@@ -272,7 +272,7 @@ const coloumn=[
                 </div>
          </div>
           <div className='container' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',marginTop:'10px'}}  >
-               <div className='row' style={{backgroundColor:'#FDE31A',padding:'15px 2px 5px 2px',color:'black',borderRadius:'20px'}}>
+               {/* <div className='row' style={{backgroundColor:'#FDE31A',padding:'15px 2px 5px 2px',color:'black',borderRadius:'20px'}}>
                   <div className='col-2'> 
                   <p >Your Order ID.</p>
                  </div>
@@ -298,8 +298,21 @@ const coloumn=[
                   <div className='col'>
                   <p>Action</p>
                   </div>
-                </div>
+                </div> */}
                </div>
+               <DataTable 
+        
+        columns={coloumn} 
+        data={filterUsers} 
+        pagination
+        
+        customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
             </Tab.Panel>
             <Tab.Panel>
             <div className='container' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px'}} >
@@ -404,19 +417,7 @@ const coloumn=[
                   <p>Action</p>
                   </div>
                 </div> */}
-                <DataTable 
-        
-        columns={coloumn} 
-        data={filterUsers} 
-        pagination
-        
-        customStyles={customStyles}
-        highlightOnHover
-      
-        
-      
-        // data={data}
-      />
+              
               </Tab.Panel>
           </Tab.Panels>
     </Tab.Group>

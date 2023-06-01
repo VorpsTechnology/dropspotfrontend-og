@@ -104,13 +104,23 @@ const [dispatched,setDispatched]=useState(false)
 const [completed,setCompleted]=useState(false)
 const [closed,setClosed]=useState(false)
 const [returns,setReturns]=useState(false) 
+
+const [allOrders,setAllOrders]=useState([{productName:"testorders"},{productName:"testorders1"},{productName:"testorders2"}])
+const [allawaiting,setAllawaiting]=useState([{productName:"testawaiting"},{productName:"testawaiting1"},{productName:"testawaiting2"}])
+const [allpending,setAllpending]=useState([{productName:"testpending"},{productName:"testpending1"},{productName:"testpending2"}])
+const [allprocessing,setAllprocessing]=useState([{productName:"testprocessing"},{productName:"testprocessing1"},{productName:"testprocessing2"}])
+const [alldispatched,setAlldispatched]=useState([{productName:"testdispatched"},{productName:"testdispatched"},{productName:"testdispatched"}])
+const [allcompleted,setAllcompleted]=useState([{nproductName:"testcomplete"},{productName:"testcomplete1"},{productName:"testcompleted2"}])
+const [allclosed,setAllclosed]=useState([{productName:"testclosed"},{productName:"testclosed1"},{productName:"testclosed2"}])
+const [allreturns,setAllreturns]=useState([{productName:"testreturn"},{productName:"testreturn1"},{productName:"testreturn2"}])
 useEffect(() => {
   async function fetchData() {
     // You can await here
    if(awaitingPayment){
     const ata={userId:userId}
-    const {data}=await sellerOrders(ata)
-    setUsers(data)
+    // const {data}=await sellerOrders(ata)
+    // setUsers(data)
+    const data=[]
     setFilteredUsers(data)
     console.log("gaiii",data);
    }if(all){
@@ -183,23 +193,133 @@ const coloumn=[
             marginLeft:"-7rem",
               color: "gray",
               }},
-  {name:"ACTION ",selector:(row)=>
+  {name:"",selector:(row)=>
   <div style={{display:"inline"}}>
-
+    {
+      all && <>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Status</button>
+      </>
+    }
     {awaitingPayment&&<>
       <div>
-      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'auto',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
       onClick={()=>alert()}
       >Request Payment</button>
       </div>
       <div>
-      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'100px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
       onClick={()=>alert()}
       >Decline</button>
       </div>
     </>}
-            
+
+
+    {
+      pending && <>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Invoice</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Request shipping</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Support </button>
+      </div>
+      </>
+    }
+
+    {
+      processing && <>
+     <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Invoice</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Support</button>
+      </div>
+      
+      
+      </>
+    }
+
+
+        {
+          dispatched && <>
+          <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Invoice</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Support</button>
+      </div>
+          </>
+        }   
+
+
+        {
+          closed && <>
+       <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >invoice</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >support</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Remove</button>
+      </div>
+          </>
+        } 
            
+
+           {
+            completed && <>
+            <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Invoice</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Support</button>
+      </div>
+            </>
+           }
+
+           {
+            returns && <>
+           <div>
+      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Accept return</button>
+      </div>
+      <div>
+      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Decline</button>
+      </div>
+            </>
+           }
        </div>,
        style:{
         marginLeft:"-7rem",
@@ -208,6 +328,11 @@ const coloumn=[
       },
             
 ]
+
+
+
+
+
   return (
     <>
     <Adminnavbar />
@@ -426,7 +551,7 @@ const coloumn=[
             <DataTable 
         customStyles={customStyles}
         columns={coloumn} 
-        data={filterUsers} 
+        data={allawaiting} 
         pagination
       
       
@@ -496,8 +621,21 @@ const coloumn=[
             </div>
            </div>
            </div>
+           <DataTable 
+        
+        columns={coloumn} 
+        data={allpending} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
            </div>
-
+           
 
           
         </div>
@@ -548,7 +686,19 @@ const coloumn=[
            </div>
            </div>
           
-          
+           <DataTable 
+        
+        columns={coloumn} 
+        data={allprocessing} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
           
          </div>
            </Tab.Panel>
@@ -558,7 +708,7 @@ const coloumn=[
             <div className='Dashboardheading'><h3>Dispatched</h3></div>
         <div className='row' style={{marginTop:'20px'}}>
              <div className='col'><input style={skubnt} type="date" /></div>
-             <div className='col'><input style={skubnt} placeholder='please enter order number' type="text" /></div>
+             <div className='col'><input style={skubnt} placeholder='please enter order number..!' type="text" /></div>
              <div className='col'>
                  <select  style={skubntselect} name="All" id="">
                      <option value="">All</option>
@@ -588,7 +738,19 @@ const coloumn=[
            </div>
            </div>
          
-          
+           <DataTable 
+        
+        columns={coloumn} 
+        data={alldispatched} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
         
         </div>
            </Tab.Panel>
@@ -629,7 +791,19 @@ const coloumn=[
             </div>
            </div>
            </div>
-           
+           <DataTable 
+        
+        columns={coloumn} 
+        data={allcompleted} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
             </div>
           
            </Tab.Panel>
@@ -669,7 +843,19 @@ const coloumn=[
            </div>
            </div>
          
-          
+           <DataTable 
+        
+        columns={coloumn} 
+        data={allclosed} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
            </div>
         
            </Tab.Panel>
@@ -706,7 +892,19 @@ const coloumn=[
            </div>
           
            </div>
-          
+           <DataTable 
+        
+        columns={coloumn} 
+        data={allreturns} 
+        pagination
+      
+      customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+        />
             </div>
          
            </Tab.Panel>

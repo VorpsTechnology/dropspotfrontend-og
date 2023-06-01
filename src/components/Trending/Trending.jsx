@@ -6,7 +6,7 @@ import Connection from '../.././pages/Connection/Connection'
 import connection from "../../assets/connection.png";
 import list from "../../assets/list.png";
 import { useEffect } from "react";
-import { getAllProducts } from "../../Api/ProductRequest.js";
+import { getAllProducts, getProduct } from "../../Api/ProductRequest.js";
 import { addToWishlist, getWishlist } from "../../Api/WishlistRoute";
 
 import swal from "sweetalert";
@@ -17,6 +17,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ViewMoreSection from "./ViewMoreSection/ViewMoreSection";
+import { beforeList } from "../../Api/ListingRequest";
 
 
 
@@ -92,27 +93,32 @@ function Trending() {
 const [search,setSearch]=useState("");
 const [filterUsers,setFilteredUsers]=useState([]);
 
-useEffect(() => {
-  async function fetchData() {
-    // You can await here
-    const beta={userId:userData}
-    const {data}=await getWishlist(beta)
-    setUsers(data)
-    setFilteredUsers(data.Wishlist.products)
-    console.log(userData);
-    console.log(data.Wishlist.products);
-    // ...
-  }
-  fetchData();
-}, []);
+// useEffect(() => {
+//   async function fetchData() {
+//     // You can await here
+//     const beta={userId:userData}
+//     const {data}=await getWishlist(beta)
+//     setUsers(data)
+//     setFilteredUsers(data.Wishlist.products)
+//     console.log(userData);
+//     console.log(data.Wishlist.products);
+//     // ...
+//   }
+//   fetchData();
+// }, []);
 const [toggle,setToggle]=useState(false)
 const handleToggle=()=>{
   setToggle(!toggle)
 }
 
 const [open, setOpen] = React.useState(false);
-
-const handleClickOpen = () => {
+const [beforeListingProduct,setbeforeListingProduct]=useState({})
+const handleClickOpen =async (productI) => {
+  alert(productI)
+  const {data}=await getProduct(productI)
+  console.log("before",data);
+  setbeforeListingProduct(data)
+  console.log("beforelisting",beforeListingProduct);
   setOpen(true);
 };
 
@@ -120,7 +126,20 @@ const handleClose = () => {
   setOpen(false);
 };
 
+const handleBeforelisting=async()=>{
+  const {_id,...others}=beforeListingProduct
+  console.log("others",others);
+const dta={  
+      dropshipperId:userData,
+    product:others
+  }
 
+  console.log("dta==>",dta);
+  const{data}=await beforeList(dta)
+  if(data){
+    alert("Product added as draft")
+  }
+}
 
 
   return (
@@ -138,7 +157,7 @@ const handleClose = () => {
                   <div className="image" style={{width:'100%'}}>
                     
                     <img
-                     src={ele.image1?"http://localhost:5000/images/"+ele.image1:"" }
+                     src={ele.image1?"http://localhost:5007/images/"+ele.image1:"" }
                      style={{cursor:"pointer",width:"100%",height:"200px",borderRadius:'10px' }}
                      onClick={() => {
                       history.push(`/ProductPage/${ele._id}`)
@@ -185,7 +204,9 @@ const handleClose = () => {
                       <div className="row" >
                         {" "}
                         <div className="col" style={{width:"50%"}}> <button  align="left" className="connect" onClick={handleCheckOut}> <img src={connection} alt="" /> Connect</button></div>
-                        <div className="col" style={{width:"50%"}}> <button align="right" className="listbtnlist" onClick={handleClickOpen} > <img src={list} alt="" /> List</button>
+                        <div className="col" style={{width:"50%"}}> <button align="right" className="listbtnlist" onClick={()=>{
+                          handleClickOpen(ele._id)
+                        }} > <img src={list} alt="" /> List</button>
                           <Dialog   open={open} 
                               sx={{
                                 "& .MuiDialog-container": {
@@ -196,7 +217,7 @@ const handleClose = () => {
                                 },
                               }}
                              onClose={handleClose}>
-        <DialogTitle></DialogTitle>
+        <DialogTitle>Listing modal</DialogTitle>
         <DialogContent>
           <DialogContentText>
           </DialogContentText>
@@ -236,6 +257,21 @@ const handleClose = () => {
               <div className="col-md-auto"><button className="buttonbox" >Total Dropshipping Cost</button></div>
               <div className="col"><button className="buttonbox">Price</button></div>
             </div>
+            <div align="middle" className="row" style={{backgroundColor:'',marginTop:'40px',padding:'10px',borderRadius:'20px'}}>
+              <div className="col"><input style={{width:'20px',height:'20px'}} type="checkbox" /></div>
+              <div className="col"><button className="buttonbox"> <img
+                     src={ele.image1?"http://localhost:5007/images/"+ beforeListingProduct?.image1:"" }
+                     style={{cursor:"pointer",width:"60px",height:"60px",borderRadius:'10px' }}
+                     /></button></div>
+              <div className="col"><button className="buttonbox">{beforeListingProduct?.sku}</button></div>
+              <div className="col"><button className="buttonbox"> {beforeListingProduct?.category}</button></div>
+
+              <div className="col"><button className="buttonbox"> {beforeListingProduct?.price}</button></div>
+              <div className="col-md-auto"><button className="buttonbox">Shipping Fee</button></div>
+              <div className="col-2"><button className="buttonbox">Service fee</button></div>
+              <div className="col-md-auto"><button className="buttonbox" > {beforeListingProduct?.price}</button></div>
+              <div className="col"><button className="buttonbox">Price</button></div>
+            </div>
           
              
          
@@ -243,12 +279,12 @@ const handleClose = () => {
         <DialogActions >
           <div align="center" style={{marginRight:'40%',display:'flex',marginBottom:'10px'}}>
           <div ><button style={{backgroundColor:'black',padding:'5px',color:'white',width:'100px',borderColor:'transparent', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'5px' }} onClick={handleClose}>Cancel</button></div>
-          <div ><button style={subbtnlist} onClick={handleClose}>List Now</button></div>
+          <div ><button style={subbtnlist} onClick={()=>{
+            handleBeforelisting()
+          }}>List Now</button></div>
           
           </div>
 
-       
-         
         </DialogActions>
       </Dialog>
  

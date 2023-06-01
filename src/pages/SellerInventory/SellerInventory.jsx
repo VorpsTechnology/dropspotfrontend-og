@@ -7,7 +7,7 @@ import { Tab } from '@headlessui/react';
 import DataTable from 'react-data-table-component';
 
 import { getAllProducts } from '../../Api/ProductRequest';
-import { preOrderFullFill, sellerOrders } from "../../Api/OrderRequest";
+import { mypreOrders, preOrderFullFill, sellerOrders, sellerpreOrders } from "../../Api/OrderRequest";
 import swal from "sweetalert";
 function SellerInventory() {
       
@@ -101,7 +101,7 @@ useEffect(() => {
   async function fetchData() {
     // You can await here
     const ata={userId:userId,type:"preOrder"}
-    const {data}=await sellerOrders(ata)
+    const {data}=await sellerpreOrders(ata)
     setUsers(data)
     setFilteredUsers(data)
     console.log("gaiii",data);

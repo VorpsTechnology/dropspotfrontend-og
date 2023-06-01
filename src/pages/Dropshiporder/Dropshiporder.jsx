@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
-import {  myOrders, preOrderFullFill} from "../../Api/OrderRequest";
+import {  myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import Sidebar from '../Sidebar/Sidebar'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import swal from 'sweetalert';
@@ -67,16 +67,18 @@ function Dropshiporder() {
          const[users,setUsers]=useState([]);
      const [search,setSearch]=useState("");
      const [filterUsers,setFilteredUsers]=useState([]);
-     
+     const [checkOrderSku,setcheckOrderSku]=useState([])
      useEffect(() => {
        async function fetchData() {
          // You can await here
          const ata={userId:userId}
-         const {data}=await myOrders(ata)
+         const {data}=await mypreOrders(ata)
+     
          setUsers(data)
          setFilteredUsers(data)
          console.log("gaiii",data);
          // ...
+      
        }
        fetchData();
      }, []); // Or [] if effect doesn't need props or state
@@ -88,6 +90,22 @@ function Dropshiporder() {
      //   })
      //   setFilteredUsers(result)
      // },[search,users])
+
+
+     useEffect(()=>{
+      async function fetchData() {
+        // You can await here
+        
+          const ata={dropshipperId:userId,type:"shopify"}
+        const {data}=await myshopifyOrders(ata)
+        setcheckOrderSku(data)
+        console.log("check",data);
+        
+        // ...
+        }
+        fetchData();
+     },[])
+
      const customStyles={
       headCells: {
         style: {
@@ -121,7 +139,7 @@ function Dropshiporder() {
      }
      const coloumn=[
        {name:"Image",selector:(row)=>(
-        <img style={{width:"7rem"}} src={"http://localhost:5000/images/"+row.image} alt="" />
+        <img style={{width:"7rem"}} src={"http://localhost:5007/images/"+row.image1} alt="" />
        ) ,style: {
            color: "gray",
            }},
@@ -151,15 +169,35 @@ function Dropshiporder() {
 
         <div style={{display:"inline"}}>
        <div>
-       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginLeft:"5px",padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',marginBottom:"10px"}}
-           onClick={()=>handleFullFillPreOrder(row._id,"Requested")}
-       >Fulfill My Order</button>
-        
+
+       
+         {row.sku && (()=>{
+                   
+                   const data= checkOrderSku
+                   console.log("data",checkOrderSku);
+              
+                   return  <>
+                   {data.length>0 && data.map((ele)=>(
+                    ele.sku==row.sku?<div><button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginLeft:"5px",padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
+                    // onClick={()=>handleFullFillPreOrder(row._id,"Requested")}
+                   
+                 >Fulfill My Order</button></div>:""
+                   ))}
+                     </>
+                  
+                })()
+                
+                }
        </div>
        <div>
-       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'auto',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+       <button className='button' style={{background:"white",borderColor:'black',color:"black",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
            onClick={()=>alert()}
            >Utilize My Inventory</button>
+       </div>
+       <div>
+       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
+           onClick={()=>alert()}
+           >Request Refund</button>
        </div>
       
  <div>
