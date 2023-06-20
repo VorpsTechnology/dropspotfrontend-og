@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Wallet.css'
 import icon from '../../assets/coin.png'
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,7 +8,21 @@ import Footer from '../../components/Footer/Footer'
 import Navbar from "../../components/Navbar";
 
 import Shopnavbar from "../../components/ShopNavbar/Shopnavbar";
+import { getUserWallet } from "../../Api/userWalletRequest";
+import DataTable from "react-data-table-component";
 const Wallet = () => {
+
+  const [wallet,setWallet]=useState()
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+   
+       const userId=localStorage.getItem("userid")
+       const {data}=await getUserWallet(userId)
+       setWallet(data)
+    }
+    fetchData()
+  },[])
 
   const [tabSelected, setTabSelected] = useState(null);
   // const tabheader = {
@@ -39,6 +53,94 @@ const Wallet = () => {
   const handelTabCLick = (e) => {
     setTabSelected(e);
   };
+
+
+  const [allawaiting,setAllawaiting]=useState([])
+
+  const customStyles={
+    headCells: {
+      style: {
+        padding:'5px',marginTop:'20px',
+        height:"60px",
+        fontWeight:"500px",
+        fontSize:"16px"
+      },
+    },
+  cells: {
+    style: {
+  
+        paddingLeft: '8px', // override the cell padding for data cells
+        paddingRight: '8px',
+        width:"14rem"
+       
+    },
+  },
+   }
+
+
+   const coloumn=[
+    {selector:(row)=>row._id,style: {
+      
+        color: "gray",
+        }},
+        {selector:(row)=>{
+          if(row.pending==true){
+            return "Pending"
+          }
+        },style: {
+            color: "gray",
+            }},
+    {selector:(row)=>row.productName,style: {
+      marginLeft:"-7rem",
+        color: "gray",
+        }},
+        
+          {selector:(row)=>row.quantity,style: {
+            marginLeft:"-5rem",
+            color: "gray",
+            }},
+    {selector:(row)=>row.
+      paymentMod,style: {
+        marginLeft:"-7rem",
+        color: "gray",
+        }},{selector:(row)=>"xxxx",style: {
+          marginLeft:"-7rem",
+            color: "gray",
+            }},
+            {selector:(row)=>row.price,style: {
+              marginLeft:"-7rem",
+                color: "gray",
+                }},
+    {name:"",selector:(row)=>
+    <div style={{display:"inline"}}>
+
+      {row.allawaiting&&<>
+        <div>
+        <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+        onClick={()=>alert()}
+        >Request Payment</button>
+        </div>
+        <div>
+        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+        onClick={()=>alert()}
+        >Decline</button>
+        </div>
+      </>}
+  
+  
+  
+  
+       
+         </div>,
+         style:{
+          marginLeft:"-7rem",
+         }
+       
+        },
+              
+  ]
+
+  
   return (
     <div>
       <Navbar/>
@@ -47,7 +149,7 @@ const Wallet = () => {
 
       <div style={{display:'flex',marginLeft:'80px',padding:'40px'}}>
         <div><h2>Account Balance : </h2></div>
-        <div style={{paddingLeft:'10px'}}><input className='inputtext' type="text" /></div>
+        <div style={{paddingLeft:'10px'}}><input className='inputtext' type="text" placeholder="₹" value={`₹ ${wallet?.userAddedMoney||0}`} /></div>
       </div>
 
 
@@ -56,25 +158,25 @@ const Wallet = () => {
   <div className='col'>
     <div align='center'>
     <div><h6>Pending</h6></div>
-    <div><input className='walletinput' type="text" /></div>
+    <div><input className='walletinput' type="text" value={`₹ ${wallet?.userAddedMoney||0}`} placeholder="₹" /></div>
     </div>
   </div>
   <div className='col'>
   <div align='center'>
     <div><h6>Frozen</h6></div>
-    <div><input className='walletinput' type="text" /></div>
+    <div><input className='walletinput' type="text" value={`₹ ${wallet?.userAddedMoney||0}`} placeholder="₹"/></div>
     </div>
   </div>
   <div className='col'>
     <div align='center'>
       <div><h6>Withdrawable</h6></div>
-      <div><input className='walletinput' type="text" /></div>
+      <div><input className='walletinput' type="text" value={`₹ ${wallet?.userAddedMoney||0}`}  placeholder="₹"/></div>
       </div>
   </div>
   <div className='col'>
     <div align='center'>
       <div><h6>Deposit</h6></div>
-      <div><input className='walletinput' type="text" /></div>
+      <div><input className='walletinput' type="text"  value={`₹ ${wallet?.userAddedMoney||0}`} placeholder="₹"/></div>
       </div>
   </div>
 
@@ -189,6 +291,21 @@ const Wallet = () => {
                         <div className="col">  Slip  </div>
                         <div className="col">  Message  </div>
                       </div>
+
+
+                      <DataTable 
+        customStyles={customStyles}
+        columns={coloumn} 
+        data={allawaiting} 
+        pagination
+      
+      
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
                       </Tab.Panel>
                     <Tab.Panel>
                     <div className='Dashboardheading'><h2>Warehouse</h2></div>

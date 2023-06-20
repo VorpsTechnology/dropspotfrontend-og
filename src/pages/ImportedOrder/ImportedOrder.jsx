@@ -5,9 +5,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react';
 import './ImportedOrder.css'
 import DataTable from 'react-data-table-component';
-import {  myOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
+import {  changeAwaitingpayment, changependingstatus, changeprocessingstatus, myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import swal from 'sweetalert';
-
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { payment } from '../../Api/paymentRequest';
 
 
 
@@ -78,6 +83,8 @@ const tabpanls={
   padding:'30px',
 
 }
+
+
 const handelTabCLick = (e) => {
   setTabSelected(e);
 };
@@ -91,6 +98,21 @@ const [ordercomponent,setOrderComponent]=useState(true)
 const [invalidordercomponent,setinvalidOrderComponent]=useState(false)
 const [declinedordercomponent,setdeclineOrderComponent]=useState(false)
 
+const [checkOrderSku,setcheckOrderSku]=useState([])
+useEffect(() => {
+  async function fetchData() {
+    // You can await here
+    const ata={userId:userId}
+    const {data}=await mypreOrders(ata)
+
+    setUsers(data)
+    setcheckOrderSku(data)
+    console.log("gaiii",data);
+    // ...
+ 
+  }
+  fetchData();
+}, []); // Or [] if effect doesn't need props or state
 useEffect(() => {
 async function fetchData() {
 // You can await here
@@ -113,10 +135,10 @@ fetchData();
 //   })
 //   setFilteredUsers(result)
 // },[search,users])
-const customStyles={
+  const customStyles={
 headCells: {
 style: {
- backgroundColor:'#FFE627',padding:'5px',marginTop:'20px',
+ backgroundColor:'#FFE627',marginTop:'20px',
  height:"60px",
  fontWeight:"500px",
  fontSize:"16px"
@@ -124,9 +146,10 @@ style: {
 },
 cells: {
 style: {
- paddingLeft: '8px', // override the cell padding for data cells
- paddingRight: '8px',
- width:"12rem"
+//  paddingLeft: '8px', // override the cell padding for data cells
+//  paddingRight: '8px',
+ width:"15rem",
+ height:"auto"
 
 },
 },
@@ -145,11 +168,17 @@ const handleFullFillPreOrder=async(dat,sat)=>{
   }
  }
 const coloumn=[
+  {name:"Sl",selector:(row,index)=>index+1,style: {
+    color: "gray",
+    }},
   {name:"Image",selector:(row)=>(
    <img style={{width:"7rem"}} src={"http://localhost:5000/images/"+row.image} alt="" />
   ) ,style: {
       color: "gray",
       }},
+      {name:"Product",selector:(row)=>row.productName,style: {
+        color: "gray",
+        }},
       {name:"Order Time",selector:(row)=>row.createdAt,style: {
        color: "gray",
        }},
@@ -158,20 +187,314 @@ const coloumn=[
      ,style: {
           color: "gray",
           }},
-  {name:"Product",selector:(row)=>row.productName,style: {
-      color: "gray",
-      }},
-      
+          {name:"Billing Address",selector:(row)=>"xxxxxxxx",style: {
+            color: "gray",
+            }},
+  
+      {name:"Quantity",selector:(row)=>row.
+      quantity,style: {
+          color: "gray",
+          }},
         {name:"Price",selector:(row)=>row.price,style: {
           color: "gray",
           }},
-  {name:"Quantity",selector:(row)=>row.
-  quantity,style: {
+
+      {name:"Shipping fee",selector:(row)=>100,style: {
+      color: "gray",
+      }},
+      {name:"service fee",selector:(row)=>row.price*2/100,style: {
+      color: "gray",
+      }},
+      ,
+      {name:"Total",selector:(row)=>row.price*2/100 +row.price+ 100,style: {
       color: "gray",
       }},
   {name:"ACTION ",selector:(row)=>
   <div style={{}}>
 
+    {/* {
+      ordercomponent && row.pending==true && <>
+      
+      pay for shipping
+      </>
+    } */}
+   {
+    ordercomponent && 
+    <>
+
+      <div style={{display:"inline"}}>
+      <div>
+
+       
+{row.sku && (()=>{
+          
+          const data= checkOrderSku
+          console.log("data",checkOrderSku);
+          if(row.pending){
+          return  <> <div>  <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+          onClick={()=>{
+            var opitions={
+              key:"rzp_test_70gDFCaoRxwKfe",
+              key_secret:"KUpauE5IPXusyiUy7rNUpdvZ",
+              amount:(row.price*2/100 +100)*100,
+              currency:"INR",
+              name:"dropshipper",
+              description:"test payment",
+              handler:async function (resp){
+                alert(resp.razorpay_payment_id)
+                const ata={
+                  orderId:row._id,
+                  status:true,
+                  shipping:{
+              
+                      
+                      "shipping_charges": 40, 
+                      "discount": 100, 
+                      "cod_charges": 30, 
+                      "payment_type": "cod", 
+                      "order_amount": 1000, 
+                      "package_weight": 300, 
+                      "package_length": 10, 
+                      "package_breadth": 10, 
+                      "package_height": 10, 
+                      "request_auto_pickup" : "yes", 
+                      "consignee": { 
+                          "name": "Customer Name", 
+                          "address": "190, ABC Road", 
+                          "address_2": "Near Bus Stand", 
+                          "city": "Mumbai", 
+                          "state": "Maharastra", 
+                          "pincode": "400001", 
+                          "phone": "9999999999" 
+                      }, 
+                      "pickup": { 
+                          "warehouse_name": "warehouse 1", 
+                          "name" : "Nitish Kumar", 
+                          "address": "140, MG Road", 
+                          "address_2": "Near metro station", 
+                          "city": "Gurgaon", 
+                          "state": "Haryana", 
+                          "pincode": "122001", 
+                          "phone": "9999999999" 
+                      }, 
+                      "order_items": [ 
+                          { 
+                              "name": "product 1", 
+                              "qty": "18", 
+                              "price": "100", 
+                              "sku": "sku001" 
+                          } 
+                      ], 
+                      "courier_id" : "1", 
+                     "collectable_amount":"150" 
+                   
+                  
+                  }
+                }
+                try {
+                  const {data}=await changeprocessingstatus(ata)
+                console.log(data);
+                if(data){
+                  alert("Requested to fullfil order >!")
+                  console.log(data);
+                }
+    
+                } catch (error) {
+                  console.log(error);
+                }
+                
+              },
+              prefill:{
+                name:"adarshraj",
+                email:"ahazadarsh0014@gmail.com",
+                contact:"8590037942"
+              },
+              notes:{
+                address:"Razorpay coorparate office"
+              },
+              theme:{
+                color:"#FFE51A"
+              }
+            };
+    
+            var pay=new window.Razorpay(opitions)
+            pay.open()
+          }
+          
+          }
+          >Pay for shipping</button>
+    
+            </div>
+            <div>
+        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Decline</button>
+        </div>
+            </>
+          }else{
+          return  <>
+          {data.length>0 && data.map((ele)=>(
+           ele.sku==row.sku?  <><div><button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
+             onClick={async()=>{
+               alert()
+              const ata={
+                orderId:row._id,
+                status:true,
+                quantity:row.quantity,
+                sku:row.sku
+              }
+              try {
+                const {data}=await changependingstatus(ata)
+              console.log(data);
+              if(data){
+                alert("Requested to fullfil order >!")
+                console.log(data);
+              }
+
+              } catch (error) {
+                console.log(error);
+              }
+
+
+
+             }
+            
+            }
+          
+        > Preorder Fulfill</button></div>
+        
+        <div>
+        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Decline</button>
+        </div>
+      </>
+        :<>
+        <div>
+        <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>{
+        var opitions={
+          key:"rzp_test_70gDFCaoRxwKfe",
+          key_secret:"KUpauE5IPXusyiUy7rNUpdvZ",
+          amount:row.price*100,
+          currency:"INR",
+          name:"dropshipper",
+          description:"test",
+          handler:async function (resp){
+            alert(resp.razorpay_payment_id)
+            const ata={
+              orderId:row._id,
+              status:true,
+              shipping:{ 
+               
+                "shipping_charges": 40, 
+                "discount": 100, 
+                "cod_charges": 30, 
+                "payment_type": "cod", 
+                "order_amount": 1000, 
+                "package_weight": 300, 
+                "package_length": 10, 
+                "package_breadth": 10, 
+                "package_height": 10, 
+                "request_auto_pickup" : "yes", 
+                "consignee": { 
+                    "name": "Customer Name", 
+                    "address": "190, ABC Road", 
+                    "address_2": "Near Bus Stand", 
+                    "city": "Mumbai", 
+                    "state": "Maharastra", 
+                    "pincode": "400001", 
+                    "phone": "9999999999" 
+                }, 
+                "pickup": { 
+                    "warehouse_name": "warehouse 1", 
+                    "name" : "Nitish Kumar", 
+                    "address": "140, MG Road", 
+                    "address_2": "Near metro station", 
+                    "city": "Gurgaon", 
+                    "state": "Haryana", 
+                    "pincode": "122001", 
+                    "phone": "9999999999" 
+                }, 
+                "order_items": [ 
+                    { 
+                        "name": "product 1", 
+                        "qty": "18", 
+                        "price": "100", 
+                        "sku": "sku001" 
+                    } 
+                ], 
+                "courier_id" : "1", 
+               "collectable_amount":"150" 
+             
+            }
+            }
+            try {
+              const {data}=await changeprocessingstatus(ata)
+            console.log(data);
+            if(data){
+              alert("Requested to fullfil order >!")
+              console.log(data);
+
+
+              // const dta={
+              //   userId:userId,
+              //   amount:((row.price)+100+(row.price *2/100)),
+              //   oderId:data._id
+              // }
+              // const response=await payment(dta)
+              // if(response.ok){
+              //   console.log("money added to the wakket")
+              // }
+            }
+
+            } catch (error) {
+              console.log(error);
+            }
+            
+          },
+          prefill:{
+            name:"adarshraj",
+            email:"ahazadarsh0014@gmail.com",
+            contact:"8590037942"
+          },
+          notes:{
+            address:"Razorpay coorparate office"
+          },
+          theme:{
+            color:"#FFE51A"
+          }
+        };
+
+        var pay=new  window.Razorpay(opitions)
+        pay.open()
+      }
+      
+      }
+      >Pay for the order</button>
+
+        </div>
+        <div>
+        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Decline</button>
+        </div>
+        </>
+
+
+        
+          ))}
+            </>
+          }
+       })()
+       
+       }
+</div>
+  
+    
+      </div>
+       </> 
+   }
     {
       declinedordercomponent && <>
 
@@ -298,7 +621,11 @@ const coloumn=[
                   <div className='col'>
                   <p>Action</p>
                   </div>
+                  
                 </div> */}
+
+
+ 
                </div>
                <DataTable 
         

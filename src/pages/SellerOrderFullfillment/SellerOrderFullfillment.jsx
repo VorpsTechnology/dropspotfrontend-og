@@ -6,8 +6,9 @@ import DataTable from 'react-data-table-component';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react'
-import { allOrders, sellerOrders } from "../../Api/OrderRequest";
-
+import { allOrders, allawaitingPayments, allclosedorders, alldispatchedorder, allpendingorders, allprocessingOrders, allreturn, allreturnReq, mypreOrders, sellerOrders } from "../../Api/OrderRequest";
+import { allcomplete } from "../../Api/OrderRequest";
+   
 function SellerOrderFullfillment() {
     
  const serchbtn={
@@ -106,13 +107,31 @@ const [closed,setClosed]=useState(false)
 const [returns,setReturns]=useState(false) 
 
 const [allOrders,setAllOrders]=useState([{productName:"testorders"},{productName:"testorders1"},{productName:"testorders2"}])
-const [allawaiting,setAllawaiting]=useState([{productName:"testawaiting"},{productName:"testawaiting1"},{productName:"testawaiting2"}])
-const [allpending,setAllpending]=useState([{productName:"testpending"},{productName:"testpending1"},{productName:"testpending2"}])
-const [allprocessing,setAllprocessing]=useState([{productName:"testprocessing"},{productName:"testprocessing1"},{productName:"testprocessing2"}])
-const [alldispatched,setAlldispatched]=useState([{productName:"testdispatched"},{productName:"testdispatched"},{productName:"testdispatched"}])
-const [allcompleted,setAllcompleted]=useState([{nproductName:"testcomplete"},{productName:"testcomplete1"},{productName:"testcompleted2"}])
-const [allclosed,setAllclosed]=useState([{productName:"testclosed"},{productName:"testclosed1"},{productName:"testclosed2"}])
-const [allreturns,setAllreturns]=useState([{productName:"testreturn"},{productName:"testreturn1"},{productName:"testreturn2"}])
+const [allawaiting,setAllawaiting]=useState([])
+const [allpending,setAllpending]=useState([])
+const [allprocessing,setAllprocessing]=useState([])
+const [alldispatched,setAlldispatched]=useState([])
+const [allcompleted,setAllcompleted]=useState([])
+const [allclosed,setAllclosed]=useState([])
+const [allreturns,setAllreturns]=useState([])
+
+console.log("allpending",allpending);
+
+const [checkOrderSku,setcheckOrderSku]=useState([])
+useEffect(() => {
+  async function fetchData() {
+    // You can await here
+    const ata={userId:userId}
+    const {data}=await mypreOrders(ata)
+
+    setUsers(data)
+    setcheckOrderSku(data)
+    console.log("gaiii",data);
+    // ...
+ 
+  }
+  fetchData();
+}, []); // Or [] if effect doesn't need props or state
 useEffect(() => {
   async function fetchData() {
     // You can await here
@@ -226,7 +245,7 @@ const coloumn=[
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
       onClick={()=>alert()}
-      >Request shipping</button>
+      >Request shipping fee</button>
       </div>
       <div>
       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
@@ -362,7 +381,7 @@ const coloumn=[
                     handelTabCLick(1)
                     }}>All </Tab>
                <Tab className={`tabbtn3 ${tabSelected === 2 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => { 
                       setAll(false)
                     setawaitingPayment(true)
                     setPending(false)
@@ -371,11 +390,17 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(false)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await  allawaitingPayments(ata)
+                 setAllawaiting(data.data)
+                  console.log("allawaiting",data.data)
                     handelTabCLick(2)}}>
                Awaiting Payments
                </Tab>
                <Tab className={`tabbtn3 ${tabSelected === 3 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(true)
@@ -384,9 +409,15 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(false)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await  allpendingorders(ata)
+                 setAllpending(data.data)
+                  console.log(data.data)
                       handelTabCLick(3)}}>Pending</Tab>
                <Tab className={`tabbtn3 ${tabSelected === 4 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(false)
@@ -395,9 +426,15 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(false)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await allprocessingOrders(ata)
+                 setAllprocessing(data.data)
+                  console.log(data.data)
                       handelTabCLick(4)}}>Processing</Tab>
                <Tab className={`tabbtn3 ${tabSelected === 5 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(false)
@@ -406,20 +443,32 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(false)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await alldispatchedorder(ata)
+                 setAlldispatched(data.data)
+                  console.log(data.data)
                       handelTabCLick(5)}}>Dispatched</Tab>
                <Tab className={`tabbtn3 ${tabSelected === 6 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(false)
                     setProcessing(false)
-                    setDispatched(false)
+                    setDispatched(false) 
                     setCompleted(true)
                     setClosed(false)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await  allcomplete(ata)
+                    setAllcompleted(data.data)
+                     console.log("allawaiting",data.data)
                       handelTabCLick(6)}}>Completed</Tab>
                <Tab className={`tabbtn3 ${tabSelected === 7 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(false)
@@ -428,9 +477,15 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(true)
                     setReturns(false)
+                    const ata={
+                      status:true
+                    }
+                    const data=await   allclosedorders(ata)
+                    setAllawaiting(data.data)
+                     console.log("allawaiting",data.data)
                       handelTabCLick(7)}}>Closed</Tab>
                <Tab className={`tabbtn3 ${tabSelected === 8 ? "selected-tab1" : ""}`}
-                    onClick={() => {
+                    onClick={async() => {
                       setAll(false)
                     setawaitingPayment(false)
                     setPending(false)
@@ -439,6 +494,12 @@ const coloumn=[
                     setCompleted(false)
                     setClosed(false)
                     setReturns(true)
+                    const ata={
+                      status:true
+                    }
+                    const data=await  allreturnReq(ata)
+                    setAllawaiting(data.data)
+                     console.log("allawaiting",data.data)
                       handelTabCLick(8)}}>Return </Tab>
      </Tab.List>
         </div>
@@ -737,7 +798,6 @@ const coloumn=[
             </div>
            </div>
            </div>
-         
            <DataTable 
         
         columns={coloumn} 
@@ -791,7 +851,7 @@ const coloumn=[
             </div>
            </div>
            </div>
-           <DataTable 
+        <DataTable 
         
         columns={coloumn} 
         data={allcompleted} 

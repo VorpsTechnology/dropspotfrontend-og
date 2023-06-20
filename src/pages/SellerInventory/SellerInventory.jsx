@@ -158,7 +158,21 @@ const coloumn=[
               }},
   {name:"ACTION ",selector:(row)=>
   <div style={{display:"inline"}}>
-
+{
+  <>
+  <div>
+  <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'100px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+  onClick={()=>handleFullFillPreOrder(row._id,"Accepted")}
+  >Edit </button>
+    </div> 
+    <div>
+      
+    <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px",marginBottom:"10px", padding:"10px",width:'100px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+  onClick={()=>handleFullFillPreOrder(row._id,"Declined")}
+  >Delete</button>
+    </div>
+</>
+}
     {row.preOrderFullfill=="Requested"?<>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'100px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
@@ -193,9 +207,9 @@ const coloumn=[
       <div className='conatiner' style={buttonheader}>
       <Tab.List className="flex space-x-1 rounded-xl  p-1"  defaultChecked="white" >
       <Tab    className={`tabbtn3 ${tabSelected === 1 ? "selected-tab1" : ""}`}
-                    onClick={() => handelTabCLick(1)}>Sourching Inventory</Tab>
+                    onClick={() => handelTabCLick(1)}>My Inventory</Tab>
                     <Tab    className={`tabbtn3 ${tabSelected === 2 ? "selected-tab1" : ""}`}
-                    onClick={() => handelTabCLick(2)}>Connecting  Inventory</Tab>
+                    onClick={() => handelTabCLick(2)}>Connected  Inventory</Tab>
                     <Tab    className={`tabbtn3 ${tabSelected === 3 ? "selected-tab1" : ""}`}
                     onClick={() => handelTabCLick(3)}>Preordered Inventory</Tab>
                 
@@ -241,7 +255,19 @@ const coloumn=[
            
              </div>
            </div>
-
+           <DataTable 
+        
+        columns={coloumn} 
+        data={filterUsers} 
+        pagination
+      
+         
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
          </div>
             </Tab.Panel>
             <Tab.Panel>
@@ -276,7 +302,19 @@ const coloumn=[
            
              </div>
            </div>
-
+           <DataTable 
+        
+        columns={coloumn} 
+        data={filterUsers} 
+        pagination
+      
+         
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
          </div>
            
             </Tab.Panel>

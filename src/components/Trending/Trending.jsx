@@ -18,6 +18,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ViewMoreSection from "./ViewMoreSection/ViewMoreSection";
 import { beforeList } from "../../Api/ListingRequest";
+import DataTable from "react-data-table-component";
 
 
 
@@ -30,6 +31,30 @@ const subbtnlist={
 
 
 function Trending() {
+
+  const customStyles={
+    headCells: {
+    style: {
+     backgroundColor:'#FFE627',marginTop:'20px',
+     height:"60px",
+     fontWeight:"500px",
+     fontSize:"16px"
+    },
+    },
+    cells: {
+    style: {
+    //  paddingLeft: '8px', // override the cell padding for data cells
+    //  paddingRight: '8px',
+     width:"15rem",
+     height:"auto"
+    
+    },
+    },
+    }
+
+
+
+
   const history = useHistory();
   const [products,setProduct]=useState([])
   const Productpage = () => {
@@ -110,14 +135,25 @@ const [toggle,setToggle]=useState(false)
 const handleToggle=()=>{
   setToggle(!toggle)
 }
+const [dataz,setDataz]=useState({
+  dropshipperPrice:"",
+  dropshipperQuantity:""
+})
 
+console.log("dataz",dataz);
+
+const handleChange = (e) => {
+  setDataz({ ...dataz, [e.target.name]: e.target.value });
+};
 const [open, setOpen] = React.useState(false);
-const [beforeListingProduct,setbeforeListingProduct]=useState({})
+const [beforeListingProduct,setbeforeListingProduct]=useState([])
 const handleClickOpen =async (productI) => {
   alert(productI)
   const {data}=await getProduct(productI)
   console.log("before",data);
-  setbeforeListingProduct(data)
+  const zeta=[data]
+
+  setbeforeListingProduct(zeta)
   console.log("beforelisting",beforeListingProduct);
   setOpen(true);
 };
@@ -127,20 +163,87 @@ const handleClose = () => {
 };
 
 const handleBeforelisting=async()=>{
-  const {_id,...others}=beforeListingProduct
+  console.log("=beforeListingProduct",beforeListingProduct);
+  const {_id,...others}=beforeListingProduct[0]
   console.log("others",others);
-const dta={  
+  console.log(dataz.dropshipperQuantity , others);
+
+  if(dataz.dropshipperPrice==""  ){
+    swal("Enter value for dropshipper price ")
+  }else if(dataz.dropshipperQuantity==""){
+    swal("Enter value for dropshipper quantity ")
+  }else if(dataz.dropshipperPrice<=others.price){
+    swal("Price should be greater than original price ")
+  }else if(dataz.dropshipperPrice<=others.price){
+    swal(`Price should be greater than original price  ${others.price}`)
+  }
+ else if (dataz.dropshipperQuantity<=others.quantity){
+    console.log("hello",others);
+    others.dropshipperQuantity=dataz.dropshipperQuantity
+    others.dropshipperPrice=dataz.dropshipperPrice
+    console.log("hello2",others);
+  //     others.push({dropshipperQuantity:dataz.dropshipperQuantity,dropshipperPrice:dataz.dropshipperPrice})
+    const dta={  
       dropshipperId:userData,
+      
     product:others
   }
 
   console.log("dta==>",dta);
   const{data}=await beforeList(dta)
+  setbeforeListingProduct([])
   if(data){
     alert("Product added as draft")
+    handleClose()
   }
-}
+  }else{
+    swal(`Only ${others[0].quantity} items are available ..!`)
+  }
 
+}
+const coloumn=[
+  {name:"Select",selector:(row)=><>
+  <input type="checkbox" name="" id="" /></>,style: {
+    color: "gray",
+    }},
+  {name:"Image",selector:(row)=>(
+    <></>
+  //  <img style={{width:"7rem"}} src={"http://localhost:5000/images/"+row.image0} alt="no img" />
+  ) ,style: {
+      color: "gray",
+      }},
+      {name:"Product name",selector:(row)=>row.name,style: {
+        color: "gray",
+        }},
+      {name:"Seller name",selector:(row)=>row.sellerName,style: {
+       color: "gray",
+       }},
+      
+       {name:"Category",selector:(row)=>row.category,style: {
+        color: "gray",
+        }},
+      {name:"Quantity",selector:(row)=><>
+      <input type="number" name="dropshipperQuantity"     value={dataz.dropshipperQuantity}
+                 onChange={handleChange} id="" />
+      </>,style: {
+          color: "gray",
+          }},
+        {name:"Product Price",selector:(row)=>`₹ ${row.price}`,style: {
+          color: "gray"
+          }}
+      
+      ,
+      
+      {name:"Listing price",selector:(row)=><>
+      
+      <input type="number" name="dropshipperPrice"     value={dataz.dropshipperPrice}
+                 onChange={handleChange}id=""  />
+      </>,style: {
+          color: "gray",width:"50px"
+          }},
+      
+            
+]
 
   return (
     <>
@@ -238,41 +341,29 @@ const dta={
             </div>
            
             <div align="center" className="row" style={{width:'1000px',marginTop:'20px'}} >
-              <div className="col-2"><button className="bulkbtn">Bulk Revise</button></div>
+              <div className="col-2">   <h5>Bulk Revise</h5></div>
               <div className="col-2"> <input className="inputflied" type="text" /> </div>
               <div className="col-2"><button className="bulkbtnprice">Price Change</button></div>
               
             
               
             </div>
-            <div align="middle" className="row" style={{backgroundColor:'rgba(255, 214, 0, 1)',marginTop:'40px',padding:'10px',borderRadius:'20px'}}>
-              <div className="col"><input style={{width:'20px',height:'20px'}} type="checkbox" /></div>
-              <div className="col"><button className="buttonbox">Image</button></div>
-              <div className="col"><button className="buttonbox">Sku</button></div>
-              <div className="col"><button className="buttonbox"> Catogory</button></div>
-
-              <div className="col"><button className="buttonbox">MRP</button></div>
-              <div className="col-md-auto"><button className="buttonbox">Shipping Fee</button></div>
-              <div className="col-2"><button className="buttonbox">Service fee</button></div>
-              <div className="col-md-auto"><button className="buttonbox" >Total Dropshipping Cost</button></div>
-              <div className="col"><button className="buttonbox">Price</button></div>
+            <div>
             </div>
-            <div align="middle" className="row" style={{backgroundColor:'',marginTop:'40px',padding:'10px',borderRadius:'20px'}}>
-              <div className="col"><input style={{width:'20px',height:'20px'}} type="checkbox" /></div>
-              <div className="col"><button className="buttonbox"> <img
-                     src={ele.image1?"http://localhost:5007/images/"+ beforeListingProduct?.image1:"" }
-                     style={{cursor:"pointer",width:"60px",height:"60px",borderRadius:'10px' }}
-                     /></button></div>
-              <div className="col"><button className="buttonbox">{beforeListingProduct?.sku}</button></div>
-              <div className="col"><button className="buttonbox"> {beforeListingProduct?.category}</button></div>
-
-              <div className="col"><button className="buttonbox"> {beforeListingProduct?.price}</button></div>
-              <div className="col-md-auto"><button className="buttonbox">Shipping Fee</button></div>
-              <div className="col-2"><button className="buttonbox">Service fee</button></div>
-              <div className="col-md-auto"><button className="buttonbox" > {beforeListingProduct?.price}</button></div>
-              <div className="col"><button className="buttonbox">Price</button></div>
-            </div>
-          
+               <DataTable 
+        
+        columns={coloumn} 
+        data={beforeListingProduct} 
+        pagination
+        
+        customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
+        
              
          
         </DialogContent>

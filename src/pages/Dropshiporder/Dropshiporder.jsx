@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component';
-import {  myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
+import {  changependingstatus, myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import Sidebar from '../Sidebar/Sidebar'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import swal from 'sweetalert';
@@ -137,6 +137,8 @@ function Dropshiporder() {
         swal("error oquired")
       }
      }
+
+     console.log("checkordersku",checkOrderSku);
      const coloumn=[
        {name:"Image",selector:(row)=>(
         <img style={{width:"7rem"}} src={"http://localhost:5007/images/"+row.image1} alt="" />
@@ -175,20 +177,57 @@ function Dropshiporder() {
                    
                    const data= checkOrderSku
                    console.log("data",checkOrderSku);
-              
-                   return  <>
-                   {data.length>0 && data.map((ele)=>(
-                    ele.sku==row.sku?<div><button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginLeft:"5px",padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
-                    // onClick={()=>handleFullFillPreOrder(row._id,"Requested")}
-                   
-                 >Fulfill My Order</button></div>:""
-                   ))}
-                     </>
+                   let val=false
+                    
+                   data.length>0 && data.map((ele)=>(
+                    ele.sku==row.sku && ele.pending==false?val=true:""
+                
+                   ))
+
+                return <>
+                {
+                  val &&    <div>
+                    <button className='button' style={{background:"#FFE51A",borderColor:'black',color:"black",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
+                        onClick={()=>{
+                          alert()
+                       checkOrderSku.length>0 &&   checkOrderSku.map(async (ele)=>{
+                     if(!ele.pending &&  ele.sku==row.sku){
+                        const ata={
+                          orderId:ele._id,
+                          status:true ,
+                           quantity:ele.quantity,
+                          sku:ele.sku 
+                        }
+                        try {
+                          const {data}= await changependingstatus(ata)
+                        console.log(data);
+                        if(data){
+                          alert("Requested to fullfil order >!")
+                          console.log(data);
+                        }
+          
+                        } catch (error) {
+                          console.log(error);
+                        }
+                      }
+          
+                       })
+
+
+                        }}
+                        >Fullfil All Orders</button>
+                    </div>
+                }
+                </>
+
+                    
+                 
                   
                 })()
                 
                 }
        </div>
+      
        <div>
        <button className='button' style={{background:"white",borderColor:'black',color:"black",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
            onClick={()=>alert()}

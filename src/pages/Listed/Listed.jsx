@@ -1,11 +1,13 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import Sidebar from '../Sidebar/Sidebar'
 
 import './Listed.css'
 import 'bootstrap/dist/css/bootstrap.css';
-
+import DataTable from 'react-data-table-component'
 import { Tab } from '@headlessui/react';
+import { getUser } from '../../Api/UserRequest';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function Listed() {
@@ -69,8 +71,107 @@ const Product={
   const handelTabCLick = (e) => {
     setTabSelected(e);
   };
-
+  const history=useHistory()
   const [tabSelected, setTabSelected] = useState(null);
+  const [filterUsers,setFilteredUsers]=useState([]);
+
+const userId=localStorage.getItem("userId")
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+   const {data}=await getUser(userId)
+   console.log("userData",data);
+
+   setFilteredUsers(data?.afterListing)
+    }
+    
+    fetchData();
+  }, []); 
+  const coloumn=[
+    {name:"Sl",selector:(row,index)=>index+1,style: {
+      color: "gray",
+      }},
+    {name:"Image",selector:(row)=>(
+     <img style={{width:"7rem"}} src={"http://localhost:5007/images/"+row[0].image1} alt="No img" />
+    ) ,style: {
+        color: "gray",
+        }},
+        {name:"Product Name",selector:(row)=>row[0].name,style: {
+          color: "gray",
+          }},
+        {name:"Store Name",selector:(row)=>`${row?.shopify}.myshopify.com `,style: {
+         color: "gray",
+         }},
+        {name:"Price",selector:(row)=>
+          row[0].price
+       ,style: {
+            color: "gray",
+            }},
+            {name:"Listed Price",selector:(row)=>row[0].dropshipperPrice,style: {
+              color: "gray",
+              }},
+    
+        {name:"Seller Name",selector:(row)=>row[0].
+        sellerName,style: {
+            color: "gray",
+            }},
+          {name:"Category",selector:(row)=>row[0].category  ,style: {
+            color: "gray",
+            }},
+  
+        {name:"Listed Quantity",selector:(row)=>row[0].dropshipperQuantity,style: {
+        color: "gray",
+        }},
+       
+    
+        {name:"Action",selector:(row)=>
+        <div>
+           <div>
+        <button className='button' style={{background:"#FFE51A",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Preorder</button>
+        </div>
+        <div>
+        <button className='button' style={{background:"#FFE51A",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Request Photography</button>
+        </div>
+      <div>
+        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
+      onClick={()=>alert()}
+      >Remove Listed</button>
+        </div>
+
+
+
+
+
+        </div> },
+   
+              
+  ]
+
+  const customStyles={
+    headCells: {
+    style: {
+     backgroundColor:'#FFE627',marginTop:'20px',
+     height:"60px",
+     fontWeight:"500px",
+     fontSize:"16px"
+    },
+    },
+    cells: {
+    style: {
+    //  paddingLeft: '8px', // override the cell padding for data cells
+    //  paddingRight: '8px',
+     width:"15rem",
+     height:"auto"
+    
+    },
+    },
+    }
+
+
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px'}}>
         <Adminnavbar />
@@ -120,25 +221,30 @@ const Product={
          <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}>
            <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
              <div >
-             <div className='row' style={{padding:'7px',backgroundColor:'#FDE31A',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px',width:'1800px',marginRight:'100px' }}>
-             <div className='col'><button style={productbtn}>Products</button></div>
-                <div className='col'><button  style={productbtn}>Store Name</button></div>
-                <div className='col'><button  style={productbtn}>Price</button></div>
-                <div className='col'><button  style={productbtn}>Weight</button></div>
-                <div className='col'><button  style={productbtn}>Shipping From</button></div>
-                <div className='col'><button  style={productbtn}>Shippping Method</button></div>
-                <div className='col'><button  style={productbtn}>Shippping Cost</button></div>
-                <div className='col'><button  style={productbtn}>Amount</button></div>
-                <div className='col'><button  style={productbtn}>Action</button></div>
-               </div>
-           
+          
+            {/* {/* ACTION BUTTONS * REMOVE LISTING SECONDARY BUTTON * REQUEST PHOTOGRAPHY * PRE ORDER * /} */}
+               <DataTable 
+        
+        columns={coloumn} 
+        data={filterUsers} 
+        pagination
+        
+        customStyles={customStyles}
+        highlightOnHover
+      
+        
+      
+        // data={data}
+      />
              </div>
            </div>
 
          </div>
          
             <div className='row' style={{marginLeft:'400px',marginTop:'40px'}}>
-           <div><button  style={Product}>Add Products</button></div>
+           <div><button  style={Product} onClick={()=>{
+                  history.push ("/")
+                }}>Add Products</button></div>
              </div>
                  </Tab.Panel>
                             <Tab.Panel>
@@ -173,7 +279,9 @@ const Product={
          </div>
 
             <div className='row' style={{marginLeft:'400px',marginTop:'40px'}}>
-                <div><button  style={Product}>Add Products</button></div>
+                <div><button  style={Product} onClick={()=>{
+                  history.push ("/")
+                }}>Add Products</button></div>
              </div>
                             </Tab.Panel>
                             <Tab.Panel>

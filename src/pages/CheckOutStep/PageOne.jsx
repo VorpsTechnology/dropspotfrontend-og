@@ -15,6 +15,7 @@ import swal from 'sweetalert'
 import { createOrder, createpreOrder } from '../../Api/OrderRequest'
 import './PageOne.css'
 import { getUser } from '../../Api/UserRequest';
+import { shippingcalculator } from '../../Api/ShippingApiRequest';
 
 
 
@@ -25,7 +26,7 @@ function PageOne(props) {
 
   const [preOrder,SetPreOrder]=useState(false)
 useEffect(()=>{
-  console.log("props",props.type);
+
   if(props.type==="PreOrder"){
     SetPreOrder(true)
   }else{
@@ -77,7 +78,34 @@ useEffect(()=>{
   const userId=localStorage.getItem("userId") 
   const handleChange = (e) => {
     setAddress({ ...address, [e.target.name]: e.target.value });
+    shippingCalculatorfn()
   };
+
+  const [shippingCharge,setShipingCharge]=useState()
+const  shippingCalculatorfn=async()=>{
+ 
+  try {
+    let destin=address.zip?address.zip:"122001"  
+const ata={ 
+  "origin" : "122001", 
+  "destination" :destin , 
+  "payment_type" : "cod", 
+  "order_amount" : "999", 
+  "weight" : "600", 
+  "length" : "10", 
+  "breadth" : "10", 
+  "height" : "10" 
+} 
+const {data}=await shippingcalculator(ata) 
+
+const charges=data[0].freight_charges + data[0].cod_charges
+
+setshipping(charges)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 useEffect(() => {
   async function fetchData() {
@@ -86,16 +114,16 @@ useEffect(() => {
 
     setPost(data)
     // ...
-    console.log(post.price);
+  
     const totalPrice=shipping+platform+Number(post.price )
     setTotal(totalPrice)
     setState( State.getStatesOfCountry("IN"))
     setCity(City.getCitiesOfState("IN", stateCode))
-
+   shippingCalculatorfn()
   }
   fetchData();
-}, [stateCode]); // Or [] if effect doesn't need props or state
-console.log("states",states)
+}, [stateCode,shipping]); // Or [] if effect doesn't need props or state
+
 const userData =localStorage.getItem("userId")
 const userInfo =localStorage.getItem("userInfo")
 const [userInformation,setUserInformation]=useState()
@@ -107,8 +135,7 @@ const orderType=localStorage.getItem("accountType")
 
           const order=async()=>{
             alert()
-           console.log("orderdata", userData,userId);
-           console.log("preOrder",preOrder)
+       
            
             if(userData && userInfo){
              const ata={
@@ -140,7 +167,7 @@ const orderType=localStorage.getItem("accountType")
                preOrder:preOrder
 
              }
-             console.log("ata====>",ata);
+             
           
              const tata= await createpreOrder(ata)  
              if(tata){
@@ -159,8 +186,7 @@ const orderType=localStorage.getItem("accountType")
               
            }
           
-           console.log(stateCode);
-           console.log(city);
+          
            function openModal() {
             setIsOpen(true);
           }
@@ -178,11 +204,11 @@ const orderType=localStorage.getItem("accountType")
 
             async function fetchData() {
               // You can await here
-              console.log(userId);
+       
               const { data} =await getUser( userId)
              setUserInformation(data)
               setAddedAddress( data.address)
-              console.log("dta",data.address, );
+            
               // ...
             }
             fetchData();
@@ -190,7 +216,7 @@ const orderType=localStorage.getItem("accountType")
 
            },[])
 
-           console.log("added address",addedAddress);
+        
   return (
     <div>
     <div style={{marginLeft:"3rem" ,display:"flex"}}>
@@ -385,7 +411,7 @@ const orderType=localStorage.getItem("accountType")
         </div>
       <div className='flex-item-right'>
           <div className='card' id='cardComponet'>
-            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"https://localhost:5007/images/"+post.image1:""} alt="" /></div>
+            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"http://localhost:5007/images/"+post.image0:""} alt="" /></div>
            <div className='containerMAx'>
            <div className='flexitem'>
               <div className='flexleft'>

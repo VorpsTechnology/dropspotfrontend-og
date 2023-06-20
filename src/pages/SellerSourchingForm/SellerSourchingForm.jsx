@@ -71,8 +71,8 @@ function SellerSourchingForm() {
       image4:null,
       sellerId:userId,
       sellerName:userName,
-      wholesalePrice:""
-     
+      wholesalePrice:"",
+      acceptReturn:false
       
     })
 
@@ -175,7 +175,7 @@ function SellerSourchingForm() {
         newPost. image4=null
         newPost. sellerId=userId
         newPost.sellerName=userName
-       
+        newPost.acceptReturn=""
         toast.success("Product added successfully")
     }
   
@@ -356,8 +356,12 @@ function SellerSourchingForm() {
   
    
   </div>
+
 </div>
 <div> 
+</div>
+<div>
+  
 </div>
 <div >
   <div className='name' >
@@ -457,7 +461,11 @@ function SellerSourchingForm() {
   </div>
 </div>
 
-
+<div >
+    
+    <input type="checkbox" name="" id="" />
+    <label ><h5>Accept Return</h5></label>
+    </div>
 
 
 </div>

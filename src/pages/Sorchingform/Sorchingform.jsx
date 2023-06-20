@@ -215,7 +215,7 @@ console.log(newPost);
     <>
     
     <div className='container' id="tabcontainer" style={{padding:'20px 10px 20px 10px',width:'1100px',marginTop:'10px'}}>
-    <div className='headingAll'><h2>Sourcing </h2></div>
+    <div className='headingAll'><h2>Sourcing...</h2></div>
       <Tab.Group>
       <div className='conatiner' style={buttonheader}>
       <Tab.List  className="flex space-x-1 rounded-xl  p-1" >
