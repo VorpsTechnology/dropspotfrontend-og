@@ -186,7 +186,7 @@ console.log("search",search);
           <div className="form-outline" style={{display:'flex',height:'10px',listStyle:'none'}}>
           <form action="">
                     <div className="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products" 
+                        <input type="text" className="form-control" placeholder="Search for products" 
                          value={search}
                          name='name'
                          onChange={
@@ -199,7 +199,7 @@ console.log("search",search);
                         style={{width:'500px',borderRadius:'20px',outlineColor:'transparent'}} />
                         <div className="input-group-append">
                             <span >
-                            <button style={{width:'70px',backgroundColor:'white',borderRadius:'20px',borderColor:'transparent',margin:'5px'}}><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <button style={{width:'70px',backgroundColor:'white',borderRadius:'20px',borderColor:'transparent',margin:'5px'}}><i className="fa fa-search" aria-hidden="true"></i></button>
                             </span>
                         </div>
                     </div>
@@ -223,7 +223,7 @@ console.log("search",search);
             <a href="#">Track Order</a>
            
           </div>
-          <span><i class='fas fa-chevron-circle-down'></i></span>
+          <span><i className='fas fa-chevron-circle-down'></i></span>
         </div>
         
         </li>
@@ -309,8 +309,8 @@ console.log("search",search);
                       <div className="first">
                       <div className="d-flex justify-content-between align-items-center">
                         <span className="wishlist">
-                        {/* <i class= "fa fa-heart"></i>
-                        <i class= " fa fa-heart-o"></i> */}
+                        {/* <i className= "fa fa-heart"></i>
+                        <i className= " fa fa-heart-o"></i> */}
                          
 
                          {(toggle==false)?<i className=" fa fa-heart-o" onClick={()=>{

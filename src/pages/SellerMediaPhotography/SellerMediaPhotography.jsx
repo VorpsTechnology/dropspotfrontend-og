@@ -62,7 +62,7 @@ function SellerMediaPhotography() {
         <div className='container' id="tabcontainer"  style={{ display: 'block',color:'black',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',padding:'40px',width:'auto',overflowX:'scroll',margin:'20px 20px 20px 20px' }}>
      <button className='Buttonstik' data-toggle="collapse" data-target="#demo">My Photography<span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-        <div id="demo" class="collapse">
+        <div id="demo" className="collapse">
 
             <div align='center'><h2>My Photography</h2></div>
            <div className='row'>

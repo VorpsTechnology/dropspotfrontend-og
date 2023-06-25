@@ -514,7 +514,7 @@ const orderType=localStorage.getItem("accountType")
            <div align='center' style={{marginTop:'50px'}} className='con'>
       <h4 style={{fontWeight:'500px'}}> <b>Your Order will be shipping on </b> </h4>
     </div>
-           <div align='left' class="bottomleft"><img style={{height:'300px'}} src="" alt="" /></div>  
+           <div align='left' className="bottomleft"><img style={{height:'300px'}} src="" alt="" /></div>  
            <div className='bootomright'><img src="" alt="" /></div> 
 
          

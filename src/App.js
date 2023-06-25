@@ -36,7 +36,7 @@ import OrderFullfillment from './pages/OrderFullfillment/OrderFullfillment'
 import Dropshiporder from './pages/Dropshiporder/Dropshiporder'
 import Calculation from './pages/Calculation/Calculation'
 import UserProfile from './pages/UserProfile/UserProfile'
-import {AboutUS} from "./pages/AboutUS/AboutUS";
+import AboutUS from "./pages/AboutUS/AboutUS";
 import ContactUS from "./pages/ContactUS/ContactUS";
 import StoreAutherizationAgreement from './pages/StoreAutherizationAgreement/StoreAutherizationAgreement';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
@@ -103,6 +103,8 @@ import SellerMediaInventory from './pages/SellerMediaInventory/SellerMediaInvent
 import SellerMediaPhotography from './pages/SellerMediaPhotography/SellerMediaPhotography'
 import SellerMediaWishlist from './pages/SellerMediaWishlist/SellerMediaWishlist'
 import PurchaseItem from "./pages/CheckOutStep/PurchaseItem/PurchaseItem";
+import SellerSignup from './pages/SellerSignup/SellerSignup'
+import SellerLogin from './pages/SellerLogin/SellerLogin'
 
 function App() {
  
@@ -214,6 +216,11 @@ function App() {
         <Route path="/SellerMediaPhotography" component={SellerMediaPhotography}></Route>
         <Route path="/SellerMediaWishlist" component={SellerMediaWishlist}></Route>
         <Route path="/PurchaseItem" component={PurchaseItem}></Route>
+        <Route path="/SellerSignup" component={SellerSignup}></Route>
+        <Route path="/SellerLogin" component={SellerLogin}></Route>
+
+        
+        
         
         
       </Switch>

@@ -256,7 +256,7 @@ const coloumn=[
               <div className="col"  >
                 <div align="center"       
                   
-                   className="cardcard" id="carasouelsection" style={{padding:'10px',width:'220px'}}>
+                   className="cardcard" id="carasouelsection" style={{padding:'10px',width:'250px'}}>
                   <div className="image" style={{width:'100%'}}>
                     
                     <img
@@ -280,8 +280,8 @@ const coloumn=[
                       <div className="first">
                       <div className="d-flex justify-content-between align-items-center">
                         <span className="wishlist">
-                        {/* <i class= "fa fa-heart"></i>
-                        <i class= " fa fa-heart-o"></i> */}
+                        {/* <i className= "fa fa-heart"></i>
+                        <i className= " fa fa-heart-o"></i> */}
                          
 
                          {(toggle==false)?<i className=" fa fa-heart-o" onClick={()=>{
@@ -320,7 +320,7 @@ const coloumn=[
                                 },
                               }}
                              onClose={handleClose}>
-        <DialogTitle>Listing modal</DialogTitle>
+        <DialogTitle > <div align='center'><h4> <b>Listing Product</b> </h4></div> </DialogTitle>
         <DialogContent>
           <DialogContentText>
           </DialogContentText>
@@ -341,7 +341,7 @@ const coloumn=[
             </div>
            
             <div align="center" className="row" style={{width:'1000px',marginTop:'20px'}} >
-              <div className="col-2">   <h5>Bulk Revise</h5></div>
+              <div className="col-2">   <h5 style={{marginTop:'5px'}}>Bulk Revise</h5></div>
               <div className="col-2"> <input className="inputflied" type="text" /> </div>
               <div className="col-2"><button className="bulkbtnprice">Price Change</button></div>
               

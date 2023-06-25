@@ -1,5 +1,6 @@
 
 import React, { useReducer, useState } from 'react';
+import dashboard from '../../assets/dashboard.png'
 import {
   Nav,
   NavLink,
@@ -43,7 +44,7 @@ const Navbar = () => {
 
   return (
     <>
-   <div className='DesktopNavbar'>
+   <div className='DesktopNavbar' style={{backgroundColor:'rgba(255, 255, 255, 1)'}}>
    <Nav>
         <Bars />
         <NavMenu>
@@ -51,34 +52,34 @@ const Navbar = () => {
      {
       seller==true?<></>:   <div>
       <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false " style={{backgroundColor:'white',textDecoration:'none'}}>
-       <span style={{paddingRight:'10px',textDecoration:'none'}}><i class="fa fa-check-circle"></i></span>Autherization</a>
+       <span style={{paddingRight:'10px',textDecoration:'none'}}><i className="fa fa-check-circle"></i></span>Autherization</a>
       <div className="dropdown-menu" aria-labelledby="dropdown09" style={{backgroundColor:'#f9f9f9',width:'150px',boxShadow: "0px 8px 16px 0px rgba(0,0,0,0.2);",borderRadius:'5px'}} >
-        <a className="dropdown-item" href="#fr"><img src={droptik} alt="" /></a>
+        {/* <a className="dropdown-item" href="#fr"><img src={droptik} alt="" /></a> */}
         <a className="dropdown-item" href="#it"><img src={dropship} alt="" /></a>
-        <a className="dropdown-item" href="#it"><img src={dropwelmart} alt="" /></a>
+        {/* <a className="dropdown-item" href="#it"><img src={dropwelmart} alt="" /></a>
         <a className="dropdown-item" href="#it"><img src={dropcomerce} alt="" /></a>
-        <a className="dropdown-item" href="#it"><img src={dropamazon} alt="" /></a>
+        <a className="dropdown-item" href="#it"><img src={dropamazon} alt="" /></a> */}
       </div>
       </div>
      }
         
         
           <NavLink to='/wishlist' activeStyle  style={{textDecoration:'none',color:'black'}}>
-           <span style={{paddingRight:'10px',textDecoration:'none'}}><i class="fa fa-heart"></i></span>Wishlist
+           <span style={{paddingRight:'10px',textDecoration:'none'}}><i className="fa fa-heart"></i></span>Wishlist
           </NavLink>
           <div>
       
         </div>
           <NavLink to='/HelpCenter' activeStyle style={{textDecoration:'none',color:'black'}}>
-          <span style={{paddingRight:'10px',textDecoration:'none'}}><i class="fa fa-handshake-o"></i></span> Help Center
+          <span style={{paddingRight:'10px',textDecoration:'none'}}><i className="fa fa-handshake-o"></i></span> Help Center
           </NavLink>
           <NavLink to='/SellerSourchingForm' activeStyle style={{textDecoration:'none',color:'black'}}>
-           <span style={{paddingRight:'10px',textDecoration:'none'}}><i class="fa fa-group"></i></span>Sourcing
+           <span style={{paddingRight:'10px',textDecoration:'none'}}><i className="fa fa-group"></i></span>Sourcing
           </NavLink>
           <NavLink to={accountType==="Seller"? "/SellerDashboard":'/MyDropspot'} activeStyle style={{textDecoration:'none',color:'black'}}>
-          My Dropspot
+          <span><img src={dashboard} style={{height:'15px',margin:'0px 5px 0px 0px'}} /></span> My Dropspot
           </NavLink>
-          {userInfo? <button style={{backgroundColor:'#FDE31A',borderRadius:'50px',padding:'10px',borderColor:'transparent',textDecoration:'none',color:'black'}} 
+          {userInfo? <button className='bttun' style={{borderRadius:'50px',padding:'10px',borderColor:'transparent',textDecoration:'none',color:'black',backgroundColor:'rgba(255, 255, 255, 1)'}} 
           onClick={(e) => {
             e.preventDefault();
             swal({
@@ -103,25 +104,26 @@ const Navbar = () => {
             });
           }}
           
-          >Log out</button>: <NavLink to='/signin' activeStyle style={{color:'black',textDecoration:'transparent'}}>
-           <span><i style={{paddingRight:'10px'}} class="fa fa-user-plus"></i></span> Log in
+          ><span><i className="fa fa-sign-out" aria-hidden="true" style={{fontSize:'15px',margin:'0px 5px 0px 0px'}}></i></span>Log out</button>: <NavLink to='/signin' activeStyle style={{color:'black',textDecoration:'transparent'}}>
+           <span><i style={{fontSize:'15px',margin:'0px 5px 0px 0px'}} className="fa fa-user-plus"></i></span> Log in
           </NavLink>}
        {
-        userInfo?"":   <NavLink style={{backgroundColor:'#FDE31A',borderColor:'transparent',borderRadius:'50px',height:'40px'}} to='/NewSignup/Dropshipper' activeStyle>
-        SignUp
+        userInfo?"":   <NavLink to='/NewSignup/Dropshipper' activeStyle>
+        <span><i class="fa fa-sign-in" aria-hidden="true" style={{fontSize:'15px',margin:'0px 5px 0px 0px'}}></i></span> SignUp
         </NavLink>
        }
           
         
         {userInfo?    <div>
 
-             <div className="dropdownuser">
-        <button className="dropbtnuser2" >{userEmail ||userName ||userId}</button>
+       
+         <div className="dropdownuser" >
+        <button className='dropbtnuser6' style={{backgroundColor:'rgba(255, 255, 255, 1)',width:'0px'}} > <span><i className="fa fa-user-circle-o" style={{fontSize:'15px',margin:'0px 5px 0px 0px'}}></i></span>{userEmail ||userName ||userId}</button>
           <div className="dropdown-contentuser">
-          <a href="/UserProfile" style={{textDecoration:'none'}}> <span><i class="fa fa-user-circle-o" style={{fontSize:'15px'}}></i></span> Profile</a>
-          <a href="/Wallet" style={{textDecoration:'none'}}> <span><i class='fas fa-wallet' style={{fontSize:'15px'}} ></i></span> Wallet</a>
-          <a href="/Calculation" style={{textDecoration:'none'}}> <span> <i class="fa fa-calculator" aria-hidden="true" style={{fontSize:'15px'}}></i></span> Shipping Calculation</a>
-          <a  onClick={(e) => {
+          <a href="/UserProfile" style={{textDecoration:'none'}}> <span><i className="fa fa-user-circle-o" style={{fontSize:'15px'}}></i></span> Profile</a>
+          <a href="/Wallet" style={{textDecoration:'none'}}> <span><i className='fas fa-wallet' style={{fontSize:'15px'}} ></i></span> Wallet</a>
+          <a href="/Calculation" style={{textDecoration:'none'}}> <span> <i className="fa fa-calculator" aria-hidden="true" style={{fontSize:'15px'}}></i></span> Shipping Calculation</a>
+          <a  style={{textDecoration:'none'}} onClick={(e) => {
             e.preventDefault();
             swal({
               title: "Are you sure?",
@@ -138,7 +140,7 @@ const Navbar = () => {
                 swal("Welcome back");
               }
             });
-          }} href="#" style={{textDecoration:'none'}}> <span><i class="fa fa-sign-out" aria-hidden="true" style={{fontSize:'15px'}}></i></span>  Logout</a>
+          }} href="#"><span><i className="fa fa-sign-out" aria-hidden="true" style={{fontSize:'15px'}}></i></span> Logout </a>
           </div>
         </div>
             </div>:""}

@@ -54,6 +54,8 @@ function Footer() {
                     <a className="text-white mb-2" href="TrackingOrder"><i className="fa fa-angle-right mr-2" />Tracking Orders</a>
                     <a className="text-white mb-2" href="/Calculation"><i className="fa fa-angle-right mr-2" />Shipping Cost and Delivery time</a>
                     <a className="text-white mb-2" href="/BulkPurchase"><i className="fa fa-angle-right mr-2" />Bulk Purchase</a>
+                    <a className="text-white mb-2" href="/SellerSignup"><i className="fa fa-angle-right mr-2" />SellerSignup</a>
+                    <a className="text-white mb-2" href="/SellerLogin"><i className="fa fa-angle-right mr-2" />SellerLogin</a>
                   </div>
                 </div>
                 <div className="col-md-4 mb-5">

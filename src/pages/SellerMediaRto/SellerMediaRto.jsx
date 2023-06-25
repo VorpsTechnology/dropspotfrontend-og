@@ -186,7 +186,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{width:'auto' ,overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo1">Awaiting Pickup<span style={{float:'right'}}><img src={leftarrow} alt="" /></span> </button>
 
-      <div id="demo1" class="collapse">
+      <div id="demo1" className="collapse">
      
      <div className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
           <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
@@ -237,7 +237,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo2">Processed <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo2" class="collapse">
+      <div id="demo2" className="collapse">
 
       <div  className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
            <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
@@ -278,7 +278,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo3">Awaiting Payments <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo3" class="collapse">
+      <div id="demo3" className="collapse">
  
       <div className='continer' style={{ display: 'block',color:'black',borderRadius:'30px'}}>
             
@@ -334,7 +334,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo4">Paid <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo4" class="collapse">
+      <div id="demo4" className="collapse">
 
       <div style={{ display: 'block',color:'black',borderRadius:'30px'}}>
                 <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
@@ -380,7 +380,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo5">Closed <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo5" class="collapse">
+      <div id="demo5" className="collapse">
 
       <div style={{ display: 'block',color:'black',borderRadius:'30px'}}>
                 <div  className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
@@ -425,7 +425,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo6">Expired <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo6" class="collapse">
+      <div id="demo6" className="collapse">
 
       <div className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
                 <div className='container' style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>

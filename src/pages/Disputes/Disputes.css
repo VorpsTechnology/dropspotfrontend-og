@@ -25,7 +25,7 @@
 
 
   .tabbtn:active{
-    background-color: white;
+  
     border-color: black;
   }
   #tabcontainer{

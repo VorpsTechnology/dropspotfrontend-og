@@ -268,7 +268,7 @@ console.log(newPost);
       
 <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>  
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo2">Sourching Form <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo2" class="collapse">
+      <div id="demo2" className="collapse">
 
       <div className='container' >
            
@@ -585,7 +585,7 @@ console.log(newPost);
       <TabPanel value={value} index={1}>
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>  
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo3">Bulk Upload <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo3" class="collapse">
+      <div id="demo3" className="collapse">
 
       <div className='container' >
      

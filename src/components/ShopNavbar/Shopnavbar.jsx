@@ -18,12 +18,12 @@ const history=useHistory()
           <div className="form-outline" style={{display:'flex',height:'10px',listStyle:'none'}}>
           <form action="">
                     <div className="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products" onClick={()=>{
+                        <input type="text" className="form-control" placeholder="Search for products" onClick={()=>{
                           history.push("/Productlisting")
-                        }} style={{width:'500px',borderRadius:'20px',outlineColor:'transparent'}} />
+                        }} style={{width:'800px',borderRadius:'20px',outlineColor:'transparent'}} />
                         <div className="input-group-append">
                             <span >
-                            <button style={{width:'70px',backgroundColor:'white',borderRadius:'20px',borderColor:'transparent',margin:'5px'}}><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <button style={{width:'70px',backgroundColor:'white',borderRadius:'20px',borderColor:'transparent',margin:'5px'}}><i className="fa fa-search" aria-hidden="true"></i></button>
                             </span>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ const history=useHistory()
             <a href="#">Track Order</a>
            
           </div>
-          <span><i class='fas fa-chevron-circle-down'></i></span>
+          <span><i className='fas fa-chevron-circle-down'></i></span>
         </div>
         
         </li>

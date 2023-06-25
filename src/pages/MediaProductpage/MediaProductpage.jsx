@@ -149,9 +149,9 @@ function MediaProductpage() {
                     <li style={{fontSize:'20px',lineHeight:'43.94px',fontWeight:'400',fontStyle:'Poppins',listStyle:'inherit'}}>Quantity:<span><input type="number" className="form-control text-center " defaultValue={1} style={{width: '30px',height:'10px'}} /></span></li>
                     <li style={{fontSize:'20px',lineHeight:'43.94px',fontWeight:'400',fontStyle:'Poppins',listStyle:'inherit'}}>SKU:</li></div>
                     <div className="row">
-                    <div class="row">
+                    <div className="row">
                   
-                        <div class="w-100 d-none d-md-block"></div>
+                        <div className="w-100 d-none d-md-block"></div>
 
                        
                        

@@ -63,7 +63,7 @@ export default function BasicTabs() {
       <TabPanel value={value} index={0}>
       <button  className='Buttonstik' data-toggle="collapse" data-target="#demo">Add Automatic Connection <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-        <div id="demo" class="collapse">
+        <div id="demo" className="collapse">
         <button id='cardblockkAuto'>Add Automatic Connection </button>
         </div>
        
@@ -71,7 +71,7 @@ export default function BasicTabs() {
       <TabPanel value={value} index={1}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo1">Add Sourcing Connection  <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-        <div id="demo1" class="collapse">
+        <div id="demo1" className="collapse">
         <button id='cardblockkAuto'>Add Sourcing Connection</button>
         </div>
     

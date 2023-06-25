@@ -384,7 +384,7 @@ const coloumn=[
   return (
    <>
    <Adminnavbar />
-   <div className='row'  style={{backgroundColor:'#31343A'}}>
+   <div className='row'  style={{backgroundColor:'#31343A',marginTop:'100px'}}>
     <div className='col-2'>
         <SellerSidebar />
     </div>

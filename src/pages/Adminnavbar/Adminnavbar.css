@@ -1,19 +1,26 @@
 .flex-container120{
     display: flex;
     justify-content: space-between;
-    
-    
+   
+    padding: 15px;
+   
     
 }
 
-#Admindashboard{
+ #Admindashboard{
     background-color: #32333A;
-    border-bottom: 1px solid #FDE31A;
-box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
+   height: 100px;
+   z-index: 1;
+  position:fixed ;
+  z-index:100;
+
+   top:0
+   
+
    
    
 
-}
+} 
 
 .flex-item-left120{
     justify-content: left;
@@ -25,7 +32,9 @@ box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
 .flex-item-right120{
     justify-content: right;
     color: rgba(255, 255, 255, 1);
-    margin-top:20px;
+    padding: 24px 0px 0px 0px;
+   
+
 }
 
 .username{
@@ -41,15 +50,18 @@ box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.15);
     background-color: #FDE31A;
     color:  rgba(50, 51, 58, 1);
     padding: 10px;
-    font-size: 16px;
+    font-size: 25px;
+    font-weight:650;
     border: none;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 5px;
+    box-shadow:grey 0px 48px 100px 0px;
   }
   
   .dropdownuser {
     position: relative;
     display: inline-block;
+    box-shadow:grey 0px 48px 100px 0px;
   }
   
   .dropdown-contentuser {

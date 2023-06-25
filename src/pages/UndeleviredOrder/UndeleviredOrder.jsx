@@ -7,6 +7,7 @@ import { Tab } from '@headlessui/react';
 import './UndeleviredOrder.css'
 import { allawaitingPayments, alldispatchedorder, allpendingorders, mypreOrders } from '../../Api/OrderRequest';
 import DataTable from 'react-data-table-component';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 
 function UndeleviredOrder() {
@@ -390,9 +391,9 @@ const coloumn=[
       <div>
         <Adminnavbar />
       </div>
-      <div className='row'>
+      <div className='row' style={{marginTop:'100px'}}>
       <div className='col-2'  style={{backgroundColor:'#31343A'}}><Sidebar /></div>
-      <div className='col-10' style={{height:'800px'}}>
+      <div className='col-10' >
     
       <div className='container' id="tabcontainer" style={{margin:'10px 20px 10px 10px',width:'auto', padding:'10px'}}>
       <div className='headingAll'><h2>RTO</h2></div>
@@ -684,7 +685,9 @@ const coloumn=[
           </Tab.Panels>
     </Tab.Group>
       </div>
+      <Dashboardfooter/>
       </div>
+      
     
       </div>
      

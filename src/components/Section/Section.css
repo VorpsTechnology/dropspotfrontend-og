@@ -87,6 +87,7 @@ width:280px;
 
 #SectionContainer{
     display: flex;
+    width: 100%;
 }
 
 @media screen and (max-width: 500px) {

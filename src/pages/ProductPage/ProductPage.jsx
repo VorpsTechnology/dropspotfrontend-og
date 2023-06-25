@@ -285,7 +285,7 @@ const subbtnlist={
                     </div>
                       
                     <div className="col">
-                    <div align="center" class="row" style={{marginnBottom:'10px'}} >
+                    <div align="center" className="row" style={{marginnBottom:'10px'}} >
                     <div className="container" style={{width:'350px',paddingRight:'20px'}}>
                         <br />
                       <form action="">

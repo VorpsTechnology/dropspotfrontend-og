@@ -132,7 +132,7 @@ export default function BasicTabs() {
       
 <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>  
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo2">Product Inventory <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo2" class="collapse">
+      <div id="demo2" className="collapse">
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Product Inventory</h3></div>
@@ -182,7 +182,7 @@ export default function BasicTabs() {
 
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>  
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo3">Connecting Pacakaging Inventory <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo3" class="collapse">
+      <div id="demo3" className="collapse">
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Connecting Pacakaging Inventory</h3></div>
@@ -219,7 +219,7 @@ export default function BasicTabs() {
         
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>  
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo3">Pre-Sold Inventory <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo3" class="collapse">
+      <div id="demo3" className="collapse">
 
       <div className='container' >
       <div className='Dashboardheading'><h3>Pre-Sold Inventory</h3></div>

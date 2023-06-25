@@ -16,23 +16,25 @@ function Adminnavbar() {
   const userEmail= userEmaill.split('@')[0];
 
   return (
-    <div className='container-fluid table-bordered' id="Admindashboard"  >
-      <div className='row' style={{borderColor:"10px solid yellow;"}}>
+    <div className='container-fluid ' id="Admindashboard"  >
+      
       <div className='flex-container120' >
-        <div className='flex-item-left120' style={{margin:'10px'}}> <h4><img onClick={()=>{
+        <div className='flex-item-left120' > <h4><img onClick={()=>{
           history.push("/")
-        }} style={{width:"70px"}} src={logo} alt="" />
-         <span style={{marginLeft:'20px',color:'#FDE31A',fontSize:'20px'}} > <b>Drop Your Product To Your Store Spot</b> </span></h4>
+        }} style={{width:"70px",boxShadow:'grey 0px 48px 100px 0px',borderRadius:'50px'}} src={logo} alt="" />
+         <span style={{color:'#FDE31A',fontSize:'18px'}} > <b>DropSpot </b> </span>
+         </h4>
          </div>
         <div className='flex-item-right120'> 
-        <span style={{marginRight:'15px'}}> <img  src={bell} alt="" /></span>
-        <img src={avatar} alt="Avatar" class="avatar" style={{width:'30px'}}></img> <span style={{margin:'10px'}}>
+       
+        <span style={{margin:'10px'}}>
         <div className="dropdownuser">
-        <button className="dropbtnuser" >{userEmail ||userName ||userId}</button>
+       
+        <button className="btn-sm mb-0 dropbtnuser" style={{boxShadow:"grey 0px 48px 100px 0px;"}}  >{userEmail ||userName ||userId}</button>
           <div className="dropdown-contentuser">
-          <a href="/UserProfile" style={{textDecoration:'none'}}> <span><i class="fa fa-user-circle-o" style={{fontSize:'15px'}}></i></span> Profile</a>
-          <a href="/Wallet" style={{textDecoration:'none'}}> <span><i class='fas fa-wallet' style={{fontSize:'15px'}} ></i></span> Wallet</a>
-          <a href="/Calculation" style={{textDecoration:'none'}}> <span> <i class="fa fa-calculator" aria-hidden="true" style={{fontSize:'15px'}}></i></span> Shipping Calculation</a>
+          <a href="/UserProfile" style={{textDecoration:'none'}}> <span><i className="fa fa-user-circle-o" style={{fontSize:'15px'}}></i></span> Profile</a>
+          <a href="/Wallet" style={{textDecoration:'none'}}> <span><i className='fas fa-wallet' style={{fontSize:'15px'}} ></i></span> Wallet</a>
+          <a href="/Calculation" style={{textDecoration:'none'}}> <span> <i className="fa fa-calculator" aria-hidden="true" style={{fontSize:'15px'}}></i></span> Shipping Calculation</a>
           <a  onClick={(e) => {
             e.preventDefault();
             swal({
@@ -50,13 +52,14 @@ function Adminnavbar() {
                 swal("Welcome back");
               }
             });
-          }} href="#" style={{textDecoration:'none'}}> <span><i class="fa fa-sign-out" aria-hidden="true" style={{fontSize:'15px'}}></i></span>  Logout</a>
+          }} href="#" style={{textDecoration:'none'}}> <span><i className="fa fa-sign-out" aria-hidden="true" style={{fontSize:'15px'}}></i></span>  Logout</a>
           </div>
+          <span style={{marginRight:'10px'}}> <img  style={{width:'15px',height:'15px'}} src={bell} alt="" /></span>
         </div>
         </span>
    </div>
       </div>
-      </div>
+     
       
     </div>
   )

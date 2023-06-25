@@ -8,7 +8,7 @@ function ViewMoreSection() {
           <div align='center'>
    <button  onClick={() => {
                       history.push('Productlisting')
-                  } } className="btnview">View more ></button> </div> 
+                  } } className="btnview" >View more </button> </div> 
     </div>
   )
 }

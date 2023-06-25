@@ -133,8 +133,8 @@ export const MediaProducts = () => {
                       <div className="first">
                       <div className="d-flex justify-content-between align-items-center">
                         <span className="wishlist">
-                        {/* <i class= "fa fa-heart"></i>
-                        <i class= " fa fa-heart-o"></i> */}
+                        {/* <i className= "fa fa-heart"></i>
+                        <i className= " fa fa-heart-o"></i> */}
                          
 
                         

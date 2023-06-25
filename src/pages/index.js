@@ -5,17 +5,17 @@ import Link from "../components/Links/Link";
 
 import Trending from "../components/Trending/Trending";
 import TrendingHeader from "../components/Trending/TrendingHeader";
-import Shipping from "../components/Shipping/Shipping";
+// import Shipping from "../components/Shipping/Shipping";
 
 import Section from '../components/Section/Section'
 import Review from "../components/Reviews/Review";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar";
-import Partner from "../components/Partner/Partner";
+// import Partner from "../components/Partner/Partner";
 
 import MediaNavbar from "../components/MediaNavbar/MediaNavbar";
 
-import Hotsellingproducts from '../components/Hotsellingproducts/Hotsellingproducts'
+// import Hotsellingproducts from '../components/Hotsellingproducts/Hotsellingproducts'
 
 import Mediabutton from '../components/Mediabutton/Mediabutton'
 
@@ -25,16 +25,13 @@ import MediaSuperDeals from "../components/MediaSuperDeals/MediaSuperDeals";
 import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton';
 import ShoppingCard from '../components/ShoppingCard/ShoppingCard';
 import MoreProduct from "../components/MoreProduct/MoreProduct";
+import HowWeWork from "../components/HowWeWork/HowWeWork";
+import DesktopHotselling from "../components/DesktopHotselling/DesktopHotselling";
+import TopSellingProducts from '../components/TopSellingProducts/TopSellingProducts'
 
 const Home = () => {
     // const [category, setCategory] = useState("");
     // const [products, setProduct] = useState([1, 2, 3, 4, 5]);
-
-
-
-
-
-
 
     return ( 
     <div >
@@ -43,11 +40,13 @@ const Home = () => {
         <Shopnavbar />
         <Section />
         <br />
+        <HowWeWork/>
+        <br />
         <MediaNavabarbutton />
         <br />
         <Mediabutton />
       
-        <Link />
+       
        
       
 
@@ -55,22 +54,24 @@ const Home = () => {
         {/* <Hotsellingproducts /> */}
         <TrendingHeader />
         <Trending  />
+        <DesktopHotselling />
+        <TopSellingProducts/>
         <br />
         
         <MediaSuperDeals />
         <MoreProduct />
-        <Shipping />
-        <br />
-        <Partner />
-        <br />
-        <ShoppingCard />
+        
+        
+        {/* <ShoppingCard /> */}
         <br />
         <Review />
         <br />
         
-       
+        <Link />
+        <br />
         <Footer />
         <ScrollUpButton />
+
         </div>
 
     );

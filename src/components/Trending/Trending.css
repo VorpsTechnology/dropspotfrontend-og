@@ -5,7 +5,7 @@
    margin-bottom: 40px;
     border-radius: 16px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 210px;
+    width: 300px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	background: rgba(255, 255, 255, 0.2);
     height:'500px';
@@ -28,10 +28,10 @@
 
 .discount {
     background-color: white;
-font-weight:500;
+font-weight:650;
 font-size:15px;
   color: black;
-  width:200px;
+  width:230px;
   border-radius: 20px;
   margin-top:10px ;
   border-color:rgba(255, 214, 0, 1);
@@ -39,7 +39,7 @@ font-size:15px;
 
 .connect{
     background-color: white;
-    font-weight: 500;
+    font-weight: 650;
    font-size:15px ;
     color:black;
     width:100px ;
@@ -57,6 +57,7 @@ font-size:15px;
     padding: 5px;
     width: 150px;
     font-weight: 800;
+    margin: 30px;
 }
 
 .btnview:hover{
@@ -77,10 +78,10 @@ font-size:15px;
 .listbtnlist{
     background-color:white;
     color:black;
-    width: 70px;
+    width:100px ;
    border-radius: 20px;
    margin-top: 20px;
-    
+    font-weight: 650;
     
     float:left;
     border-color: rgba(255, 214, 0, 1);
@@ -293,6 +294,7 @@ border-width:0;
   margin-right:10px;
  float: right;
  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+ font-weight: 650;
 
 
 }
@@ -336,7 +338,7 @@ border-width:0;
     border-radius: 10px;
     background-color:rgba(231, 231, 231, 1) ;
     border-color: transparent;
-    margin: 5px;
+    
     outline-color:rgba(253, 227, 26, 1) ;
     width: 130px;  
 }

@@ -15,7 +15,7 @@ const gridcontainer={
 const container={
 
   height:'200px',
-  marginTop:'40px',
+  marginTop:'20px',
   paddingBottom:'40px',
   width:'100%',
  
@@ -45,10 +45,10 @@ export default class SimpleSlider extends Component {
          <div align="center" className="gridcontainer" style={gridcontainer}>
          <div align="center" className="grid-item"><img  src={Review} alt="" /></div>
            <div className="grid-item" >                           
-            <div class="review-box"   >
+            <div className="review-box"   >
                  <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                    <span className="review-info"></span>
-                   <span className="review-date">18 December 2018</span>
+                   <span > <button className="review-date">18 December 2018</button> </span>
                      <div className="review-rating" >
                              
                                <span  className="fa fa-star checked"></span>
@@ -57,7 +57,7 @@ export default class SimpleSlider extends Component {
                                <span  className="fa fa-star"></span>
                                <span  className="fa fa-star"></span>
                      </div>
-                       <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                       <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
 
                      </div>
              </div>
@@ -66,10 +66,10 @@ export default class SimpleSlider extends Component {
        <div>
        <div className="gridcontainer" style={gridcontainer}>
          <div className="grid-item"><img  src={Review} alt="" /></div>
-           <div className="grid-item">                            <div class="review-box">
+           <div className="grid-item">                            <div className="review-box">
                            <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                            <span className="review-info"></span>
-                           <span className="review-date">18 December 2018</span>
+                           <span > <button className="review-date">18 December 2018</button> </span>
                            <div className="review-rating">
                              
                                <span className="fa fa-star checked"></span>
@@ -78,7 +78,7 @@ export default class SimpleSlider extends Component {
                                <span className="fa fa-star"></span>
                                <span className="fa fa-star"></span>
                            </div>
-                           <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                           <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
                            
                          </div>
                        </div>
@@ -87,10 +87,10 @@ export default class SimpleSlider extends Component {
        <div>
        <div className="gridcontainer" style={gridcontainer}>
          <div className="grid-item"><img  src={Review} alt="" /></div>
-           <div className="grid-item">                            <div class="review-box">
+           <div className="grid-item">                            <div className="review-box">
                            <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                            <span className="review-info"></span>
-                           <span className="review-date">18 December 2018</span>
+                         <span > <button className="review-date">18 December 2018</button> </span>
                            <div className="review-rating">
                              
                                <span className="fa fa-star checked"></span>
@@ -99,7 +99,7 @@ export default class SimpleSlider extends Component {
                                <span className="fa fa-star"></span>
                                <span className="fa fa-star"></span>
                            </div>
-                           <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                           <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
                           
                          </div>
                        </div>
@@ -108,10 +108,10 @@ export default class SimpleSlider extends Component {
        <div>
        <div className="gridcontainer" style={gridcontainer}>
          <div className="grid-item"><img  src={Review} alt="" /></div>
-           <div className="grid-item">                            <div class="review-box">
+           <div className="grid-item">                            <div className="review-box">
                            <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                            <span className="review-info"></span>
-                           <span className="review-date">18 December 2018</span>
+                         <span > <button className="review-date">18 December 2018</button> </span>
                            <div className="review-rating">
                              
                                <span className="fa fa-star checked"></span>
@@ -120,7 +120,7 @@ export default class SimpleSlider extends Component {
                                <span className="fa fa-star"></span>
                                <span className="fa fa-star"></span>
                            </div>
-                           <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                           <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
                           
                          </div>
                        </div>
@@ -129,10 +129,10 @@ export default class SimpleSlider extends Component {
        <div>
        <div className="gridcontainer" style={gridcontainer}>
          <div className="grid-item"><img  src={Review} alt="" /></div>
-           <div className="grid-item">                            <div class="review-box">
+           <div className="grid-item">                            <div className="review-box">
                            <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                            <span className="review-info"></span>
-                           <span className="review-date">18 December 2018</span>
+                         <span > <button className="review-date">18 December 2018</button> </span>
                            <div className="review-rating">
                              
                                <span className="fa fa-star checked"></span>
@@ -141,7 +141,7 @@ export default class SimpleSlider extends Component {
                                <span className="fa fa-star"></span>
                                <span className="fa fa-star"></span>
                            </div>
-                           <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                           <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
                           
                          </div>
                        </div>
@@ -150,10 +150,10 @@ export default class SimpleSlider extends Component {
        <div>
        <div className="gridcontainer" style={gridcontainer}>
          <div className="grid-item"><img  src={Review} alt="" /></div>
-           <div className="grid-item">                            <div class="review-box">
+           <div className="grid-item">                            <div className="review-box">
                            <img id="carasouelsection" className="cli-img" src={logo} alt="" />
                            <span className="review-info"></span>
-                           <span className="review-date">18 December 2018</span>
+                           <span > <button className="review-date">18 December 2018</button> </span>
                            <div className="review-rating">
                              
                                <span className="fa fa-star checked"></span>
@@ -162,7 +162,7 @@ export default class SimpleSlider extends Component {
                                <span className="fa fa-star"></span>
                                <span className="fa fa-star"></span>
                            </div>
-                           <p class="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
+                           <p className="review-text fs-5" style={{width:'500px'}}>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
                           
                          </div>
                        </div>

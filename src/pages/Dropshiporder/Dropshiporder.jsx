@@ -3,6 +3,7 @@ import DataTable from 'react-data-table-component';
 import {  changependingstatus, myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import Sidebar from '../Sidebar/Sidebar'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 import swal from 'sweetalert';
 function Dropshiporder() {
 
@@ -257,9 +258,9 @@ function Dropshiporder() {
   return (
     <div  style={{backgroundColor:'#31343A',padding:'0px 0px  0px'}}>
         <Adminnavbar />
-        <div className='row'>
+        <div className='row'  style={{marginTop:'100px'}}>
             <div className='col-2' style={{backgroundColor:'#32333A'}}><Sidebar /></div>
-            <div className='col-10'  style={{height:'800px'}}>
+            <div className='col-10'  >
              <div className='container' id='tabcontainer' style={{  display: 'block',color:'black',borderRadius:'20px',width:'auto',margin:'20px 20px 20px 20px', border:"0.5px solid rgba(0, 0, 0, 0.25)" ,
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',padding:'20px',}}>
                 <div className='Dashboardheading'><h3>Pre-Inventory Orders</h3></div>
@@ -322,7 +323,7 @@ function Dropshiporder() {
                 
                  */}
                 {/* </div> */}
-               <div  className='container'  style={{overflowX:"auto"}}>
+               <div  className='container'  style={{overflowX:"auto",padding:'10px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
                <DataTable 
         
         columns={coloumn} 
@@ -338,6 +339,7 @@ function Dropshiporder() {
       />
                </div>
              </div>
+             <Dashboardfooter />
             </div>
 
         </div>

@@ -117,7 +117,7 @@ function SellerWishlist() {
     <>
     <Adminnavbar />
 
-    <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px'}}>
+    <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px',marginTop:'100px'}}>
     <div className='col-2' ><SellerSidebar /></div>
       <div className='col-10'>
   <div className='container' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',padding:'40px',width:'auto',margin:'10px 20px 10px 20px',}}>

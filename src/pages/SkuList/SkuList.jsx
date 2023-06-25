@@ -1,8 +1,13 @@
 import React from 'react'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import Sidebar from '../Sidebar/Sidebar'
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter'
+import illustration from '../../assets/illustration.jpg'
 
 function SkuList() {
+
+  const isDataAvailable = false; 
+  
     const serchbtn={
         backgroundColor:'#FDE31A',
         borderColor:'transparent',
@@ -59,13 +64,34 @@ function SkuList() {
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px  0px'}}>       
     <Adminnavbar />
-    <div className='row'>
+    <div className='row' style={{marginTop:'100px'}}>
         <div className='col-2' style={{backgroundColor:'#31343A'}}>
             <Sidebar />
         </div>
-        <div className='col-10' style={{height:'800px'}}>
+        {/* <div className='col-10' style={{height:'800px'}} >
           <div className='container' id="tabcontainer"  style={{ display: 'block',color:'black',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',padding:'40px',width:'auto',margin:'20px 20px 20px 20px' }}>
-          <div className='container'  style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px'}} >
+          <div className='container'  style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px'}} >           
+</div>
+
+          </div>
+
+          <Dashboardfooter />
+ 
+        </div> */}
+        <div className='col-10' >
+        <div
+          className='container'
+          id='tabcontainer'
+          style={{
+            display: 'block',
+            color: 'black',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
+            borderRadius: '30px',
+            padding: '40px',
+            width: 'auto',
+            margin: '20px 20px 20px 20px',
+          }}
+        >
           <div className='row'>
           <div className='col'><h4 style={{marginTop:'20px'}}>SkuList</h4> </div>
           <div  ><button style={{float:'right',backgroundColor:'#FFE51A',borderColor:'transparent',borderRadius:'10px',padding:'5px',marginRight:'5px'}}>Add To Sku list</button></div>
@@ -76,11 +102,32 @@ function SkuList() {
               <div className='col-2'><p><button style={serchbtn}>Search</button></p></div>
             </div>
           </div>
-          
+          {/* ... */}
+          <div
+            className='container'
+            style={{
+              boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
+              borderRadius: '30px',
+            }}
+          >
+            {/* ... */}
+          </div>
 
-              
-</div>
-<div  className='container'  style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}  >
+          {/* Render the table */}
+          <div
+            className='container'
+            style={{
+              display: 'block',
+              color: 'black',
+              padding: '10px',
+              borderRadius: '30px',
+              width: '1000px',
+              overflowX: 'scroll',
+            }}
+          >
+            {/* ... */}
+          </div>
+          <div  className='container'  style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}  >
 <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
 <div className='row' style={{padding:'7px',backgroundColor:'#FDE31A',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px',width:'1800px',marginRight:'100px' }}>
    <div className='col'><button style={Order}>Product Information</button></div>
@@ -97,9 +144,30 @@ function SkuList() {
 </div>
   
    </div>
-          </div>
- 
+
+          {/* Render the illustration if data is not available */}
+          {!isDataAvailable && (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '400px',
+              }}
+            >
+              <img
+                src={illustration} // Replace with your illustration source
+                alt='No data available'
+                style={{ width: '300px' }}
+              />
+            </div>
+          )}
+
+          {/* ... */}
         </div>
+        {/* ... */}
+        <Dashboardfooter />
+      </div>
     </div>
   </div>
   )

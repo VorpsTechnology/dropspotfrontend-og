@@ -198,7 +198,7 @@ useEffect(() => {
                 
     ]    
   return (
-    <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px'}}>
+    <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px',marginTop:'100px'}}>
         <Adminnavbar />
         <div className='row'>
             <div className='col-2'   >
@@ -250,7 +250,7 @@ useEffect(() => {
             </div>
            </div>
             </div> */}
-          
+    <div className='col-10'>    
      <div className='container' id="tabcontainer" style={{margin:'10px 20px 10px 20px', padding:'20px',width:'auto'}}>
      <div><h2>Order Tracking</h2></div>
              <Tab.Group>
@@ -287,9 +287,9 @@ useEffect(() => {
 
 
           </div>
-          <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}>
-            <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
-              <div >
+         
+          <div  className='container'  style={{overflowX:"auto",padding:'10px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
+            <div >
               
                 <DataTable 
         
@@ -304,10 +304,8 @@ useEffect(() => {
       
         // data={data}
       />
+              </div> 
               </div>
-            </div>
-
-          </div>
           
                 </div>
                 
@@ -325,22 +323,6 @@ useEffect(() => {
             <div className='Dashboardheading'><h3>Successful Orders</h3></div>
            <div className='row' style={{marginTop:'20px'}}>
              <div className='col'><input style={skubnt} type="date" /></div>
-
-             <div className='col'>
-                 {/* <select  style={skubntselect} name="Order Status" id="">
-                     <option value="">Awaiting Payments</option>
-                     <option value="">Waiting for receive</option>
-                     <option value="">Waiting for pay again</option>
-                 </select>
-                 </div>
-                 <div className='col'><input style={skubntselect} placeholder='please enter order number' type="text" /></div>
-                 <div className='col'>
-                 <select  style={skubntselect} name="Order Status" id="">
-                     <option value="">Return Orders</option>
-                     <option value="">Incomplete Order information</option>
-                   
-                 </select> */}
-                 </div>
              <div style={{marginTop:'20px'}}><p><button style={serchbtn}>Search</button><span><button style={Clearbtn} >Clear</button></span></p></div>
            </div>
             </div>
@@ -363,7 +345,7 @@ useEffect(() => {
 
             </div>
            </div>
-           <DataTable 
+           {/* <DataTable 
         
         columns={coloumn} 
         data={filterUsers} 
@@ -375,13 +357,14 @@ useEffect(() => {
         
       
         // data={data}
-      />
+      /> */}
            </div> 
            </Tab.Panel>
           
 
          </Tab.Panels>
    </Tab.Group>
+   </div>
    </div>
         </div>
       </div>

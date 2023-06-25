@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import Sidebar from '../Sidebar/Sidebar'
 import DataTable from 'react-data-table-component';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -224,56 +225,12 @@ const [success,setSuccess]=useState([])
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px'}}>
         <Adminnavbar />
-        <div className='row'>
+        <div className='row'  style={{marginTop:'100px'}}>
             <div className='col-2'   >
                 <Sidebar />
             </div>
-     {/* <div className='col-10' style={{height:'800px'}}>
-          
-
-           <div className='container' id="tabcontainer"  style={{ display: 'block',color:'black',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',padding:'40px',width:'auto',margin:'20px 20px 20px 20px' }}>
-            <div><h2>Order Tracking</h2></div>
-           <div className='row'>
-                <div className='col' style={{marginTop:'20px'}}>
-                <div ><input style={skubnt} type="date" /></div>
-                <div>
-                <div className='row' >
-                <div className='row' style={{marginTop:'20px'}}>
-        <div className='col-2'><button style={serchbtn}>Search</button></div>
-        <div className='col-2'><button style={Pickbtn}> Clear</button></div>
-      </div>
-
-
-          </div>
-          <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}>
-            <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
-              <div >
-              
-                <DataTable 
-        
-        columns={coloumn} 
-        data={filterUsers} 
-        pagination
-        
-        customStyles={customStyles}
-        highlightOnHover
-      
-        
-      
-        // data={data}
-      />
-              </div>
-            </div>
-
-          </div>
-          
-                </div>
-                
-                </div>
-            </div>
-           </div>
-            </div> */}
-          
+     
+    <div className='col-10' >  
      <div className='container' id="tabcontainer" style={{margin:'10px 20px 10px 20px', padding:'20px',width:'auto'}}>
      <div><h2>Order Tracking</h2></div>
              <Tab.Group>
@@ -307,9 +264,9 @@ const [success,setSuccess]=useState([])
          <Tab.Panels style={tabpanls}>
            <Tab.Panel> 
             
-            <div className='continer' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
+            <div className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
           
-          <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
+          <div style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
           <div className='Dashboardheading'><h3>All</h3></div>
           <div className='row'>
                 <div className='col' style={{marginTop:'20px'}}>
@@ -323,83 +280,21 @@ const [success,setSuccess]=useState([])
 
 
           </div>
-          <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}>
-            <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
-              <div >
-              
-                <DataTable 
-        
-        columns={coloumn} 
-        data={filterUsers} 
-        pagination
-        
-        customStyles={customStyles}
-        highlightOnHover
-      
-        
-      
-        // data={data}
-      />
-              </div>
-            </div>
-
-          </div>
+       
           
                 </div>
                 
                 </div>
             </div>
            </div>
-
+           <div >
+          <div  style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1100px' }}>
              
+            </div>
+
           </div>
-          </Tab.Panel>
-           <Tab.Panel>
-            
-           <div className='container'  style={{ display: 'block',color:'black',borderRadius:'30px',overflowX:'scroll' }}>
-            <div style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
-            <div className='Dashboardheading'><h3>Successful Orders</h3></div>
-           <div className='row' style={{marginTop:'20px'}}>
-             <div className='col'><input style={skubnt} type="date" /></div>
-
-             <div className='col'>
-                 {/* <select  style={skubntselect} name="Order Status" id="">
-                     <option value="">Awaiting Payments</option>
-                     <option value="">Waiting for receive</option>
-                     <option value="">Waiting for pay again</option>
-                 </select>
-                 </div>
-                 <div className='col'><input style={skubntselect} placeholder='please enter order number' type="text" /></div>
-                 <div className='col'>
-                 <select  style={skubntselect} name="Order Status" id="">
-                     <option value="">Return Orders</option>
-                     <option value="">Incomplete Order information</option>
-                   
-                 </select> */}
-                 </div>
-             <div style={{marginTop:'20px'}}><p><button style={serchbtn}>Search</button><span><button style={Clearbtn} >Clear</button></span></p></div>
-           </div>
-            </div>
-         
-
-           
-           <div  style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1100px' }}>
-            <div className='row' style={{padding:'7px',backgroundColor:'#FDE31A',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px',width:'1100px',marginRight:'100px'}}>
-
-              <div className='col-md-auto'><button style={Order}>Your Order Number</button></div>
-              <div className='col'><button style={Order}>Order Source</button></div>
-              
-              <div className='col'><button style={Order}>Status</button></div>
-              <div className='col'><button style={Order}>Quantity</button></div>
-            
-            
-              <div className='col'><button style={Order}>Amount</button></div>
-              <div className='col'><button style={Order}>Action</button></div>
-
-
-            </div>
-           </div>
-           <DataTable 
+               
+          <DataTable 
         
         columns={coloumn} 
         data={filterUsers} 
@@ -410,14 +305,50 @@ const [success,setSuccess]=useState([])
       
         
       
-        // data={data}
-      />
+    
+      /> 
+
+
+             
+          </div>
+          </Tab.Panel>
+           <Tab.Panel>
+            
+            <div className='container'  style={{ display: 'block',color:'black',borderRadius:'30px'}}>
+                    <div style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
+                    <div className='Dashboardheading'><h3>Successful Orders</h3></div>
+                  <div className='row' style={{marginTop:'20px'}}>
+                    <div className='col'><input style={skubnt} type="date" /></div>
+                    <div style={{marginTop:'20px'}}><p><button style={serchbtn}>Search</button><span><button style={Clearbtn} >Clear</button></span></p></div>
+                  </div>
+              </div>
+              <div  className='container'  style={{overflowX:"auto",padding:'10px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
+              <DataTable 
+                
+                columns={coloumn} 
+                data={filterUsers} 
+                pagination
+                
+                customStyles={customStyles}
+                highlightOnHover
+              
+                
+              
+                // data={data}
+              />
+              </div>
+
+             
+                
+
            </div> 
            </Tab.Panel>
           
 
          </Tab.Panels>
    </Tab.Group>
+   </div>
+   <Dashboardfooter/>
    </div>
         </div>
       </div>

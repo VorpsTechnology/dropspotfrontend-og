@@ -66,7 +66,7 @@ function SellerMediaWishlist() {
       <div  id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll',margin:'20px'}}>
       <button data-toggle="collapse" data-target="#demo" className='Buttonstik'>Wishlist <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo" class="collapse">
+      <div id="demo" className="collapse">
 
       <div className='container' style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px'}}>
       <div align='center' style={{justifyContent:'center',padding:'20px'}}> <h2>WishList</h2> </div>

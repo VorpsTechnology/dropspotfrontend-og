@@ -8,6 +8,8 @@ import DataTable from 'react-data-table-component'
 import { Tab } from '@headlessui/react';
 import { getUser } from '../../Api/UserRequest';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
+import illustration from '../../assets/illustration.jpg'
 
 
 function Listed() {
@@ -68,6 +70,10 @@ const Product={
     padding:'30px',
 
   }
+
+ 
+
+
   const handelTabCLick = (e) => {
     setTabSelected(e);
   };
@@ -92,34 +98,34 @@ const userId=localStorage.getItem("userId")
       color: "gray",
       }},
     {name:"Image",selector:(row)=>(
-     <img style={{width:"7rem"}} src={"http://localhost:5007/images/"+row[0].image1} alt="No img" />
+     <img style={{width:"7rem"}} src={''} alt="No img" />
     ) ,style: {
         color: "gray",
         }},
-        {name:"Product Name",selector:(row)=>row[0].name,style: {
+        {name:"Product Name",selector:(row)=>row[0]?.name,style: {
           color: "gray",
           }},
         {name:"Store Name",selector:(row)=>`${row?.shopify}.myshopify.com `,style: {
          color: "gray",
          }},
         {name:"Price",selector:(row)=>
-          row[0].price
+          row[0] ?.price
        ,style: {
             color: "gray",
             }},
-            {name:"Listed Price",selector:(row)=>row[0].dropshipperPrice,style: {
+            {name:"Listed Price",selector:(row)=>row[0] ?.dropshipperPrice,style: {
               color: "gray",
               }},
     
-        {name:"Seller Name",selector:(row)=>row[0].
+        {name:"Seller Name",selector:(row)=>row[0]?. 
         sellerName,style: {
             color: "gray",
             }},
-          {name:"Category",selector:(row)=>row[0].category  ,style: {
+          {name:"Category",selector:(row)=>row[0]?.category  ,style: {
             color: "gray",
             }},
   
-        {name:"Listed Quantity",selector:(row)=>row[0].dropshipperQuantity,style: {
+        {name:"Listed Quantity",selector:(row)=>row[0]?.dropshipperQuantity,style: {
         color: "gray",
         }},
        
@@ -175,11 +181,11 @@ const userId=localStorage.getItem("userId")
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px'}}>
         <Adminnavbar />
-        <div className='row'>
+        <div className='row' style={{marginTop:'100px'}}>
             <div className='col-2' style={{backgroundColor:'#31343A'}}>
                 <Sidebar />
             </div>
-            <div className='col-10' style={{height:'800px'}}>
+            <div className='col-10' >
                 <div className='container' id="tabcontainer" style={{margin:'20px 0px 20px 10px',width:'1100px', padding:'20px',}}>
                 <div className='headingAll'><h2>Listing</h2></div>
                     <Tab.Group>
@@ -218,12 +224,25 @@ const userId=localStorage.getItem("userId")
        
                
          </div>
-         <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,overflowX:'scroll'}}>
-           <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
+         <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' }}>
+           <div style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'1000px' ,boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
              <div >
+             {filterUsers.length === 0 ? (
+              <div className='text-center' >
+                <img src={illustration} alt='illustration' style={{ width: '300px' }}/>
+              </div>
+            ) : (
+              <DataTable
+                columns={coloumn}
+                data={filterUsers}
+                pagination
+                customStyles={customStyles}
+                highlightOnHover
+              />
+            )}
           
             {/* {/* ACTION BUTTONS * REMOVE LISTING SECONDARY BUTTON * REQUEST PHOTOGRAPHY * PRE ORDER * /} */}
-               <DataTable 
+               {/* <DataTable 
         
         columns={coloumn} 
         data={filterUsers} 
@@ -235,7 +254,7 @@ const userId=localStorage.getItem("userId")
         
       
         // data={data}
-      />
+      /> */}
              </div>
            </div>
 
@@ -338,6 +357,7 @@ const userId=localStorage.getItem("userId")
                         
                     </Tab.Group>
                 </div>  
+                <Dashboardfooter />
             <div>
             
             </div>

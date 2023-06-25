@@ -11,7 +11,7 @@ function Authentication() {
   return (
     <div  style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px',height:'800px'}} >
         <Adminnavbar />
-        <div className='row'>
+        <div className='row' style={{marginTop:'100px'}}>
             <div className='col-2' style={{borderColor:"10px solid yellow;"}} >
                 <Sidebar />
             </div>

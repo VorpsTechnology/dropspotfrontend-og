@@ -80,7 +80,7 @@ function MediaWishlist() {
       <div   >
       <div  className='card' id='cardblockk'>
       <button style={{background:'transparent',borderColor:'transparent'}}  data-toggle="collapse" data-target="#demo">Order <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
-      <div id="demo" class="collapse">
+      <div id="demo" className="collapse">
  
  <div  className='card' id='cardblockkSublnk'>
       <button style={{background:'transparent',borderColor:'transparent'}} onClick={handleClickOrder}>Imported Orders</button>

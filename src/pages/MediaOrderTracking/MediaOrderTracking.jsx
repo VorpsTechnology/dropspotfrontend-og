@@ -62,7 +62,7 @@ function MediaOrderTracking() {
         <div className='container' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto',overflowX:'scroll'}}>
      <button className='Buttonstik' data-toggle="collapse" data-target="#demo">Order Tracking <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-        <div id="demo" class="collapse">
+        <div id="demo" className="collapse">
         
 
             <div align='center'><h2>Order Tracking</h2></div>

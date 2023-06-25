@@ -3,9 +3,7 @@
 .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 190px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
 }
@@ -23,19 +21,29 @@
     display:block
 }
 
-.dropbtnuser2{
-    background-color: transparent;
+.dropbtnuser6{
+    background-color:transparent;
     border-color: transparent;
     font-size: 15px;
     font-weight: 500;
     margin-left: 5px;
 }
+.dropbtnuser6:hover{
+    background-color: rgba(255, 214, 0, 1);  
+}
+
+.bttun:hover{
+    background-color: rgba(255, 214, 0, 1);   
+}
+.dropdownuser{
+    background-color: transparent;
+}
 .dropdown-contentuser{
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    
     min-width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
     z-index: 1;
     text-align: left;
     margin-left: 20px;

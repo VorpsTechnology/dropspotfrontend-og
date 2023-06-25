@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 import { useHistory } from "react-router-dom";
+import cancel from '../../assets/cancel.png'
+import trip from '../../assets/trip.png'
+import spe from '../../assets/spe.png'
+import newpro from '../../assets/newpro.png'
+import love from '../../assets/love.png'
+import cartsim from '../../assets/cartsim.png'
+import  camera from '../../assets/camera.png'
+import dashboard from '../../assets/dashboard.png'
 
 
 function SellerSidebar() {
@@ -106,19 +114,29 @@ const orderOptions=[]
 const cartOptions=[]
 return (
 
-<div  className='container-fluid table-bordered'  id="main" style={{height:'100%',width:'230px'}}  >
+<div  className='container-fluid'  id="main" style={{height:'100%',width:'230px'}}  >
 
 <div align='center' className="row " >  
             <div className="sidebar-offcanvas" id="sidebar" role="navigation"  >  
               <ul  className="flex-column pl-0 mt-4">
               <li >  
-                  <a> <button   className='dropbtnsubmenu' onClick={SellerDashboard}> Dashboard</button></a>  
+                  <a> <button   className='dropbtnsubmenu' onClick={SellerDashboard}>
+                  <div align='left' style={{display:'flex',textAlign:"left"}}>
+                  <div ><img src={dashboard} alt='dashboard'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}> Dashboard</div>
+                 </div>
+                   </button></a>  
                  
                 </li>  
                 <li className="nav-item">  
                   <a  > <button className='dropbtnsubmenu' onClick={()=>{
                     setOpenoProduct(!openProduct)
-                  }} >Manage Product</button></a>  
+                  }} >
+                    <div style={{display:'flex',textAlign:'left'}}>
+                   <div ><img src={newpro} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}>  Manage Product</div>
+                  </div>
+                 </button></a>  
                   <ul  >  
                     
                     
@@ -130,15 +148,30 @@ return (
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerInventory} className='dropbtnsubmenu' style={{color: inventoryButton ? "grey" : "black" }}>My inventory</button>  </a> </li> 
+                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerInventory} className='dropbtnsubmenu' style={{color: inventoryButton ? "grey" : "black" }}>
+                     <div style={{display:'flex',textAlign:'left'}}>
+                   <div ><img src={cartsim} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}> My inventory</div>
+                   </div> 
+                     </button>  </a> </li> 
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerWishlist} className='dropbtnsubmenu' style={{color: wishlist ? "grey" : "black" }}>Wishlist</button>  </a> </li> 
+                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerWishlist} className='dropbtnsubmenu' style={{color: wishlist ? "grey" : "black" }}>
+                     <div style={{display:'flex',textAlign:'left'}}>
+                   <div ><img src={love} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}>    Wishlist</div>
+                   </div>
+                    </button>  </a> </li> 
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href>  <button onClick={SellerPhotographyRequest} className='dropbtnsubmenu'style={{color: photograophy ? "grey" : "black" }}> My Photography</button> </a> </li> 
+                     <li className="nav-item pl-2"> <a className="nav-link" href>  <button onClick={SellerPhotographyRequest} className='dropbtnsubmenu'style={{color: photograophy ? "grey" : "black" }}>
+                     <div style={{display:'flex',textAlign:'left'}}>
+                  <div ><img src={camera} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}>    My Photography</div>
+                  </div>
+                    </button> </a> </li> 
 
                      </div>
                 </div>
@@ -148,17 +181,32 @@ return (
                 <li className="nav-item">  
                   <a > <button className='dropbtnsubmenu'  onClick={()=>{
                     setOpenoOrder(!openOrder)
-                  }}> Order</button></a>  
+                  }}><span><i className="fa-solid fa-truck-fast" style={{color: "#0f0f10"}}></i></span> Order</button></a>  
                   <ul >  
 
 {
   openOrder &&   <div>
   
   <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerOrderFullfillment} style={{color: orderfullfulfmt ? "grey" : "black" }} > Order Fullfillment</button> </a> </li>  
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerDispute} style={{color: disputes ? "grey" : "black" }}>Disputes </button> </a> </li> 
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerDispute} style={{color: disputes ? "grey" : "black" }}>
+                      <div style={{display:'flex',justifyContent:'space-evenly'}}>
+                  <div ><i className="fa-solid fa-messages-question" style={{color: "#0f0f10"}}></i></div>
+                  <div> Disputes</div>
+                 </div>
+                      </button> </a> </li> 
   
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerUndeleviredOrder} style={{color: rto ? "grey" : "black" }}>RTO / Cancellation</button> </a> </li>  
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerOrderTracking} style={{color: tracking ? "grey" : "black" }}>Orders Tracking</button>  </a> </li> 
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerUndeleviredOrder} style={{color: rto ? "grey" : "black" }}>
+                      <div style={{display:'flex',justifyContent:'space-evenly'}}>
+                  <div style={{padding:'10px 0px 0px 5px'}} ><img style={{height:'24px',width:'24px'}} src={cancel} alt='authentication'/> </div>
+                  <div> RTO / cancellation</div>
+                 </div>
+                  </button> </a> </li>  
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerOrderTracking} style={{color: tracking ? "grey" : "black" }}>
+                      <div style={{display:'flex',justifyContent:'space-evenly'}}>
+                   <div style={{padding:'10px 0px 0px 5px'}} ><img src={trip} alt='authentication'/></div>
+                  <div> Orders Tracking</div>
+                   </div>
+                     </button>  </a> </li> 
                       
   </div>
 }
@@ -167,7 +215,12 @@ return (
                 <li className="nav-item">  
                   <a > <button className='dropbtnsubmenu' onClick={()=>{
                     setOpenoCart(!openCart)
-                  }} >  Add To Cart</button> </a>  
+                  }} >
+                  <div style={{display:'flex',textAlign:'left'}}>
+                   <div ><img src={spe} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}>  Add To Cart</div>
+                   </div>
+                   </button> </a>  
                   <ul >  
                     {
                       openCart && <>
@@ -180,27 +233,7 @@ return (
                     }
                   </ul>  
                 </li>  
-                {/* <li className="nav-item">  
-                  <a className="nav-link" href="#submenu3" data-toggle="collapse" data-target="#submenu4"> <button className='dropbtnsubmenu'>Products</button> </a>  
-                  <ul className="list-unstyled flex-column pl-0 collapse" id="submenu4" aria-expanded="false">  
-                  <li className="nav-item pl-3"> <a className="nav-link" href> <button className='dropbtnsubmenu'  >Connection</button>  </a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link" href> <button className='dropbtnsubmenu' >Listed </button> </a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link" href> <button className='dropbtnsubmenu'  >SKU List</button>  </a> </li> 
-                    <li className="nav-item pl-3"> <a className="nav-link" href> <button className='dropbtnsubmenu'  > Service Product</button></a> </li> 
-                    
-                  </ul>  
-                </li>  */}
-                {/* <li className="nav-item">  
-                  <a className="nav-link" href="#submenu4" data-toggle="collapse" data-target="#submenu5"><button className='dropbtnsubmenu'> Authentication</button></a>  
-                  <ul className="list-unstyled flex-column pl-0 collapse" id="submenu5" aria-expanded="false">  
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'>Shopify</button> </a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'> Ebay </button></a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'> Etsy</button></a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'> Api</button> </a> </li> 
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'>dsfsdffsf</button> </a> </li>  
-                    <li className="nav-item pl-3"> <a className="nav-link " href> <button  className='dropbtnsubmenu'>sfdfsfsdf</button>  </a> </li> 
-                  </ul>  
-                </li>   */}
+               
                
               </ul>  
             </div>  

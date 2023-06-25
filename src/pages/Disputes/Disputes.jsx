@@ -3,6 +3,7 @@ import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import Sidebar from '../Sidebar/Sidebar'
 import 'bootstrap/dist/css/bootstrap.css';
 import './Disputes.css'
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 import { Tab } from '@headlessui/react';
 
@@ -106,9 +107,9 @@ const Disputes = () => {
     <div>
           <div  style={{backgroundColor:'#31343A'}}>
       <Adminnavbar />
-      <div className='row'>
+      <div className='row' style={{marginTop:'100px'}}>
         <div className='col-2'  ><Sidebar /></div>
-        <div className='col-10' style={{height:'800px'}}>
+        <div className='col-10' >
        
         <div className='container' id="tabcontainer" style={{margin:'20px 0px 20px 10px',width:'1100px', padding:'20px',}}>
         <div className='headingAll'><h2>Disputes</h2></div>
@@ -259,6 +260,7 @@ const Disputes = () => {
           </Tab.Panels>
     </Tab.Group>
       </div>
+      <Dashboardfooter/>
         </div>
       </div>
     

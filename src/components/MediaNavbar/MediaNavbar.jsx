@@ -46,9 +46,9 @@ function MediaNavbar() {
  >
    {
      isMobile ? (
-      <i class="fa fa-close"></i>
+      <i className="fa fa-close"></i>
      ):(
-      <i class="fa fa-bars"></i>
+      <i className="fa fa-bars"></i>
      )
    }
  </button>

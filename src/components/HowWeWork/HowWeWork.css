@@ -1,0 +1,12 @@
+.store h4{
+font-weight: 650;
+font-size: 18px;
+padding: 8px;
+}
+
+.Inter{
+   background-color:#FFFFFF;
+   padding:8px;
+   border-radius:30px; 
+   box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15) ;
+}

@@ -7,12 +7,7 @@ import './ImportedOrder.css'
 import DataTable from 'react-data-table-component';
 import {  changeAwaitingpayment, changependingstatus, changeprocessingstatus, myOrders, mypreOrders, myshopifyOrders, preOrderFullFill} from "../../Api/OrderRequest";
 import swal from 'sweetalert';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import { payment } from '../../Api/paymentRequest';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 
 
@@ -527,9 +522,9 @@ const coloumn=[
     <>
     <div style={{backgroundColor:'#32333A'}}>
       <Adminnavbar />
-      <div className='row'>
+      <div className='row' style={{marginTop:'100px'}}>
         <div className='col-2'  style={{backgroundColor:'#31343A'}}><Sidebar /></div>
-        <div className='col-10' style={{height:'800px'}}>
+        <div className='col-10' >
        
         <div className='container' id="tabcontainer" style={{margin:'20px 0px 20px 10px',width:'1100px', padding:'20px',}}>
         <div className='headingAll'><h2>Imported Order</h2></div>
@@ -749,8 +744,9 @@ const coloumn=[
           </Tab.Panels>
     </Tab.Group>
       </div>
-      
+      <Dashboardfooter/>
         </div>
+       
       </div>
     </div>
   

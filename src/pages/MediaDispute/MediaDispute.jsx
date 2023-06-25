@@ -113,7 +113,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo1">Awaiting Response<span style={{float:'right'}}><img src={leftarrow} alt="" /></span> </button>
 
-      <div id="demo1" class="collapse">
+      <div id="demo1" className="collapse">
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Awaiting Response</h3></div>
@@ -170,7 +170,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo2">Completed <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo2" class="collapse">
+      <div id="demo2" className="collapse">
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Completed </h3></div>
@@ -224,7 +224,7 @@ export default function BasicTabs() {
       <div className='container-fluid' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',width:'auto'}}>
       <button className='Buttonstik' data-toggle="collapse" data-target="#demo3">Closed <span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
 
-      <div id="demo3" class="collapse">
+      <div id="demo3" className="collapse">
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Closed </h3></div>

@@ -92,8 +92,8 @@ function Section() {
     <>
     <div id='SectionContainer'>
 
-        <div className="flex-conatainer"  style={{display:'flex',justifyContent:'space-evenly',width:'100%',padding:'20px'}}>
-          <div className="flex-item-left" style={{justifyContent:'left'}}>
+        <div  className="row"  style={{display:'flex',width:'100%',padding:'20px',justifyContent:'center'}}>
+          <div className="col-3" style={{justifyContent:'left'}}>
           <div >
                 <div align="center" className="flexutemcenter" style={{backgroundColor:'#FFD600',padding:'10px',height:'50px',marginTop:'3px'}}>All Catogries</div>
               </div>
@@ -164,13 +164,13 @@ function Section() {
 
 
           </div>
-          <div className="flex-item-center" style={{justifyContent:'center'}}>
+          <div className="col-9">
           <div id="myCarousel" className="carousel slide" data-ride="carousel">
             {/* Indicators */}
             <ol className="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to={0} className="active" />
-              <li data-target="#myCarousel" data-slide-to={1} />
-              <li data-target="#myCarousel" data-slide-to={2} />
+              <li data-target="#myCarousel" style={{width:'20px'}} data-slide-to={0} className="active" />
+              <li data-target="#myCarousel" style={{width:'20px'}} data-slide-to={1} />
+              <li data-target="#myCarousel" style={{width:'20px'}} data-slide-to={2} />
             </ol>
             {/* Wrapper for slides */}
             <div className="carousel-inner" id="carasouelsection" style={{height:'470px'}}>
@@ -186,7 +186,7 @@ function Section() {
             </div>
           </div>
           </div>
-          <div className="flex-item-right6" style={{justifyContent:'right'}}>
+          {/* <div className="flex-item-right6" style={{justifyContent:'right'}}>
           <div className="container" id="carasouelsection" style={{padding:'10px 40px 10px 40px'}} >
             <div align="center" style={{margin:'5px 5px 5px 5px'}}><h3>How we work</h3></div>
           <div className="row"  >
@@ -235,25 +235,11 @@ function Section() {
           </div>
           </div>
 
-          </div>
+          </div> */}
         </div>
 
      </div>
 
-
-
-
-
-
-
-
-
-
-
-    
-    
-  
-   
   </>
   );
 }

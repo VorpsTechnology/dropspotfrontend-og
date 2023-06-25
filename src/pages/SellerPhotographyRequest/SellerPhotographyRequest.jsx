@@ -20,7 +20,7 @@ function SellerPhotographyRequest() {
   return (
   <>
   <Adminnavbar />
-  <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px'}}>
+  <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px',marginTop:'100px'}}>
     <div className='col-2' >
         <SellerSidebar />
     </div>

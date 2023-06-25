@@ -196,7 +196,7 @@ const coloumn=[
   return (
     <>
     <Adminnavbar />
-    <div className='row' style={{backgroundColor:'#32333A'}}>
+    <div className='row' style={{backgroundColor:'#32333A',marginTop:'100px'}}>
         <div className='col-2' ><SellerSidebar /></div>
         <div className='col-10'>
        

@@ -70,7 +70,7 @@ function MediaSellerDashboard() {
     <div   className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}}  data-toggle="collapse" data-target="#demo">Manage Product<span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
     </div>
-    <div id="demo" class="collapse">
+    <div id="demo" className="collapse">
     <div  className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}} onClick={MediaSourching}>Sourching</button>
     </div>
@@ -88,7 +88,7 @@ function MediaSellerDashboard() {
     <div   className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}}  data-toggle="collapse" data-target="#demo2">Order<span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
     </div>
-    <div id="demo2" class="collapse">
+    <div id="demo2" className="collapse">
     <div  className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}} onClick={sellerOrderMediaFullfillment}>Order Fullfillment</button>
     </div>
@@ -106,7 +106,7 @@ function MediaSellerDashboard() {
     <div   className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}}  data-toggle="collapse" data-target="#demo3">Add To Cart<span style={{float:'right'}}><img src={leftarrow} alt="" /></span></button>
     </div>
-    <div id="demo3" class="collapse">
+    <div id="demo3" className="collapse">
     <div  className='card' id='cardblockk'>
     <button style={{background:'transparent',borderColor:'transparent'}}>Purchase Cart</button>
     </div>

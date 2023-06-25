@@ -53,7 +53,7 @@ function PurchaseCart() {
       <div>
         <Adminnavbar />
       </div>
-      <div className="row">
+      <div className="row" style={{marginTop:'100px'}}>
         <div className="col-2"  >
           <Sidebar />
         </div>
