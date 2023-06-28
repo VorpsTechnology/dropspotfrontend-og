@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar'
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
 import Footer from '../../components/Footer/Footer'
 import smart from '../../assets/smart.png'
+import './SellerLogin.css'
 import { useHistory} from 'react-router-dom';
 
 function SellerLogin() {
@@ -12,7 +13,7 @@ function SellerLogin() {
     <Navbar />
     <MediaNavbar />
 
-   
+   <br />
     <div className='flex-conatiner00' style={{backgroundColor:'rgba(255, 214, 0, 1)',borderTopLeftRadius:'20px',borderTopRightRadius:'20px'}}  >
     <div style={{paddingTop:'40px'}}>
                           <button style={{width:"100px"}}  className='backbtn' onClick={()=>{
@@ -20,7 +21,7 @@ function SellerLogin() {
                           }} > Back</button>
                           </div>
   
-     <div align='center' className='flex-item-left00' >
+     <div align='center' className='flex-item-left00' style={{marginBottom:'30px'}} >
       
         <div align="center" style={{paddingTop:'40px',paddingBottom:'40px',textShadow:"0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
           <h1>Login</h1></div>
@@ -118,8 +119,7 @@ function SellerLogin() {
      </div>
   
     </div>
-    <br />
-    <br />
+  
     <Footer />
  
   </div>

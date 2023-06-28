@@ -17,8 +17,7 @@ function SellerSignup() {
     <Navbar />
     <Shopnavbar />
     <MediaNavbar />
-    <br />
-    <br />
+  
 
        <div className='container-fluid' style={{backgroundColor:'rgba(255, 214, 0, 1)',borderTopLeftRadius:'20px',borderTopRightRadius:'20px'}}>
               <div className='backbbtn'  >

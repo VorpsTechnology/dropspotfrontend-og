@@ -1,0 +1,20 @@
+.flex-conatiner00{
+   padding:0px 0px 0px 0px
+}
+
+@media (min-width:360px) and (max-width:640px){
+    .flex-conatiner00{
+        padding:5px 0px 50px 0px;
+        background-color:rgba(255, 214, 0, 1);
+     }
+      
+}
+
+
+@media screen and (max-width: 500px){
+    .flex-conatiner00{
+        padding:5px 0px 50px 0px;
+        background-color:rgba(255, 214, 0, 1);
+     }
+       
+}
