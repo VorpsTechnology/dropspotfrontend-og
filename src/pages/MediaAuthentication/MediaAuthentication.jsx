@@ -4,12 +4,21 @@ import ebay from '../../assets/ebay.png'
 import wcom from '../../assets/wcom.png'
 import etc from '../../assets/etc.png'
 import './MediaAuthentication.css'
+import { useHistory} from 'react-router-dom';
 
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
+
+
 function MediaAuthentication() {
+    const history = useHistory();
   return (
    <>
     <MediaNavbar />
+    <div className='btnbtnbtn' style={{margin:'20px 0px 20px 20px'}}  >
+    <button className='backbtnmedia'  style={{width:"100px"}}   onClick={()=>{
+      history.push("/")
+    }} > Back</button>
+</div>
     <div>
               <div className='container' id="tabcontainer" style={{margin:'10px 20px 10px 10px',width:'auto', padding:'30px'}}>
                     <div className='flexlmedia'>
@@ -21,7 +30,7 @@ function MediaAuthentication() {
                         </div>
                         <div className='flnmedia'><button>Connect with shopify</button></div>
                     </div>
-                    <hr />
+                    {/* <hr />
                     <div className='flexlmedia'>
                         <div className='flexkmedia'>
                         <div align='center'>
@@ -50,7 +59,7 @@ function MediaAuthentication() {
                             </div>
                            </div>
                         <div className='flnmedia'><button>Connect with ebay </button></div>
-                    </div>
+                    </div> */}
                   
                 </div>
     </div>

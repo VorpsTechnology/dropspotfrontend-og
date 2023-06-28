@@ -1,11 +1,12 @@
-import * as React from 'react';
+import  React ,{useState} from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
+import './MediaDispute.css'
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
+import { useHistory} from 'react-router-dom';
 import leftarrow from '../../assets/leftarrow.png'
 
 const serchbtn={
@@ -98,15 +99,40 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
+  const handelTabCLick = (e) => {
+    setTabSelected(e);
+  };
+  const [tabSelected, setTabSelected] = useState(null);
+  const history = useHistory();
+  
+ 
   return (
 <div>
   <MediaNavbar />
+  <div className='btnbtnbtn' style={{margin:'20px 0px 20px 20px'}}  >
+    <button className='backbtnmedia'  style={{width:"100px"}}   onClick={()=>{
+      history.push("/")
+    }} > Back</button>
+</div>
 <Box sx={{ width: '100%',paddingBottom:'100px' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Awaiting Response" {...a11yProps(0)} />
-          <Tab label="Completed Order" {...a11yProps(1)} />
-          <Tab label="Closed" {...a11yProps(2)} />
+        <Tabs
+         TabIndicatorProps={{
+            style: {
+              backgroundColor: "#FDE31A",
+              color: "#FDE31A",
+            }
+          }} 
+         value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tab
+             className={`tabbtnmedia ${tabSelected === 1 ? "selected-tabmedia" : ""}`}
+           label="Awaiting Response" {...a11yProps(0)} />
+          <Tab 
+             className={`tabbtnmedia ${tabSelected === 2 ? "selected-tabmedia" : ""}`}
+          label="Completed Order" {...a11yProps(1)} />
+          <Tab 
+             className={`tabbtnmedia ${tabSelected === 3 ? "selected-tabmedia" : ""}`}
+          label="Closed" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -117,7 +143,7 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Awaiting Response</h3></div>
-         <div align='center' className='row' style={{marginTop:'20px'}}>
+         <div align='left' className='row' style={{marginTop:'20px'}}>
          <div style={{marginTop:'20px'}} ><input  style={skubnt} type="date" /></div>
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
@@ -131,7 +157,7 @@ export default function BasicTabs() {
             <input  style={skubnt} type="text" placeholder='Please enter order number' /> 
             </div>
           </div>
-          <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+          <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
          </div>
      
       </div>
@@ -174,9 +200,9 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Completed </h3></div>
-        <div align='center' style={{marginTop:'20px'}} ><input  style={skubnt} type="date" /></div>
+        <div align='left' style={{marginTop:'20px'}} ><input  style={skubnt} type="date" /></div>
         <div style={{marginTop:'20px'}}><input   style={skubnt} type="text" placeholder='abnormal order' /></div>
-         <div align='center' className='row' >
+         <div align='left' className='row' >
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
                 <option value="">All</option>
@@ -186,7 +212,7 @@ export default function BasicTabs() {
               </div>
         
           </div>
-          <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+          <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
            
          </div>
       
@@ -228,9 +254,9 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Closed </h3></div>
-        <div align='center' style={{marginTop:'20px'}} ><input  style={skubnt} type="date" /></div>
+        <div align='left' style={{marginTop:'20px'}} ><input  style={skubnt} type="date" /></div>
         <div style={{marginTop:'20px'}}><input   style={skubnt} type="text" placeholder='abnormal order' /></div>
-         <div align='center' className='row' >
+         <div align='left' className='row' >
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
                 <option value="">All</option>
@@ -241,7 +267,7 @@ export default function BasicTabs() {
         
           </div>
          
-          <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+          <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
          </div>
           
       </div>

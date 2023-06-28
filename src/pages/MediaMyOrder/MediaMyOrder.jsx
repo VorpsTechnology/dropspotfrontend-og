@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React ,{useState} from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
 import leftarrow from '../../assets/leftarrow.png'
+import { useHistory} from 'react-router-dom';
 
 const serchbtn={
   backgroundColor:'#FDE31A',
@@ -60,8 +61,10 @@ function TabPanel(props) {
 
   
   const { children, value, index, ...other } = props;
-
+ 
   return (
+   
+
     <div
       role="tabpanel"
       hidden={value !== index}
@@ -97,16 +100,44 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const handelTabCLick = (e) => {
+    setTabSelected(e);
+  };
+  const [tabSelected, setTabSelected] = useState(null);
+  const history = useHistory();
 
   return (
 <div>
   <MediaNavbar />
+  <div className='btnbtnbtn' style={{margin:'20px 0px 20px 20px'}}  >
+    <button className='backbtnmedia'  style={{width:"100px"}}   onClick={()=>{
+      history.push("/")
+    }} > Back</button>
+</div>
 <Box sx={{ width: '100%',paddingBottom:'100px' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Order" {...a11yProps(0)} />
-          <Tab label="Invalid Order" {...a11yProps(1)} />
-          <Tab label="Declined" {...a11yProps(2)} />
+        <Tabs
+         
+         
+          TabIndicatorProps={{
+            style: {
+              backgroundColor: "#FDE31A",
+              color: "#FDE31A",
+            }
+          }} 
+         value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tab 
+           className={`tabbtnmedia ${tabSelected === 1 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(1)} 
+          label="Order" {...a11yProps(0)} />
+          <Tab label="Invalid Order"
+           className={`tabbtnmedia ${tabSelected === 2 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(1)} 
+           {...a11yProps(1)} />
+          <Tab label="Declined"
+           className={`tabbtnmedia ${tabSelected === 3 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(2)} 
+           {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -117,7 +148,7 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Orders</h3></div>
-         <div align='center' className='row' style={{marginTop:'20px'}}>
+         <div align='left' className='row' style={{marginTop:'20px'}}>
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
                 <option value="">Your Order Time</option>
@@ -134,15 +165,15 @@ export default function BasicTabs() {
               </select>
             </div>
           </div>
-          <div align='center' className='row'  style={{marginTop:'20px'}} >
+          <div align='left' className='row'  style={{marginTop:'20px'}} >
                   <div style={{marginTop:'20px'}}><input   style={skubnt} type="text" placeholder='Please enter the name' /></div>
                   <div style={{marginTop:'20px'}} ><input style={skubnt}  type="text" placeholder='Please enter the product title' /></div>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter SKU' /></div>
                 </div>
-                <div className='row'  style={{marginTop:'20px'}}>
+                <div align='left'  className='row'  style={{marginTop:'20px'}}>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter order number' /></div>
                   <div  style={{marginTop:'20px'}}><input style={skubnt} type="text"  placeholder='Abnormal Orders' /></div>
-                  <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+                  <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
                 </div>
          </div>
          
@@ -186,7 +217,7 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Invalid Order</h3></div>
-         <div align='center' className='row' style={{marginTop:'20px'}}>
+         <div align='left' className='row' style={{marginTop:'20px'}}>
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
                 <option value="">Your Order Time</option>
@@ -203,7 +234,7 @@ export default function BasicTabs() {
               </select>
             </div>
           </div>
-          <div align='center' className='row'  style={{marginTop:'20px'}} >
+          <div align='left' className='row'  style={{marginTop:'20px'}} >
                   <div style={{marginTop:'20px'}}><input   style={skubnt} type="text" placeholder='Please enter the name' /></div>
                   <div style={{marginTop:'20px'}} ><input style={skubnt}  type="text" placeholder='Please enter the product title' /></div>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter SKU' /></div>
@@ -211,7 +242,7 @@ export default function BasicTabs() {
                 <div className='row'  style={{marginTop:'20px'}}>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter order number' /></div>
                   <div  style={{marginTop:'20px'}}><input style={skubnt} type="text"  placeholder='Abnormal Orders' /></div>
-                  <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+                  <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
                 </div>
          </div>
           
@@ -253,7 +284,7 @@ export default function BasicTabs() {
 
       <div className='container' >
             <div className='Dashboardheading'><h3>Declined </h3></div>
-         <div align='center' className='row' style={{marginTop:'20px'}}>
+         <div align='left' className='row' style={{marginTop:'20px'}}>
             <div style={{marginTop:'20px'}} >
               <select style={skubnt} name="name" id="value">
                 <option value="">Your Order Time</option>
@@ -270,7 +301,7 @@ export default function BasicTabs() {
               </select>
             </div>
           </div>
-          <div align='center' className='row'  style={{marginTop:'20px'}} >
+          <div align='left' className='row'  style={{marginTop:'20px'}} >
                   <div style={{marginTop:'20px'}}><input   style={skubnt} type="text" placeholder='Please enter the name' /></div>
                   <div style={{marginTop:'20px'}} ><input style={skubnt}  type="text" placeholder='Please enter the product title' /></div>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter SKU' /></div>
@@ -278,7 +309,7 @@ export default function BasicTabs() {
                 <div className='row'  style={{marginTop:'20px'}}>
                   <div style={{marginTop:'20px'}} ><input  style={skubnt} type="text" placeholder='Please enter order number' /></div>
                   <div  style={{marginTop:'20px'}}><input style={skubnt} type="text"  placeholder='Abnormal Orders' /></div>
-                  <div align='center' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
+                  <div align='left' style={{marginTop:'20px'}} ><p><span style={{margin:'10px'}}><button style={serchbtn}>Search</button></span><button style={Clearbtn}>Clear</button></p></div>
                 </div>
          </div>
           

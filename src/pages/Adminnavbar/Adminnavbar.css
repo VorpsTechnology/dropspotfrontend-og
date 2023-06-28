@@ -7,6 +7,18 @@
     
 }
 
+.dropbtnusercategory h4{
+  background-color: transparent;
+  border-color: transparent;
+  color: #FDE31A;
+  font-weight: 500;
+  font-size: 18px;
+}
+.dropbtnusercategory {
+  background-color: transparent;
+  border-color: transparent;
+ 
+}
  #Admindashboard{
     background-color: #32333A;
    height: 100px;
@@ -28,13 +40,33 @@
 }
 
 
+.desktopul{
+  display:flex;
+}
 
+.desktopul .desktopulli{
+  margin: 20px;
+  color: #FDE31A;
+  font-weight: 500;
+ 
+}
+.desktopul .desktopulli h4 a{
+
+  font-size: 18px;
+  color: #FDE31A;
+  font-weight: 500;
+}
 .flex-item-right120{
     justify-content: right;
     color: rgba(255, 255, 255, 1);
     padding: 24px 0px 0px 0px;
    
 
+}
+
+.desktopul20 .desktopulli{
+
+  font-weight: 500;
 }
 
 .username{
@@ -55,27 +87,34 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow:grey 0px 48px 100px 0px;
+    
   }
   
   .dropdownuser {
     position: relative;
     display: inline-block;
-    box-shadow:grey 0px 48px 100px 0px;
+
   }
   
   .dropdown-contentuser {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 130px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 180px;
+    
     z-index: 1;
     text-align: left;
     margin-left: 20px;
     border-radius: 5px;
     
   }
+  .dropbtnuser2{
+    background-color: transparent;
+    border-color:transparent ;
+  }
+  .dropbtnuser2 a{
+    font-size: 13px;
+  } 
   
   .dropdown-contentuser a {
     color: black;
@@ -84,6 +123,16 @@
     display: block;
     font-size: 15px;
     text-decoration: none;
+   
+  }
+  .dropdown-contentuser a:hover {
+    color: white;
+  }
+ 
+  .dropdown-contentuser  .droplink{
+    font-size: 15px;
+    font-weight: 650;
+
   }
   
   .dropdown-contentuser a:hover {background-color: rgba(50, 51, 58, 1);color:white}

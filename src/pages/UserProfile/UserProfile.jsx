@@ -9,6 +9,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Footer from '../../components/Footer/Footer'
 import './UserProfile.css'
 
 function UserProfile() {
@@ -180,16 +181,7 @@ function UserProfile() {
             
        </div>
           </div>
-          <div className='container'id="carasouelsection" style={{padding:'40px',marginTop:'40px'}} >
-          
-            <div className='flexcontainer'>
-              
-              <div className='flexleft'>
-              <div  ><h4 style={{marginLeft:'10px'}}>Whatsup</h4></div>
-                <p className='labelcil' style={{marginTop:'20px'}}>To directly communicate with your agent via WhatsAPP</p></div>
-              <div className='flexright'><button className='contactbtn'>Contact us</button></div>
-            </div>
-          </div>
+        
           
         </Tab.Panel>
         <Tab.Panel>   
@@ -303,6 +295,7 @@ function UserProfile() {
       </Tab.Panels>
     </Tab.Group>
    </div>
+   <Footer/>
     </div>
   )
 }

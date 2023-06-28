@@ -15,7 +15,7 @@ function MyDropspot() {
 
 
 
-
+  document.body.style.backgroundColor = "#32333A"
    const history=useHistory()
    useEffect(() => {
    const userInfo = localStorage.getItem("userInfo");
@@ -29,12 +29,12 @@ function MyDropspot() {
      }
    }, []);
 
- 
+
   return (
     <div>
       <Adminnavbar />
       <div style={{backgroundColor:'#32333A'}}>
-        <div className='row' style={{marginTop:'100px'}}>
+        <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
           <div className='col-2' >
             <Sidebar />
           </div>
@@ -192,16 +192,16 @@ function MyDropspot() {
             <div className='row' style={{margin:'20px'}}>
               <div className='col-xl-6 col-sm-6 mb-xl-0 mb-4'>
                 <div className='card'  style={{borderRadius:"20px"}}>
-                  <div className='card-body p-3'>
+                  <div align='center' className='card-body ' >
                   
-              <div  align='center'> 
+              
                     <div >
                     <img src={pro} alt='wallet'/>
                     </div>
-                    <div className='text-center' style={{padding:'3px 0px 0px 20px'}}>
-                   <b>Profile</b> 
+                    <div align='center'>
+                   <b>profile</b>
                     </div>
-              </div>
+         
              <div align='center'>
              <div style={{justifyContent:'center',margin:'10px 5px 5px 5px'}}  className='row'>
                 <div className='col-4'> <b> Name</b></div>
@@ -230,8 +230,8 @@ function MyDropspot() {
                 <div >
                 <img src={shop} alt='wallet'/>
                 </div>
-                <div className='text-center' style={{padding:'3px 0px 0px 20px'}}>
-                <b>Need Support And Domentation</b> 
+                <div className='text-center'>
+                <button className='storebtn'>Connect with store</button>
                 </div>
               </div>
                   
@@ -260,12 +260,14 @@ function MyDropspot() {
                </div>
             </div> */}
               </div>
-       <Dashboardfooter/>
-           
+    
           </div>
+          
         </div>
-
+      
       </div>
+   
+      <Dashboardfooter/>
    
     </div>
   )

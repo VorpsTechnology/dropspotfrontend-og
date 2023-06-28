@@ -236,8 +236,8 @@ function Mediabutton() {
        
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button className='cancelbutton' onClick={handleClose}> <h6 style={{color:'black'}}> <b> Cancel</b></h6> </Button>
+          <Button  onClick={handleClose}><h6 style={{color:'#FDE31A'}}> <b>Open</b> </h6></Button>
         </DialogActions>
       </Dialog>
             <div>
@@ -256,6 +256,9 @@ function Mediabutton() {
         
           
           
+        </div>
+        <div align='center'>
+         <button className='btnwork'>How We Work</button> 
         </div>
       </div>
     </div>

@@ -148,7 +148,7 @@ useEffect(()=>{
     <div className='container-fluid '  id="main"  >
     
          
-          <div align='center' className="row " >  
+          <div align='center' className="row" style={{marginBottom:'200px'}} >  
             <div className="sidebar-offcanvas" id="sidebar" role="navigation">  
               <ul className="flex-column pl-0 mt-4">
               <li  >  
@@ -353,8 +353,8 @@ useEffect(()=>{
                 </li>  */}
               </ul>  
             </div>  
-          </div> 
-          <div className='sidenav-footer mx-3'>
+            <div className='row'>
+            <div className='sidenav-footer mx-3'>
           <div className="card " id="sidenavCard">
 <div className="full-background" ></div>
 <div className="card-body text-start p-2 w-100">
@@ -365,11 +365,14 @@ useEffect(()=>{
 <h6 align='center' className="text-white up mb-0">Need help?</h6>
 <p align='center' className="text-xs font-weight-bold">Please check our docs</p>
 
-<div align='center'><a  target="_blank" className="dobtn btn-white btn-sm w-100 mb-0 " >Documentation</a></div>
+<div align='center' style={{margin:'0px 0px 10px 0px'}}><a  target="_blank" className="dobtn btn-white btn-sm w-100 mb-0 " >Documentation</a></div>
 </div>
 </div>
 </div>
           </div>
+            </div>
+          </div> 
+          
          
         
         </div>

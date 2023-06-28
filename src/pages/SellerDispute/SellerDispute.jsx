@@ -9,7 +9,9 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import './SellerDispute.css'
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 function SellerDispute() {
+  document.body.style.backgroundColor = "#32333A"
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -100,7 +102,7 @@ function SellerDispute() {
   return (
    <>
    <Adminnavbar />
-   <div className='row'  style={{backgroundColor:'#31343A',marginTop:'100px'}}>
+   <div className='row'  style={{backgroundColor:'#31343A',marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2' ><SellerSidebar /></div>
         <div className='col-10'>
        
@@ -301,6 +303,9 @@ function SellerDispute() {
     </Tab.Group>
       </div>
         </div>
+      </div>
+      <div className='row'>
+        <Dashboardfooter/>
       </div>
    </>
   )

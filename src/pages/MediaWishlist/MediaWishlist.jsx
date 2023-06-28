@@ -71,9 +71,9 @@ function MediaWishlist() {
        </div>
       </div>
  <div className='container' style={{backgroundColor:'#FFFEFA',marginBottom:'100px'}}>
- <div className='card' onClick={handleClickCart} id='cardblockk'>
+ {/* <div className='card' onClick={handleClickCart} id='cardblockk'>
         <h6>Wallet<span style={{float:'right'}}><img src={leftarrow} alt="" /></span></h6>
-      </div>
+      </div> */}
       
 
      

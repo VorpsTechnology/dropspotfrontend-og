@@ -6,8 +6,10 @@ import { Tab } from "@headlessui/react";
 import { useHistory } from "react-router-dom";
 import { allOrders, myOrders } from "../../Api/OrderRequest";
 import DataTable from 'react-data-table-component';
+import Dashboardfooter from "../../components/Dashboardfooter/Dashboardfooter";
 
 function SellerCart() {
+  document.body.style.backgroundColor = "#32333A"
 
   const [tabSelected, setTabSelected] = useState(null);
 
@@ -115,11 +117,11 @@ const userId=localStorage.getItem("userId")
   return (
    <>
    <Adminnavbar />
-<div className="row" style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px',marginTop:'100px'}}>
+<div className="row" style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px',marginTop:'100px',marginBottom:'100px'}}>
 <div className='col-2' >
     <SellerSidebar />
    </div>
-   <div className='col-10' style={{height:'800px'}}>
+   <div className='col-10' >
    <div
             className="container"
             id="tabcontainer"
@@ -184,6 +186,9 @@ const userId=localStorage.getItem("userId")
       />
           </div>
    </div>
+</div>
+<div className="row">
+  <Dashboardfooter/>
 </div>
    </>
   )

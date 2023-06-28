@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react'
 import { allclosedorders, allprocessing, allprocessingOrders, myshopifyOrders } from '../../Api/OrderRequest';
 function OrderTracking() {
+  document.body.style.backgroundColor = "#32333A"
   const Clearbtn={
     backgroundColor:'black',
     borderColor:'transparent',
@@ -225,7 +226,7 @@ const [success,setSuccess]=useState([])
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px'}}>
         <Adminnavbar />
-        <div className='row'  style={{marginTop:'100px'}}>
+        <div className='row'  style={{marginTop:'100px',marginBottom:'100px'}}>
             <div className='col-2'   >
                 <Sidebar />
             </div>
@@ -348,8 +349,11 @@ const [success,setSuccess]=useState([])
          </Tab.Panels>
    </Tab.Group>
    </div>
-   <Dashboardfooter/>
+
    </div>
+        </div>
+        <div className='row'>
+          <Dashboardfooter />
         </div>
       </div>
   )

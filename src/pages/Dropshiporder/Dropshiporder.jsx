@@ -7,7 +7,7 @@ import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 import swal from 'sweetalert';
 function Dropshiporder() {
 
-
+  document.body.style.backgroundColor = "#32333A"
 
     const skubnt={
         width:'300px',
@@ -258,7 +258,7 @@ function Dropshiporder() {
   return (
     <div  style={{backgroundColor:'#31343A',padding:'0px 0px  0px'}}>
         <Adminnavbar />
-        <div className='row'  style={{marginTop:'100px'}}>
+        <div className='row'  style={{marginTop:'100px',marginBottom:'100px'}}>
             <div className='col-2' style={{backgroundColor:'#32333A'}}><Sidebar /></div>
             <div className='col-10'  >
              <div className='container' id='tabcontainer' style={{  display: 'block',color:'black',borderRadius:'20px',width:'auto',margin:'20px 20px 20px 20px', border:"0.5px solid rgba(0, 0, 0, 0.25)" ,
@@ -339,9 +339,12 @@ function Dropshiporder() {
       />
                </div>
              </div>
-             <Dashboardfooter />
+            
             </div>
 
+        </div>
+        <div className='row'>
+          <Dashboardfooter />
         </div>
       
     </div>

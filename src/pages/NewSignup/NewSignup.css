@@ -34,7 +34,7 @@ margin-left: 50px;
         color: black;
         margin-bottom: 20px;
         width: 120px;  
-        border-radius: 20px;
+        border-radius: 10px;
         padding: 10px;
     }
 
@@ -63,7 +63,7 @@ margin-left: 50px;
     .backbtn{
         background-color: white;
         border-color: transparent;
-        border-radius: 20px;
+        border-radius: 10px;
         font-weight: 800;
         font-size: 15px;
         color: black;
@@ -128,7 +128,7 @@ margin-left: 50px;
                 .backbtn{
                     background-color: white;
                     border-color: transparent;
-                    border-radius: 20px;
+                    border-radius: 10px;
                     font-weight: 800;
                     font-size: 15px;
                     color: black;
@@ -163,7 +163,7 @@ margin-left: 50px;
                 .backbtn{
                     background-color: white;
                     border-color: transparent;
-                    border-radius: 20px;
+                    border-radius: 10px;
                     font-weight: 800;
                     font-size: 15px;
                     color: black;

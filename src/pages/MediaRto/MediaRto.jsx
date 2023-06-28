@@ -1,13 +1,12 @@
 
-
-
-
-import * as React from 'react';
+import  React , {useState} from 'react';
+import '../MediaMyOrder/MediaMyOrder.css'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { useHistory} from 'react-router-dom';
 
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
 import leftarrow from '../../assets/leftarrow.png'
@@ -136,10 +135,18 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const [tabSelected, setTabSelected] = useState(null);
+  const history = useHistory();
+
 
   return (
 <div>
   <MediaNavbar />
+  <div className='btnbtnbtn' style={{margin:'20px 0px 20px 20px'}}  >
+    <button className='backbtnmedia'  style={{width:"100px"}}   onClick={()=>{
+      history.push("/")
+    }} > Back</button>
+</div>
 <Box sx={{ width: '100%',paddingBottom:'100px' }}>
       <Box sx={{ maxWidth: { xs: 'auto', sm: 'auto' }, bgcolor: 'background.paper' }}>
         <Tabs
@@ -148,14 +155,38 @@ export default function BasicTabs() {
          variant="scrollable"
          scrollButtons="auto"
          aria-label="scrollable auto tabs example"
+         TabIndicatorProps={{
+            style: {
+              backgroundColor: "#FDE31A",
+              color: "#FDE31A",
+            }
+          }} 
+          
+          
         >
-          <Tab  label="Awaiting Pickup" {...a11yProps(0)} />
-          <Tab label="Processed" {...a11yProps(1)} />
-          <Tab label="Awaiting Payments" {...a11yProps(2)} />
-          <Tab label="Paid" {...a11yProps(3)} />
-          <Tab label="Closed" {...a11yProps(4)} />
-          <Tab label="Expired" {...a11yProps(5)} />
-          <Tab label="Abnormal Order" {...a11yProps(6)} />
+          <Tab 
+           className={`tabbtnmedia ${tabSelected === 1 ? "selected-tabmedia" : ""}`}
+            label="Awaiting Pickup" {...a11yProps(0)} />
+          <Tab
+          className={`tabbtnmedia ${tabSelected === 2 ? "selected-tabmedia" : ""}`}
+           label="Processed"
+           {...a11yProps(1)} />
+          <Tab 
+          className={`tabbtnmedia ${tabSelected === 3 ? "selected-tabmedia" : ""}`}
+          label="Awaiting Payments" {...a11yProps(2)} />
+          <Tab
+          className={`tabbtnmedia ${tabSelected === 4 ? "selected-tabmedia" : ""}`}
+           label="Paid" {...a11yProps(3)} />
+          <Tab 
+          className={`tabbtnmedia ${tabSelected === 5 ? "selected-tabmedia" : ""}`}
+          label="Closed" {...a11yProps(4)} />
+          <Tab
+          className={`tabbtnmedia ${tabSelected === 6 ? "selected-tabmedia" : ""}`}
+           label="Expired" {...a11yProps(5)} />
+          <Tab
+          className={`tabbtnmedia ${tabSelected === 7 ? "selected-tabmedia" : ""}`}
+           label="Abnormal Order"
+           {...a11yProps(6)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -167,7 +198,7 @@ export default function BasicTabs() {
      <div id="demo1" className="collapse">
      <div className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
           <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
-          <div align='center' className='row' style={{marginTop:'20px'}}>
+          <div align='left' className='row' style={{marginTop:'20px'}}>
             
             
             <div className='col'><input style={skubnt} placeholder='please enter order number' type="text" />
@@ -176,7 +207,7 @@ export default function BasicTabs() {
 
       </div>
         
-      <div align='center' className='row' style={{marginTop:'20px'}}>
+      <div align='left' className='row' style={{marginTop:'20px'}}>
         <div ><button style={serchbtn}>submit</button></div>
         <div style={{marginTop:'20px'}}><button style={Pickbtn}> Send Pickup Notification</button></div>
       </div>
@@ -221,12 +252,12 @@ export default function BasicTabs() {
  
       <div  className='container' style={{ display: 'block',color:'black',borderRadius:'30px',}}>
            <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
-           <div align='center' className='row' style={{marginTop:'20px'}}>
+           <div align='left' className='row' style={{marginTop:'20px'}}>
             <div><input style={skubnt} placeholder='please enter order number' type="text" /></div>
 
             </div>
         
-            <div align='center' style={{marginTop:'20px'}}><button style={serchbtn}>Search</button></div>
+            <div align='left' style={{marginTop:'20px'}}><button style={serchbtn}>Search</button></div>
           </div>
            </div>
         
@@ -262,14 +293,14 @@ export default function BasicTabs() {
             
             <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
             <div className='row' style={{marginTop:'20px'}}>
-            <div align='center' ><input style={skubnt} type="text"  placeholder='please enter order number' /></div>
+            <div align='left' ><input style={skubnt} type="text"  placeholder='please enter order number' /></div>
          
             
            
 
           </div>
          
-          <div align='center' className='row' style={{marginTop:'20px'}}>
+          <div align='left' className='row' style={{marginTop:'20px'}}>
             <div style={{marginTop:'20px'}} ><button style={serchbtn}>Search</button></div>
           
             <div style={{marginTop:'20px'}} ><button style={serchbtn}>Upload Excel</button></div>
@@ -313,10 +344,10 @@ export default function BasicTabs() {
 
       <div style={{ display: 'block',color:'black',borderRadius:'30px'}}>
                 <div className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}} >
-                <div align='center' className='row' style={{marginTop:'20px'}}>
+                <div align='left' className='row' style={{marginTop:'20px'}}>
 
                   <div ><input style={skubnt} placeholder='please enter order number' type="text" /></div>
-                  <div  align='center' style={{marginTop:'20px'}}><button style={serchbtn}>Search</button></div>
+                  <div  align='left' style={{marginTop:'20px'}}><button style={serchbtn}>Search</button></div>
 
 
 
@@ -355,14 +386,14 @@ export default function BasicTabs() {
  
       <div style={{ display: 'block',color:'black',borderRadius:'30px'}}>
                 <div  className="container" style={{ display: 'block',color:'black',padding:'20px',borderRadius:'30px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)"}}>
-                <div align='center' className='row' style={{marginTop:'20px'}}>
+                <div align='left' className='row' style={{marginTop:'20px'}}>
      
             
-                <div align='center'  ><input style={skubnt} placeholder='please enter order number' type="text" /><span></span></div>
+                <div align='left'  ><input style={skubnt} placeholder='please enter order number' type="text" /><span></span></div>
                 
 
             </div>
-            <div align='center' style={{marginTop:'20px'}}><button style={serchbtn}>submit</button></div>
+            <div align='left' style={{marginTop:'20px'}}><button style={serchbtn}>submit</button></div>
                 </div>
                 
               </div>

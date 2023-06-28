@@ -8,9 +8,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react'
 import { allOrders, allawaitingPayments, allclosedorders, alldispatchedorder, allpendingorders, allprocessingOrders, allreturn, allreturnReq, mypreOrders, sellerOrders } from "../../Api/OrderRequest";
 import { allcomplete } from "../../Api/OrderRequest";
+import Dashboardfooter from "../../components/Dashboardfooter/Dashboardfooter";
    
 function SellerOrderFullfillment() {
-    
+  document.body.style.backgroundColor = "#32333A"
  const serchbtn={
   backgroundColor:'#FDE31A',
   borderColor:'transparent',
@@ -355,7 +356,7 @@ const coloumn=[
   return (
     <>
     <Adminnavbar />
-    <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px',marginTop:'100px'}}>
+    <div className='row' style={{backgroundColor:'#32333A',padding:'0px 0px 0px 0px',marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2' >
            <SellerSidebar />
         </div>
@@ -974,6 +975,9 @@ const coloumn=[
      </div>
      </div>
 
+    </div>
+    <div className="row">
+      <Dashboardfooter/>
     </div>
     </>
   )

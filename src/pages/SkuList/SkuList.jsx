@@ -5,7 +5,7 @@ import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter'
 import illustration from '../../assets/illustration.jpg'
 
 function SkuList() {
-
+  document.body.style.backgroundColor = "#32333A"
   const isDataAvailable = false; 
   
     const serchbtn={
@@ -64,7 +64,7 @@ function SkuList() {
   return (
     <div style={{backgroundColor:'#31343A',padding:'0px 0px  0px'}}>       
     <Adminnavbar />
-    <div className='row' style={{marginTop:'100px'}}>
+    <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2' style={{backgroundColor:'#31343A'}}>
             <Sidebar />
         </div>
@@ -141,12 +141,7 @@ function SkuList() {
               <div className='col'><button style={Order}>Amount</button></div>
               <div className='col'><button style={Order}>Action</button></div>
     </div>
-</div>
-  
-   </div>
-
-          {/* Render the illustration if data is not available */}
-          {!isDataAvailable && (
+    {!isDataAvailable && (
             <div
               style={{
                 display: 'flex',
@@ -162,13 +157,22 @@ function SkuList() {
               />
             </div>
           )}
+</div>
+  
+   </div>
+
+          {/* Render the illustration if data is not available */}
+       
 
           {/* ... */}
         </div>
         {/* ... */}
-        <Dashboardfooter />
+       
       </div>
     </div>
+    <div className='row'>
+          <Dashboardfooter />
+        </div>
   </div>
   )
 }

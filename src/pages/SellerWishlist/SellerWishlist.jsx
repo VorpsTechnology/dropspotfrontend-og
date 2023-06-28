@@ -8,7 +8,9 @@ import DataTable from 'react-data-table-component';
 import { getWishlist } from '../../Api/WishlistRoute';
 import { useHistory } from 'react-router-dom';
 import { getProduct } from '../../Api/ProductRequest';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 function SellerWishlist() {
+  document.body.style.backgroundColor = "#32333A"
 
       const btns={
         backgroundColor:'transparent',
@@ -192,6 +194,9 @@ function SellerWishlist() {
     
       </div>
       
+    </div>
+    <div className='row'>
+      <Dashboardfooter/>
     </div>
 
     </>

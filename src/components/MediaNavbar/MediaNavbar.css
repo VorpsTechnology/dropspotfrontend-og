@@ -14,6 +14,9 @@
   width:75%
 }
 
+.flexcenter{
+  justify-content: center;
+}
 .mobile-menu-icon{
   display: none;
 }
@@ -23,12 +26,21 @@
   border-color:transparent;
  font-size:12px;
  color:  #FFD600;
- border-radius:20px;
+ border-radius:10px;
 
  font-weight: 650;
 }
 
+.btnFooterteoseller{
+  background-color:transparent;
+  border-color:transparent;
+ font-size:12px;
+ color:  #1F1E1A;
+ border-radius:10px;
+ background-color:#FFD600 ;
 
+ font-weight: 650; 
+}
 
 @media  screen and (max-width:780px) {
   .log{
@@ -68,6 +80,7 @@
       font-size: 15px;
       font-weight: 650;
       border-radius: 13px;
+      width: 70%;
 
 
   }
@@ -118,7 +131,7 @@
 
   .mobile-menu-icon{
       display: block;
-     
+     justify-content: right;
       font-size: 30px;
       color: black;
       background-color: transparent;
@@ -162,22 +175,6 @@
 }
 
 
-.flexcenter input{
-  border-color: transparent;
-  border-radius: 10px;
-  outline: transparent;
-  width:80%;
-  padding:7px;
-}
-
-.flexcon{
-  background-color: rgba(255, 222, 0, 1);
-  padding:1rem 2rem ;
-  border-radius: 20px;
-  margin: 5px;
-  
-
-}
 
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
@@ -188,6 +185,7 @@
     display:inline-block;
     width: 100%;
     border-radius: 20px;
+    background-color: rgba(255, 222, 0, 1);
   }
   #mediainput{
     display: block;
@@ -202,13 +200,7 @@
     width: auto;
     border-radius: 20px;
   }
-  .flexcenter input{
-    border-color: transparent;
-    border-radius: 10px;
-    outline: transparent;
-    width:80%;
-    margin-top: 2px;
-  }
+
 
   
 }
@@ -246,21 +238,16 @@
   color: black;
 }
 
-
-.flexcenter input{
-  border-color: transparent;
+.flexlef{
+  background-color: white;
+  padding: 7px;
   border-radius: 10px;
-  outline: transparent;
-  width:80%
 }
-
 .flexcon{
   background-color: rgba(255, 222, 0, 1);
-  padding:1rem 2rem ;
+display: flex;
   border-radius: 20px;
-  margin: 5px;
-  
-
+  align-items:center;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -272,6 +259,7 @@
     display:inline-block;
     width: 100%;
     border-radius: 20px;
+    padding: 20px;
   }
   #mediainput{
     display: block;
@@ -286,12 +274,14 @@
     width: auto;
     border-radius: 20px;
   }
-  .flexcenter input{
+  .boxinputbox{
     border-color: transparent;
     border-radius: 10px;
     outline: transparent;
-    width:80%;
-    padding:5px
+    width:90%;
+    padding:7px;
+    background-color: white;
+    margin: 7px 0px 5px 0px;
    
   }
 
@@ -302,19 +292,13 @@
   @media only screen and (max-width : 300px) {
     .flexcon{
       background-color: rgba(255, 222, 0, 1);
-      padding:10px 0px 10px 0px;
+      
       border-radius: 20px;
-      margin: 2px;
+     
       
     
     } 
-    .flexcenter input{
-      border-color: transparent;
-      border-radius: 10px;
-      outline: transparent;
-      width:80%;
-      margin-top: 7px;
-    }
+   
     .flexrigh img{
       margin-top: 4px;
     }

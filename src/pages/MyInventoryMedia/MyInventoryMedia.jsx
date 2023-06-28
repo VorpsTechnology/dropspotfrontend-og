@@ -1,4 +1,5 @@
-import * as React from 'react';
+import  React ,{useState} from 'react';
+import './MyInventoryMedia.css'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
 
+import { useHistory} from 'react-router-dom';
 import leftarrow from '../../assets/leftarrow.png'
 
 
@@ -74,6 +76,7 @@ const tranferbtn={
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
+
   return (
     <div
       role="tabpanel"
@@ -110,10 +113,23 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const handelTabCLick = (e) => {
+    setTabSelected(e);
+  };
+  const [tabSelected, setTabSelected] = useState(null);
+  const history = useHistory();
 
   return (
   <>
     <MediaNavbar />
+    <div  className='backbtnmedia'  >
+                        <button style={{width:"100px"}}   onClick={()=>{
+                          history.push("/")
+                        }} > Back</button>
+      </div>
+
+
+   
     <Box sx={{ width: '100%',paddingBottom:'60px' }}>
       <Box sx={{ maxWidth: { xs: 'auto', sm: 'auto' }, bgcolor: 'background.paper' }}>
         <Tabs 
@@ -123,9 +139,18 @@ export default function BasicTabs() {
          scrollButtons="auto"
          aria-label="scrollable auto tabs example"
         >
-          <Tab label="Product Inventory" {...a11yProps(0)} />
-          <Tab label="Connecting Packaging Inventory" {...a11yProps(1)} />
-          <Tab label="Deposit Inventory" {...a11yProps(2)} />
+          <Tab
+           className={`tabbtnmedia ${tabSelected === 1 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(1)} 
+           label="Product Inventory" {...a11yProps(0)} />
+          <Tab
+          className={`tabbtnmedia ${tabSelected === 2 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(1)} 
+           label="Connecting Packaging Inventory" {...a11yProps(1)} />
+          <Tab 
+          className={`tabbtnmedia ${tabSelected === 3 ? "selected-tabmedia" : ""}`}
+           onClick={() => handelTabCLick(1)} 
+          label="Deposit Inventory" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -143,12 +168,12 @@ export default function BasicTabs() {
                     <div className='buttonIn'></div><input style={skubnt}  placeholder='Enter Product SKU'  type="text" name="" id="" />
                      
                     </div>
-                    <div style={{marginTop:'20px'}} align='center'><button style={serchbtn}  >Search</button></div>
-                    <div align='center' style={{marginTop:'20px'}}  >
+                    <div style={{marginTop:'20px'}} align='left'><button style={serchbtn}  >Search</button></div>
+                    <div align='left' style={{marginTop:'20px'}}  >
                     <p> Total Value:<span style={{margin:'10px'}} ><input type="checkbox" name="" id="" /></span> Product In Stock .</p>
                     
                     </div>
-                    <div align='center'>
+                    <div align='left'>
                   <button style= {tranferbtn}>Transfer record</button>
                     
                     </div>
@@ -187,8 +212,8 @@ export default function BasicTabs() {
       <div className='container' >
             <div className='Dashboardheading'><h3>Connecting Pacakaging Inventory</h3></div>
             <div >
-                    <div align='center'  className='buttonIn'></div><input style={skubnt} placeholder='Enter Product SKU'  type="text" name="" id="" />
-                    <div align='center' style={{marginTop:'20px'}}><button  style={serchbtn} >Search</button></div> 
+                    <div align='left'  className='buttonIn'></div><input style={skubnt} placeholder='Enter Product SKU'  type="text" name="" id="" />
+                    <div align='left' style={{marginTop:'20px'}}><button  style={serchbtn} >Search</button></div> 
                     </div>
         
           
@@ -228,9 +253,9 @@ export default function BasicTabs() {
                 <div style={{marginTop:'20px'}}> <input style={skubnt} placeholder='Please enter SKU' type="text" /> </div>
 
               </div>
-              <div align='center' style={{marginTop:'20px'}} >
-                <div><button style={serchbtn} >Search</button></div>
-                <div style={{marginTop:'20px'}}><button style={Clearbtn} >Clear</button></div>
+              <div align='left' style={{marginTop:'20px'}} >
+                <div align='left'><button style={serchbtn} >Search</button></div>
+                <div align='left' style={{marginTop:'20px'}}><button style={Clearbtn} >Clear</button></div>
 </div>
         
           

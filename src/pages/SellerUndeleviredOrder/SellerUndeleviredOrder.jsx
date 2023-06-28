@@ -5,8 +5,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react';
 import { allawaitingPayments, alldispatchedorder, allpendingorders, mypreOrders } from '../../Api/OrderRequest';
 import DataTable from 'react-data-table-component';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 function SellerUndeleviredOrder() {
+  document.body.style.backgroundColor = "#32333A"
   const serchbtn={
     backgroundColor:'#FDE31A',
     borderColor:'transparent',
@@ -384,7 +386,7 @@ const coloumn=[
   return (
    <>
    <Adminnavbar />
-   <div className='row'  style={{backgroundColor:'#31343A',marginTop:'100px'}}>
+   <div className='row'  style={{backgroundColor:'#31343A',marginTop:'100px',marginBottom:'100px'}}>
     <div className='col-2'>
         <SellerSidebar />
     </div>
@@ -683,6 +685,9 @@ const coloumn=[
     </Tab.Group>
       </div>
     </div>
+   </div>
+   <div className='row'>
+    <Dashboardfooter/>
    </div>
    </>
   )

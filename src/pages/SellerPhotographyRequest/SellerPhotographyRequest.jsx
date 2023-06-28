@@ -1,12 +1,13 @@
 import React from 'react'
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import SellerSidebar from '../SellerDashboard/SellerSidebar'
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter'
 
 import './SellerPhotographyRequest.css'
 
 function SellerPhotographyRequest() {
 
-     
+  document.body.style.backgroundColor = "#32333A"
   const Order={
     backgroundColor:'#FDE31A',
     borderColor:'transparent',
@@ -24,7 +25,7 @@ function SellerPhotographyRequest() {
     <div className='col-2' >
         <SellerSidebar />
     </div>
-   <div className='col-10' style={{height:'800px'}}>
+   <div className='col-10' >
     <div  className='container' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',padding:'40px',width:'auto',margin:'10px 20px 10px 20px',}}>
  <div><h2>Photography Request</h2></div>
  <div className='container' style={{ display: 'block',color:'black',padding:'10px',borderRadius:'30px',width:'auto',overflowX:'scroll' }}>
@@ -49,6 +50,9 @@ function SellerPhotographyRequest() {
     </div>
 
    </div>
+  </div>
+  <div className='row'>
+   <Dashboardfooter />
   </div>
   </>
   )

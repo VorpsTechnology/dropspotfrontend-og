@@ -45,12 +45,6 @@ const Home = () => {
         <MediaNavabarbutton />
         <br />
         <Mediabutton />
-      
-       
-       
-      
-
-       
         {/* <Hotsellingproducts /> */}
         <TrendingHeader />
         <Trending  />

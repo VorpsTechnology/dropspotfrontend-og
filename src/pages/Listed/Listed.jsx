@@ -13,7 +13,7 @@ import illustration from '../../assets/illustration.jpg'
 
 
 function Listed() {
-
+  document.body.style.backgroundColor = "#32333A"
 const  productbtn={
     backgroundColor:'transparent',
     borderColor:'transparent',
@@ -357,11 +357,14 @@ const userId=localStorage.getItem("userId")
                         
                     </Tab.Group>
                 </div>  
-                <Dashboardfooter />
+             
             <div>
             
             </div>
             </div>
+        </div>
+        <div className='row'>
+          <Dashboardfooter />
         </div>
        
       </div>

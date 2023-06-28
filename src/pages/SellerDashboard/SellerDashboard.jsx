@@ -11,13 +11,15 @@ import pending from '../../assets/pending.png'
 import pro from '../../assets/pro.png'
 import shop from '../../assets/shop.png'
 import SellerSidebar from '../../pages/SellerDashboard/SellerSidebar'
+
 function SellerDashboard() {
+  document.body.style.backgroundColor = "#32333A"
 
   return (
     <div>
       <Adminnavbar />
       <div style={{backgroundColor:'#32333A'}}>
-        <div className='row' style={{marginTop:'100px'}}>
+        <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
           <div className='col-2' >
             <SellerSidebar />
           </div>
@@ -177,7 +179,7 @@ function SellerDashboard() {
                 <div className='card'  style={{borderRadius:"20px"}}>
                   <div className='card-body p-3'>
                   
-              <div  align='center'> 
+              {/* <div  align='center'> 
                     <div >
                     <img src={pro} alt='wallet'/>
                     </div>
@@ -198,7 +200,7 @@ function SellerDashboard() {
                 <div className='col-4'> <b>Activated Store</b> </div>
                 <div className='col-6'><b>Store Status </b> </div>
               </div>
-             </div>
+             </div> */}
               
             </div>
                   
@@ -207,7 +209,7 @@ function SellerDashboard() {
               <div className='col-xl-6 col-sm-6 mb-xl-0 mb-4'>
                 <div className='card'  style={{borderRadius:"20px"}}>
                   <div className='card-body p-3'>
-                       
+{/*                        
               <div align='center'  > 
                
                 <div >
@@ -216,7 +218,7 @@ function SellerDashboard() {
                 <div className='text-center' style={{padding:'3px 0px 0px 20px'}}>
                 <b>Need Support And Domentation</b> 
                 </div>
-              </div>
+              </div> */}
                   
              
                   </div>
@@ -243,11 +245,16 @@ function SellerDashboard() {
                </div>
             </div> */}
               </div>
-       <Dashboardfooter/>
+
            
           </div>
         </div>
+       
+        
 
+      </div>
+      <div className='row'>
+      <Dashboardfooter/>
       </div>
    
     </div>

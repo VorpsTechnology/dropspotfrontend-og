@@ -13,7 +13,7 @@ function SellerLogin() {
     <MediaNavbar />
 
    
-    <div className='flex-conatiner00'  >
+    <div className='flex-conatiner00' style={{backgroundColor:'rgba(255, 214, 0, 1)',borderTopLeftRadius:'20px',borderTopRightRadius:'20px'}}  >
     <div style={{paddingTop:'40px'}}>
                           <button style={{width:"100px"}}  className='backbtn' onClick={()=>{
                             history.push("/")
@@ -61,16 +61,16 @@ function SellerLogin() {
                     </div>
                             <div style={{paddingTop:'20px'}}> <input type="checkbox"  name="submit_form" id="submit_form" value="yes" />
                         <label for="send_newsletter" style={{color:'black'}}> Remember Me</label><span style={{float:'right',paddingRight:'70px'}}>Forgot Your Password?</span></div>
-                        <span  style={{color:"orange",poiner:"cursor"}}>Login with OTP</span>
-                        <br />
-                         <span  style={{color:"orange",poiner:"cursor"}}>signUp</span>
-                            <div className="or-container">
+                        
+                        <div className="or-container">
                            
-                                <div className="line-separator" />
-                               
-                                <div className="or-label">or</div>
-                                <div className="line-separator" />
-                            </div>
+                           <div className="line-separator" />
+                          
+                           <div className="or-label">or</div>
+                           <div className="line-separator" />
+                       </div>
+                         <div  style={{paddingTop:'20px'}}><a style={{color:"orange",poiner:"cursor",fontWeight:'650',fontSize:'15px'}} href='/SellerSignup'>signUp</a></div>
+                            
                             <div  className="flex-container" style={{paddingBottom:'20px'}}>
                                 {/* <div  className="flex-left"><button style={{backgroundColor:'transparent',borderColor:'transparent'}}><img align="center" src={googleicon} alt="" /></button></div> */}
                                 {/* <div  className="flex-right"><button style={{backgroundColor:'transparent',borderColor:'transparent'}}><img  align="center" src={facebookicon} alt="" /></button></div> */}
@@ -118,6 +118,8 @@ function SellerLogin() {
      </div>
   
     </div>
+    <br />
+    <br />
     <Footer />
  
   </div>

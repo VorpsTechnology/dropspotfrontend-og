@@ -14,6 +14,7 @@ import illustration from '../../assets/illustration.jpg'
 import './Wishlist.css'
 function Wishlist() {
 
+  document.body.style.backgroundColor = "#32333A"
   const smtbtn={
     backgroundColor:'#FFE51A',
     borderColor:'transparent',
@@ -123,9 +124,9 @@ const [filterUsers,setFilteredUsers]=useState([]);
     
     <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px 0px'}}>
         <Adminnavbar />
-    <div className='row' style={{marginTop:'100px'}}>
+    <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
     <div className='col-2' ><Sidebar /></div>
-      <div className='col-10' style={{height:'800px'}} >
+      <div className='col-10'  >
   <div className='container' id='tabcontainer' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',margin:'20px',width:'auto'}}>
       <div className='container' style={{marginTop:'20px',boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px'}}>
       <div style={{justifyContent:'left',padding:'20px'}}> <h2>WishList</h2> </div>
@@ -159,42 +160,58 @@ const [filterUsers,setFilteredUsers]=useState([]);
             </div>
       </div>
 
-     {filterUsers && filterUsers.length === 0 ? (
-  <div className="text-center">
-    <img src={illustration} alt="illustration" style={{ width: '300px' }} />
-  </div>
-) : (
-  <div className='container' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px'}}>
-    <div className='row' style={{marginTop:'20px',backgroundColor:'#FFE51A',padding:'5px'}}>
-      <div className='col'> <input type="checkbox" /></div>
-      <div className='col'><button style={btns}>Date</button></div>
-      <div className='col'><button  style={btns}>Images</button></div>
-      <div className='col'><button  style={btns}>Title</button></div>
-      <div className='col'><button  style={btns}>Product Price</button></div>
-      <div className='col'><button  style={btns}>Actions</button></div>
-    </div>
-    <div className='container' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'20px'}}>
-      <DataTable 
-        columns={coloumn} 
-        data={filterUsers} 
-        pagination
-        fixedHeader
-        style={{color:"red"}}
-        highlightOnHover
-        subHeader
-        subHeaderAlign="center"
-      />  
-    </div>
-  </div>
-)}
+
+      {filterUsers && filterUsers.length === 0 ? (
+              <div className="text-center">
+                <img src={illustration} alt="illustration" style={{ width: '300px' }} />
+              </div>
+            ) : (
+              <div className='container' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)", borderRadius: '20px' }}>
+                <div className='row' style={{ marginTop: '20px', backgroundColor: '#FFE51A', padding: '5px' }}>
+                  <div className='col'>
+                    <input type="checkbox" />
+                  </div>
+                  <div className='col'>
+                    <button style={btns}>Date</button>
+                  </div>
+                  <div className='col'>
+                    <button style={btns}>Images</button>
+                  </div>
+                  <div className='col'>
+                    <button style={btns}>Title</button>
+                  </div>
+                  <div className='col'>
+                    <button style={btns}>Product Price</button>
+                  </div>
+                  <div className='col'>
+                    <button style={btns}>Actions</button>
+                  </div>
+                </div>
+                <div className='container' style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)", borderRadius: '20px' }}>
+                  <DataTable
+                    columns={coloumn}
+                    data={filterUsers}
+                    pagination
+                    fixedHeader
+                    style={{ color: "red" }}
+                    highlightOnHover
+                    subHeader
+                    subHeaderAlign="center"
+                  />
+                </div>
+              </div>
+            )}
 
 
   </div>
-  <Dashboardfooter/>
+ 
     
       </div>
       
     </div>
+    <div className='row'>
+          <Dashboardfooter />
+        </div>
     
     </div>
 

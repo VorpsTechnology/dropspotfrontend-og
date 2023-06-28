@@ -13,6 +13,8 @@ import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 
 function ImportedOrder() {
+  
+  document.body.style.backgroundColor = "#32333A;"
   const [tabSelected, setTabSelected] = useState(null);
 
   const serchbtn={
@@ -522,7 +524,7 @@ const coloumn=[
     <>
     <div style={{backgroundColor:'#32333A'}}>
       <Adminnavbar />
-      <div className='row' style={{marginTop:'100px'}}>
+      <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2'  style={{backgroundColor:'#31343A'}}><Sidebar /></div>
         <div className='col-10' >
        
@@ -590,37 +592,6 @@ const coloumn=[
                 </div>
          </div>
           <div className='container' style={{boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'30px',marginTop:'10px'}}  >
-               {/* <div className='row' style={{backgroundColor:'#FDE31A',padding:'15px 2px 5px 2px',color:'black',borderRadius:'20px'}}>
-                  <div className='col-2'> 
-                  <p >Your Order ID.</p>
-                 </div>
-                  <div className='col-2'><p >Your Order Time</p></div>
-                  <div className='col'>
-                  <p>Cost 
-                  <span style={{margin:'1px'}}>
-                   
-                  </span> 
-                    </p>
-                  </div>
-                
-                 
-                  <div className='col'>
-                  <p>Address</p>
-                  </div>
-                  <div className='col'>
-                  <p>SKU ID</p>
-                  </div>
-                  <div className='col'>
-                  <p>Status</p>
-                  </div>
-                  <div className='col'>
-                  <p>Action</p>
-                  </div>
-                  
-                </div> */}
-
-
- 
                </div>
                <DataTable 
         
@@ -744,10 +715,11 @@ const coloumn=[
           </Tab.Panels>
     </Tab.Group>
       </div>
-      <Dashboardfooter/>
+    
         </div>
        
       </div>
+      <Dashboardfooter/>
     </div>
   
     </>

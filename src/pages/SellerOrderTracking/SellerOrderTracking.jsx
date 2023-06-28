@@ -8,7 +8,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Tab } from '@headlessui/react'
 import { allprocessing, allprocessingOrders, myshopifyOrders } from '../../Api/OrderRequest';
 import SellerSidebar from '../SellerDashboard/SellerSidebar';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 function OrderTracking() {
+  document.body.style.backgroundColor = "#32333A"
+  
   const Clearbtn={
     backgroundColor:'black',
     borderColor:'transparent',
@@ -198,8 +201,10 @@ useEffect(() => {
                 
     ]    
   return (
-    <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px',marginTop:'100px'}}>
-        <Adminnavbar />
+    <>
+    <Adminnavbar />
+    <div style={{backgroundColor:'#31343A',padding:'0px 0px 0px',marginTop:'100px',marginBottom:'100px'}}>
+        
         <div className='row'>
             <div className='col-2'   >
              
@@ -368,6 +373,11 @@ useEffect(() => {
    </div>
         </div>
       </div>
+      <div className='row'>
+    <Dashboardfooter/>
+   </div>
+    </>
+   
   )
 }
 

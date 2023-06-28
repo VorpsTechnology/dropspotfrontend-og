@@ -19,9 +19,11 @@ import DialogTitle from '@mui/material/DialogTitle';
 import 'bootstrap/dist/css/bootstrap.css';
 import Papa from 'papaparse';
 import { uploadCsv } from '../../Api/ProductRequest';
+import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter'
 
 
 function SellerSourchingForm() {
+  document.body.style.backgroundColor = "#32333A"
 
   const [open, setOpen] = React.useState(false);
 
@@ -215,7 +217,7 @@ function SellerSourchingForm() {
   return (
   <>
     <Adminnavbar />
-    <div className='row' style={{backgroundColor:'#32333A',marginTop:'100px'}}>
+    <div className='row' style={{backgroundColor:'#32333A',marginTop:'100px',marginBottom:'100px'}}>
       <div className='col-2'>
         <SellerSidebar />
       </div>
@@ -581,6 +583,9 @@ function SellerSourchingForm() {
       <ToastContainer />
       </div>
 
+    </div>
+    <div className='row'>
+      <Dashboardfooter/>
     </div>
   </>
   )

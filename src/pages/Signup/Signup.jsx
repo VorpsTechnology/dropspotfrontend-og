@@ -133,7 +133,7 @@ function  Signup() {
                   /> <span align="center">By clicking "Next", you agree to the user agreement and privacy policy</span> </p> 
                  <div align="center" style={{marginTop:'30px'}}><div align="center" className='submitbtn'><button style={{backgroundColor:'transparent',borderColor:'transparent',}}>Submit</button></div></div>
                 </div>
-                <div align='center' className='Already'><h6 className='Already'>Already have an account?Sign In?</h6></div>
+                <div align='center' className='Already'><h6 className='Already'> <a href='Signin'>Already have an account?Sign In?</a> </h6></div>
                 <div className="or-container">
                   <div className="line-separator" />
                   <div className="or-label">or</div>

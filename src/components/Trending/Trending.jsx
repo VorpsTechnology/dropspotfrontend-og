@@ -369,7 +369,7 @@ const coloumn=[
         </DialogContent>
         <DialogActions >
           <div align="center" style={{marginRight:'40%',display:'flex',marginBottom:'10px'}}>
-          <div ><button style={{backgroundColor:'black',padding:'5px',color:'white',width:'100px',borderColor:'transparent', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'5px' }} onClick={handleClose}>Cancel</button></div>
+          <div ><button style={{backgroundColor:'black',padding:'5px',color:'white',width:'100px',borderColor:'transparent', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",borderRadius:'10px' }} onClick={handleClose}>Cancel</button></div>
           <div ><button style={subbtnlist} onClick={()=>{
             handleBeforelisting()
           }}>List Now</button></div>

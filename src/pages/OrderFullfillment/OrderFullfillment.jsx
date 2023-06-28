@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Adminnavbar from '../Adminnavbar/Adminnavbar'
 import Sidebar from '../Sidebar/Sidebar'
+import Dashboardfooter from "../../components/Dashboardfooter/Dashboardfooter";
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -89,7 +90,7 @@ function OrderFullfillment() {
       <div>
         <Adminnavbar />
       </div>
-      <div className='row'>
+      <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
       <div className='col-2'  style={{backgroundColor:'#31343A'}}><Sidebar /></div>
       <div className='col-10'>
      
@@ -467,6 +468,10 @@ function OrderFullfillment() {
      </div>
      </div>
       </div>
+      <div className='row'>
+      <Dashboardfooter/>
+      </div>
+     
 
      
 

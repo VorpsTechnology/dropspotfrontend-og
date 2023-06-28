@@ -9,6 +9,9 @@ import love from '../../assets/love.png'
 import cartsim from '../../assets/cartsim.png'
 import  camera from '../../assets/camera.png'
 import dashboard from '../../assets/dashboard.png'
+import sor from '../../assets/sor.png'
+import adds from '../../assets/adds.png'
+
 
 
 function SellerSidebar() {
@@ -116,7 +119,7 @@ return (
 
 <div  className='container-fluid'  id="main" style={{height:'100%',width:'230px'}}  >
 
-<div align='center' className="row " >  
+<div align='center' className="row " style={{marginBottom:'30px'}}>  
             <div className="sidebar-offcanvas" id="sidebar" role="navigation"  >  
               <ul  className="flex-column pl-0 mt-4">
               <li >  
@@ -144,11 +147,16 @@ return (
                       openProduct && <>
                 <div>
                 <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  className='dropbtnsubmenu' onClick={SellerSourchingForm} style={{color: sourcing ? "grey" : "black" }}> Sourcing </button></a> </li>  
+                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  className='dropbtnsubmenu' onClick={SellerSourchingForm} style={{color: sourcing ? "black" : "grey" }}> 
+                     <div style={{display:'flex',textAlign:'left'}}>
+                   <div ><img src={sor} alt='authentication'/></div>
+                  <div style={{margin:'0px 0px 0px 5px'}}> Sourcing </div>
+                   </div> 
+                     </button></a> </li>  
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerInventory} className='dropbtnsubmenu' style={{color: inventoryButton ? "grey" : "black" }}>
+                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerInventory} className='dropbtnsubmenu' style={{color: inventoryButton ? "black" : "grey" }}>
                      <div style={{display:'flex',textAlign:'left'}}>
                    <div ><img src={cartsim} alt='authentication'/></div>
                   <div style={{margin:'0px 0px 0px 5px'}}> My inventory</div>
@@ -157,7 +165,7 @@ return (
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerWishlist} className='dropbtnsubmenu' style={{color: wishlist ? "grey" : "black" }}>
+                     <li className="nav-item pl-2"> <a className="nav-link" href> <button  onClick={SellerWishlist} className='dropbtnsubmenu' style={{color: wishlist ? "black" : "grey" }}>
                      <div style={{display:'flex',textAlign:'left'}}>
                    <div ><img src={love} alt='authentication'/></div>
                   <div style={{margin:'0px 0px 0px 5px'}}>    Wishlist</div>
@@ -166,7 +174,7 @@ return (
 
                      </div>
                      <div>
-                     <li className="nav-item pl-2"> <a className="nav-link" href>  <button onClick={SellerPhotographyRequest} className='dropbtnsubmenu'style={{color: photograophy ? "grey" : "black" }}>
+                     <li className="nav-item pl-2"> <a className="nav-link" href>  <button onClick={SellerPhotographyRequest} className='dropbtnsubmenu'style={{color: photograophy ? "black" : "grey" }}>
                      <div style={{display:'flex',textAlign:'left'}}>
                   <div ><img src={camera} alt='authentication'/></div>
                   <div style={{margin:'0px 0px 0px 5px'}}>    My Photography</div>
@@ -187,21 +195,21 @@ return (
 {
   openOrder &&   <div>
   
-  <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerOrderFullfillment} style={{color: orderfullfulfmt ? "grey" : "black" }} > Order Fullfillment</button> </a> </li>  
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerDispute} style={{color: disputes ? "grey" : "black" }}>
+  <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerOrderFullfillment} style={{color: orderfullfulfmt ? "black" : "grey" }} > Order Fullfillment</button> </a> </li>  
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerDispute} style={{color: disputes ? "black" : "grey" }}>
                       <div style={{display:'flex',justifyContent:'space-evenly'}}>
                   <div ><i className="fa-solid fa-messages-question" style={{color: "#0f0f10"}}></i></div>
                   <div> Disputes</div>
                  </div>
                       </button> </a> </li> 
   
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerUndeleviredOrder} style={{color: rto ? "grey" : "black" }}>
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu'  onClick={SellerUndeleviredOrder} style={{color: rto ? "black" : "grey" }}>
                       <div style={{display:'flex',justifyContent:'space-evenly'}}>
                   <div style={{padding:'10px 0px 0px 5px'}} ><img style={{height:'24px',width:'24px'}} src={cancel} alt='authentication'/> </div>
                   <div> RTO / cancellation</div>
                  </div>
                   </button> </a> </li>  
-                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerOrderTracking} style={{color: tracking ? "grey" : "black" }}>
+                      <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerOrderTracking} style={{color: tracking ? "black" : "grey" }}>
                       <div style={{display:'flex',justifyContent:'space-evenly'}}>
                    <div style={{padding:'10px 0px 0px 5px'}} ><img src={trip} alt='authentication'/></div>
                   <div> Orders Tracking</div>
@@ -226,7 +234,7 @@ return (
                       openCart && <>
                       <div>
                         
-                    <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerCart} style={{color: cart ? "grey" : "black" }} >Purchase Cart</button>  </a> </li>  
+                    <li className="nav-item pl-2"> <a className="nav-link" href> <button className='dropbtnsubmenu' onClick={SellerCart} style={{color: cart ? "black" : "grey" }} >Purchase Cart</button>  </a> </li>  
                 
                       </div>
                       </>
@@ -237,7 +245,26 @@ return (
                
               </ul>  
             </div>  
+            <div className='row'>
+            <div className='sidenav-footer mx-3'>
+          <div className="card " id="sidenavCard">
+<div className="full-background" ></div>
+<div className="card-body text-start p-2 w-100">
+<div className="icon   text-center mb-2 d-flex align-items-center justify-content-center border-radius-md">
+<img src={adds}/>
+</div>
+<div className="docs-info">
+<h6 align='center' className="text-white up mb-0">Need help?</h6>
+<p align='center' className="text-xs font-weight-bold">Please check our docs</p>
+
+<div align='center' style={{margin:'0px 0px 10px 0px'}}><a  target="_blank" className="dobtn btn-white btn-sm w-100 mb-0 " >Documentation</a></div>
+</div>
+</div>
+</div>
+          </div>
+            </div>
           </div>  
+          
 </div>
    
   )

@@ -12,13 +12,13 @@
     .listbtn{
       background-color: #FDE31A;
       border-color: transparent;
-      border-radius: 20px;
+      border-radius: 10px;
       font-size: 15px; 
     }
     .super_btnMedia{
       background-color: #FDE31A;
       border-color: transparent;
-      border-radius: 20px;
+      border-radius: 10px;
       font-size: 15px; 
       width: 80px;
       margin-left: 35px;
@@ -39,7 +39,7 @@
        font-size:15px ;
         color:black;
         width:100px ;
-        border-radius: 20px;
+        border-radius: 10px;
           
        margin-top: 20px;
          border-color:rgba(255, 214, 0, 1);

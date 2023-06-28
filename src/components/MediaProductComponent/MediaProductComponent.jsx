@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import shopingcard from "../../assets/shopingcard.png";
+import { useHistory } from "react-router-dom";
 import './MediaProductComponent.css'
 
 export default class Responsive extends Component {
+
 
   state = {
     products: [1, 2, 3, 4, 5, 6],
@@ -43,14 +45,17 @@ export default class Responsive extends Component {
         },
       ],
     };
+
+    
     return (
+      
       <>
     
     
-      <div className="container">
+      <div className="container-fluid">
       
       
-        <div align="center" id="MediaProduct">
+        <div  align='center' id="MediaProduct">
           <Slider {...settings}>
          
             {this.state.products.map((ele, i) => (

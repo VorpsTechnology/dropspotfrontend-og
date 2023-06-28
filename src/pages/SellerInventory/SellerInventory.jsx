@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { Tab } from '@headlessui/react';
 import DataTable from 'react-data-table-component';
+import Dashboardfooter from "../../components/Dashboardfooter/Dashboardfooter";
 
 import { getAllProducts } from '../../Api/ProductRequest';
 import { mypreOrders, preOrderFullFill, sellerOrders, sellerpreOrders } from "../../Api/OrderRequest";
 import swal from "sweetalert";
 function SellerInventory() {
-      
+  document.body.style.backgroundColor = "#32333A"
 
 const btnrow={
     backgroundColor:'transparent',
@@ -196,7 +197,7 @@ const coloumn=[
   return (
     <>
     <Adminnavbar />
-    <div className='row' style={{backgroundColor:'#32333A',marginTop:'100px'}}>
+    <div className='row' style={{backgroundColor:'#32333A',marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2' ><SellerSidebar /></div>
         <div className='col-10'>
        
@@ -370,6 +371,9 @@ const coloumn=[
 
         </div>
         </div>
+        <div className='row'>
+      <Dashboardfooter/>
+    </div>
 
     </>
   )

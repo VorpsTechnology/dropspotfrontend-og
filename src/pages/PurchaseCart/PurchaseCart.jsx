@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Adminnavbar from "../Adminnavbar/Adminnavbar";
 import Sidebar from "../Sidebar/Sidebar";
 import "./PurchaseCart.css";
-
+import Dashboardfooter from "../../components/Dashboardfooter/Dashboardfooter";
 import "bootstrap/dist/css/bootstrap.css";
 import { Tab } from "@headlessui/react";
 import { useHistory } from "react-router-dom";
 function PurchaseCart() {
+  
+  document.body.style.backgroundColor = "#32333A"
   const [tabSelected, setTabSelected] = useState(null);
 
   const history = useHistory();
@@ -53,7 +55,7 @@ function PurchaseCart() {
       <div>
         <Adminnavbar />
       </div>
-      <div className="row" style={{marginTop:'100px'}}>
+      <div className="row" style={{marginTop:'100px',marginBottom:'100px'}}>
         <div className="col-2"  >
           <Sidebar />
         </div>
@@ -110,6 +112,9 @@ function PurchaseCart() {
           </div>
         </div>
       </div>
+      <div className='row'>
+          <Dashboardfooter />
+        </div>
     </div>
   );
 }

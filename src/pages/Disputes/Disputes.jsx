@@ -6,9 +6,11 @@ import './Disputes.css'
 import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 import { Tab } from '@headlessui/react';
+   
 
 
 const Disputes = () => {
+  document.body.style.backgroundColor = "#32333A"
     const serchbtn={
       backgroundColor:'#FDE31A',
       borderColor:'transparent',
@@ -107,7 +109,7 @@ const Disputes = () => {
     <div>
           <div  style={{backgroundColor:'#31343A'}}>
       <Adminnavbar />
-      <div className='row' style={{marginTop:'100px'}}>
+      <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
         <div className='col-2'  ><Sidebar /></div>
         <div className='col-10' >
        
@@ -260,11 +262,17 @@ const Disputes = () => {
           </Tab.Panels>
     </Tab.Group>
       </div>
-      <Dashboardfooter/>
+     
         </div>
       </div>
+     
     
     </div>
+    <div className='row'>
+    <Dashboardfooter/>
+    </div>
+   
+   
     </div>
   )
 }

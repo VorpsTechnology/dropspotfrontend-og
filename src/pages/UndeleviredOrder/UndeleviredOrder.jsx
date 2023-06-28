@@ -11,6 +11,7 @@ import Dashboardfooter from '../../components/Dashboardfooter/Dashboardfooter';
 
 
 function UndeleviredOrder() {
+  document.body.style.backgroundColor = "#32333A"
     const serchbtn={
       backgroundColor:'#FDE31A',
       borderColor:'transparent',
@@ -391,7 +392,7 @@ const coloumn=[
       <div>
         <Adminnavbar />
       </div>
-      <div className='row' style={{marginTop:'100px'}}>
+      <div className='row' style={{marginTop:'100px',marginBottom:'100px'}}>
       <div className='col-2'  style={{backgroundColor:'#31343A'}}><Sidebar /></div>
       <div className='col-10' >
     
@@ -685,10 +686,13 @@ const coloumn=[
           </Tab.Panels>
     </Tab.Group>
       </div>
-      <Dashboardfooter/>
+     
       </div>
       
     
+      </div>
+      <div className='row'>
+      <Dashboardfooter/>
       </div>
      
     </div>
