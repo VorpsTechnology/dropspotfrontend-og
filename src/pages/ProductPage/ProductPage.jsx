@@ -193,15 +193,15 @@ const subbtnlist={
            
             <div className="col-lg-4 left-side-product-box pb-3">
             
-              <img src={preview ?"http://localhost:5007/images/"+ preview:""} style={{marginTop:"20px"}}/>
+              <img src={preview ?"https://server.dropspot.in/images/"+ preview:""} style={{marginTop:"20px"}}/>
               <span className="sub-img">
-              <img src={post.image2?"http://localhost:5007/images/"+ post.image1:""} style={{width:"3rem",height:"3rem"}}  onClick={()=>{
+              <img src={post.image2?"https://server.dropspot.in/images/"+ post.image1:""} style={{width:"3rem",height:"3rem"}}  onClick={()=>{
                 setPreview(post.image1)
               }}/>
-                <img src={post.image2?"http://localhost:5007/images/"+post.image2:""} style={{width:"3rem",height:"3rem"}}  onClick={()=>{
+                <img src={post.image2?"https://server.dropspot.in/images/"+post.image2:""} style={{width:"3rem",height:"3rem"}}  onClick={()=>{
                 setPreview(post.image2)
               }}/>
-                <img src={post.image3?"http://localhost:5007/images/"+post.image3:"" } style={{width:"3rem",height:"3rem"}}  onClick={()=>{
+                <img src={post.image3?"https://server.dropspot.in/images/"+post.image3:"" } style={{width:"3rem",height:"3rem"}}  onClick={()=>{
                 setPreview(post.image3)
               }}/>
                

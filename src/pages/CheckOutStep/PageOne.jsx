@@ -411,7 +411,7 @@ const orderType=localStorage.getItem("accountType")
         </div>
       <div className='flex-item-right'>
           <div className='card' id='cardComponet'>
-            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"http://localhost:5007/images/"+post.image0:""} alt="" /></div>
+            <div className='imagecontainer'><img style={{height:"18rem",width:"21rem",padding:"1rem 2rem 1rem 2rem  ",borderRadius:"16%"}} src={post.image1?"https://server.dropspot.in/images/"+post.image0:""} alt="" /></div>
            <div className='containerMAx'>
            <div className='flexitem'>
               <div className='flexleft'>

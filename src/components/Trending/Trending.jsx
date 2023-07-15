@@ -276,7 +276,7 @@ const coloumn=[
                   <div className="image" style={{width:'100%'}}>
                     
                     <img
-                     src={ele.image1?"http://localhost:5007/images/"+ele.image1:"" }
+                     src={ele.image1?"https://server.dropspot.in/images/"+ele.image1:"" }
                      style={{cursor:"pointer",width:"100%",height:"200px",borderRadius:'10px' }}
                      onClick={() => {
                       history.push(`/ProductPage/${ele._id}`)
