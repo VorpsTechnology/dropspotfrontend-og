@@ -122,7 +122,7 @@ function SellerSourchingForm() {
   console.log(newPost);
        
             console.log(image);
-            alert()
+          
            
             for(let i=0;i<image.length;i++){
             

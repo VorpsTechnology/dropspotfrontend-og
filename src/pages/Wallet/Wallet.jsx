@@ -117,12 +117,12 @@ const Wallet = () => {
       {row.allawaiting&&<>
         <div>
         <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-        onClick={()=>alert()}
+        onClick={()=>console.log("haiii")}
         >Request Payment</button>
         </div>
         <div>
         <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-        onClick={()=>alert()}
+        onClick={()=>console.log("haiii")}
         >Decline</button>
         </div>
       </>}

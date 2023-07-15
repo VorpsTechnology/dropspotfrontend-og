@@ -176,7 +176,7 @@ console.log(newPost);
           // newPost.image=filename
           // console.log(newPost)
           console.log(image);
-          alert()
+         
          
           for(let i=0;i<image.length;i++){
           

@@ -102,9 +102,9 @@ const userId=localStorage.getItem("userId")
   
       {<>
         <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginLeft:"5px",padding:"10px",width:'100px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-        onClick={()=>alert()}
+        onClick={()=>console.log("haiii")}
         >Edit</button> <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'100px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-        onClick={()=>alert()}
+        onClick={()=>console.log("haiii")}
         >Delete</button>
       </>}
               

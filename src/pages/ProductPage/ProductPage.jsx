@@ -211,7 +211,7 @@ const subbtnlist={
                   <div align="center"><img style={{width:'20px',height:'20px'}} src={share} alt="" /></div>
                    <div align="center"> <button onClick={()=>{
                    navigator.clipboard.writeText(window.location.toString())
-                      alert("link copied")
+                   console.log("haiii")
                    }}  style={btn}>Share</button> </div>
                 </div>
                 

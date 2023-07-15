@@ -252,19 +252,19 @@ const coloumn=[
     {
       all && <>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Status</button>
       </>
     }
     {awaitingPayment&&<>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Request Payment</button>
       </div>
       <div>
       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Decline</button>
       </div>
     </>}
@@ -274,17 +274,17 @@ const coloumn=[
       pending && <>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Invoice</button>
       </div>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Request shipping fee</button>
       </div>
       <div>
       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Support </button>
       </div>
       </>
@@ -294,12 +294,12 @@ const coloumn=[
       processing && <>
      <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Invoice</button>
       </div>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Support</button>
       </div>
       
@@ -312,12 +312,12 @@ const coloumn=[
           dispatched && <>
           <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Invoice</button>
       </div>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Support</button>
       </div>
           </>
@@ -328,17 +328,17 @@ const coloumn=[
           closed && <>
        <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >invoice</button>
       </div>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >support</button>
       </div>
       <div>
       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Remove</button>
       </div>
           </>
@@ -349,12 +349,12 @@ const coloumn=[
             completed && <>
             <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Invoice</button>
       </div>
       <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Support</button>
       </div>
             </>
@@ -364,12 +364,12 @@ const coloumn=[
             returns && <>
            <div>
       <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',marginBottom:"10px",marginLeft:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Accept return</button>
       </div>
       <div>
       <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Decline</button>
       </div>
             </>

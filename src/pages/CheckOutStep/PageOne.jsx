@@ -134,7 +134,7 @@ const orderType=localStorage.getItem("accountType")
           } 
 
           const order=async()=>{
-            alert()
+         
        
            
             if(userData && userInfo){
@@ -176,7 +176,7 @@ const orderType=localStorage.getItem("accountType")
               // history.push("/PurchaseCart")
               openModal()
              }else{
-              alert("error")
+              console.log("haiii")
              }
             }else{
              swal("Login first")

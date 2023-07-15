@@ -19,6 +19,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import ViewMoreSection from "./ViewMoreSection/ViewMoreSection";
 import { beforeList } from "../../Api/ListingRequest";
 import DataTable from "react-data-table-component";
+import { getconnectedshops } from "../../Api/UserRequest";
 
 
 
@@ -148,7 +149,7 @@ const handleChange = (e) => {
 const [open, setOpen] = React.useState(false);
 const [beforeListingProduct,setbeforeListingProduct]=useState([])
 const handleClickOpen =async (productI) => {
-  alert(productI)
+ 
   const {data}=await getProduct(productI)
   console.log("before",data);
   const zeta=[data]
@@ -161,7 +162,20 @@ const handleClickOpen =async (productI) => {
 const handleClose = () => {
   setOpen(false);
 };
+const [stores,setStores]=useState([])
+useEffect(()=>{
+  async function fetchData() {
+        // You can await here
+        const beta={userId:userData}
+        const {data}=await getconnectedshops(beta)
+        setStores(data)
+       
+        // ...
+      }
+      fetchData();
+},[])
 
+console.log("stores",stores);
 const handleBeforelisting=async()=>{
   console.log("=beforeListingProduct",beforeListingProduct);
   const {_id,...others}=beforeListingProduct[0]
@@ -191,9 +205,11 @@ const handleBeforelisting=async()=>{
 
   console.log("dta==>",dta);
   const{data}=await beforeList(dta)
+ 
   setbeforeListingProduct([])
+  history.push("/Listed")
   if(data){
-    alert("Product added as draft")
+    
     handleClose()
   }
   }else{
@@ -332,9 +348,11 @@ const coloumn=[
                 </div>
                 <div style={{marginLeft:'20px'}} className="flexright">
                 <select className="Selectbox" name="" id="">
-                    <option value=""></option>
-                     <option value=""></option>
-                      <option value=""></option>
+                   {
+                    stores.map((ele)=>(
+                      <option value="">{ele}</option>
+                    ))
+                   }
                     </select>
                 </div>
               </div>

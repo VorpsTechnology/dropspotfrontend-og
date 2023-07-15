@@ -190,7 +190,7 @@ function Dropshiporder() {
                   val &&    <div>
                     <button className='button' style={{background:"#FFE51A",borderColor:'black',color:"black",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
                         onClick={()=>{
-                          alert()
+                        
                        checkOrderSku.length>0 &&   checkOrderSku.map(async (ele)=>{
                      if(!ele.pending &&  ele.sku==row.sku){
                         const ata={
@@ -231,12 +231,12 @@ function Dropshiporder() {
       
        <div>
        <button className='button' style={{background:"white",borderColor:'black',color:"black",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
-           onClick={()=>alert()}
+           onClick={()=>console.log("haiii")}
            >Utilize My Inventory</button>
        </div>
        <div>
        <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'140px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
-           onClick={()=>alert()}
+           onClick={()=>console.log("haiii")}
            >Request Refund</button>
        </div>
       

@@ -181,19 +181,19 @@ const [success,setSuccess]=useState([])
         {row.processing && <>
           <div>
      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',marginBottom:"10px"}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
      >Track order</button>
       
      </div>
      <div>
      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',marginBottom:"10px"}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
      >Invoice</button>
       
      </div>
      <div>
      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
          >Request cancel</button>
      </div>
         </>}
@@ -203,13 +203,13 @@ const [success,setSuccess]=useState([])
           
           <div>
      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',marginBottom:"10px"}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
      >Request Return</button>
       
      </div>
      <div>
      <button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',marginBottom:"10px"}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
      >Invoice</button>
       
      </div>

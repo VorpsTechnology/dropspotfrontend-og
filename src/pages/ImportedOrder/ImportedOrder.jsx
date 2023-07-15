@@ -238,7 +238,7 @@ const coloumn=[
               name:"dropshipper",
               description:"test payment",
               handler:async function (resp){
-                alert(resp.razorpay_payment_id)
+                // alert(resp.razorpay_payment_id)
                 const ata={
                   orderId:row._id,
                   status:true,
@@ -324,7 +324,7 @@ const coloumn=[
             </div>
             <div>
         <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Decline</button>
         </div>
             </>
@@ -333,7 +333,7 @@ const coloumn=[
           {data.length>0 && data.map((ele)=>(
            ele.sku==row.sku?  <><div><button className='button' style={{background:"#FFE51A",color:"black",borderColor:'transparent',margin:"5px",padding:"10px",width:'150px',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',margin:"5px"}}
              onClick={async()=>{
-               alert()
+               
               const ata={
                 orderId:row._id,
                 status:true,
@@ -362,7 +362,7 @@ const coloumn=[
         
         <div>
         <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Decline</button>
         </div>
       </>
@@ -378,7 +378,7 @@ const coloumn=[
           name:"dropshipper",
           description:"test",
           handler:async function (resp){
-            alert(resp.razorpay_payment_id)
+          //  alert(resp.razorpay_payment_id)
             const ata={
               orderId:row._id,
               status:true,
@@ -473,7 +473,7 @@ const coloumn=[
         </div>
         <div>
         <button className='button' style={{background:"black",borderColor:'transparent',color:"white",margin:"5px", padding:"10px",width:'150px',borderRadius:'auto',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-      onClick={()=>alert()}
+      onClick={()=>console.log("haiii")}
       >Decline</button>
         </div>
         </>
@@ -504,7 +504,7 @@ const coloumn=[
      </div>
      <div>
      <button className='button' style={{background:"black",borderColor:'transparent',color:"white",marginLeft:"5px", padding:"10px",width:'auto',borderRadius:'5px',  boxShadow:'0px 4px 4px rgba(0, 0, 0, 0.15)',}}
-         onClick={()=>alert()}
+         onClick={()=>console.log("haiii")}
          >Raise A Dispute</button>
      </div>
     
