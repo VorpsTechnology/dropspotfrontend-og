@@ -43,7 +43,7 @@ function SellerSignup() {
   console.log(user);
   //form sunmit to server
   const handleSubmit = async (e) => {
-
+   alert("")
     e.preventDefault();
     if (user.username === "" || user.email === "" || user.phone === "") {
       toast.error("Fields can't be empty");
@@ -108,13 +108,13 @@ function SellerSignup() {
                                 <h1 class="gl-h1">REGISTER AS SELLER</h1>
                 </div>
                 
-                <div   className='Signcontainer' >
+                <div   className='Signcontainer' style={{width:"50%",marginLeft:"24rem"    }} >
                  
-               <div className='container-fluid' style={{justifyContent:'center'}}>
+               <div className='container-fluid' style={{justifyContent:'center',}}>
                <form  action="" onSubmit={handleSubmit}>
                
                <div   >
-               <div className='col-12 col-lg-3 u-s-m-b-30'   >
+               <div  className='col-12 u-s-m-b-30' >
               
                     <div ><label htmlFor="" style={{marginTop:'20px'}}>First Name</label></div>
                     <div ><input
@@ -128,7 +128,7 @@ function SellerSignup() {
                 </div>
            
                <div>
-               <div className='col-12 col-lg-3 u-s-m-b-30' >
+               <div  className='col-12 u-s-m-b-30'>
                     
                     <div ><label htmlFor="" style={{marginTop:'20px'}}>Last Name</label></div>
                     <div><input
@@ -141,7 +141,7 @@ function SellerSignup() {
                 </div>
                </div>
               </div>
-              <div className='col-12 col-lg-3 u-s-m-b-30'  >
+              <div  className='col-12 u-s-m-b-30' >
                     <div style={{display:'inline'}}>
                     <div  ><label htmlFor="" style={{marginTop:'20px'}}>Phone</label></div>
                     
@@ -159,7 +159,7 @@ function SellerSignup() {
                     
                    
                 </div>
-                <div className='col-12 col-lg-3 u-s-m-b-30'  >
+                <div className='col-12 u-s-m-b-30' >
                     <div style={{display:'inline'}}>
                     <div  ><label htmlFor="" style={{marginTop:'20px'}}>Email</label></div>
                     
@@ -183,7 +183,7 @@ function SellerSignup() {
                
                   <div >
                <div>
-               <div className='col-12 col-lg-6 u-s-m-b-30' >
+               <div className='col-12 u-s-m-b-30' >
                     
                     <div  ><label htmlFor="" style={{marginTop:'20px'}}> Password</label></div>
                     <div><input
@@ -198,7 +198,7 @@ function SellerSignup() {
                 </div>
                </div>
                <div>
-               <div className='col-12 col-lg-6 u-s-m-b-30'  >
+               <div className='col-12 u-s-m-b-30' >
                     
                     <div ><label htmlFor="" style={{marginTop:'20px'}}>Confirm Password </label></div>
                     <div><input
@@ -251,7 +251,7 @@ function SellerSignup() {
                 </div>
                </div>
               </div>
-              <div className='col-12 col-lg-4 u-s-m-b-30'  >
+              <div className='col-12 u-s-m-b-30'>
                     <div style={{display:'inline'}}>
                     <div  ><label htmlFor="" style={{marginTop:'20px'}}>Pin Code</label></div>
                     
@@ -271,7 +271,7 @@ function SellerSignup() {
                    
                 </div>
               <div >
-              <div  className='col-12 col-lg-4 u-s-m-b-30' >
+              <div  className='col-12 u-s-m-b-30'>
                 <div ><label htmlFor="" style={{marginTop:'20px'}}>State</label></div>
                 <div>
                 <input
@@ -284,7 +284,7 @@ function SellerSignup() {
                </div>
                 </div>
              
-                <div  className='col-12 col-lg-4 u-s-m-b-30' >
+                <div className='col-12 u-s-m-b-30' >
                   <div ><label htmlFor="" style={{marginTop:'20px'}}>Country</label></div>
                   <div>
                   <input
